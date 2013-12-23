@@ -15,7 +15,7 @@ if (!window.FAOSTATHome) {
         },
 
         _loadNews: function(id, type, lang) {
-            var url = 'http://' + CORE.baseURL + '/faostat-gateway/static/faostat-home-js/resources/' + type +'.json';
+            var url = 'http://' + CORE.baseURL + '/gateway/static/faostat/faostat-home-js/resources/' + type +'.json';
             $.getJSON(url, function(data) {
                 for( var i=0; i < data.length; i++) {
                     var html = '<div class="news-element">';
@@ -28,7 +28,7 @@ if (!window.FAOSTATHome) {
         },
 
         _loadLinks: function(id, lang) {
-            var url = 'http://' + CORE.baseURL + '/faostat-gateway/static/faostat-home-js/resources/links.json';
+            var url = 'http://' + CORE.baseURL + '/gateway/static/faostat/faostat-home-js/resources/links.json';
             $.getJSON(url, function(data) {
                 for( var i=0; i < data.length; i++) {
                     var html = '<div class="partner-link">';

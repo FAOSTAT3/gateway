@@ -18,12 +18,13 @@ if (!window.CORE) {
         lang : null,
 
         CONFIG_MES: {
-            prefix                  : 'http://faostat3.fao.org:10200/mes/',
+            prefix                  : 'http://168.202.23.224:8085/fenix-mes/',
             datasource              : 'faostat2',
+            html_structure          : 'http://168.202.23.224:8085/fenix-mes/structure.html',
+
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
-            rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
-            html_structure          : 'http://faostat3.fao.org:10200/mes/structure.html'
+            rest_domains            : 'http://faostat3.fao.org/wds/rest/domains'
         },
 
         /**
@@ -118,11 +119,11 @@ if (!window.CORE) {
          * Function linked to the Gateway's menu that load the requested module in the main content.
          */
         loadModule : function(module, group, domain, lang) {
-            window.location.href = 'http://' + CORE.baseURL + '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang;
+            window.location.href = 'http://' + CORE.baseURL + '/gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang;
         },
 
         loadSearchModule : function(module, word, lang) {
-            window.location.href = 'http://' + CORE.baseURL + '/faostat-gateway/go/to/' + module + '/' + word + '/' + lang;
+            window.location.href = 'http://' + CORE.baseURL + '/gateway/go/to/' + module + '/' + word + '/' + lang;
         },
 
         /**
@@ -145,7 +146,7 @@ if (!window.CORE) {
         upgradeURL : function(module, group, domain, lang) {
             /** TODO: make is as load module **/
             if (CORE.testHTML5()) {
-                window.history.pushState(null, 'Test', '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang);
+                window.history.pushState(null, 'Test', '/gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang);
             }
         },
 
@@ -167,7 +168,7 @@ if (!window.CORE) {
                 CORE.loadMapJS[module] = true;
 
                 // Load module's libraries.
-                $.getJSON('http://' + CORE.baseURL + '/faostat-gateway/static/faostat-gateway-js/libs.json', function (data) {
+                $.getJSON('http://' + CORE.baseURL + '/gateway/static/faostat/faostat-gateway-js/libs.json', function (data) {
 
                     if(typeof data == 'string')
                         data = $.parseJSON(data);
@@ -257,7 +258,7 @@ if (!window.CORE) {
                 case 'S' : I18NLang = 'es'; break;
                 default: I18NLang = 'en'; break;
             }
-            var path =  'http://'+ CORE.baseURL +'/faostat-gateway/static/I18N/';
+            var path =  'http://'+ CORE.baseURL +'/gateway/static/faostat/I18N/';
 
             $.i18n.properties({
                 name: 'I18N',
@@ -279,9 +280,9 @@ if (!window.CORE) {
         loadModule: function(module, options) {
 
             // TODO: move in in CORE.js
-            var defaultURL =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module+'/'+ options + '/'+  CORE.lang;
-            var homeURL    =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module + '/'+ CORE.lang;
-            var searchURL  =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module +'/'+ options + '/'+ CORE.lang
+            var defaultURL =  'http://' + CORE.baseURL +'/gateway/go/to/' + module+'/'+ options + '/'+  CORE.lang;
+            var homeURL    =  'http://' + CORE.baseURL +'/gateway/go/to/' + module + '/'+ CORE.lang;
+            var searchURL  =  'http://' + CORE.baseURL +'/gateway/go/to/' + module +'/'+ options + '/'+ CORE.lang
 
             switch (module) {
                 case 'search':

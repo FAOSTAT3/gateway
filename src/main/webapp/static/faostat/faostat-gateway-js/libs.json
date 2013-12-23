@@ -1,7 +1,6 @@
 {
     "browse" : {
         "js" : [
-            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqx-all.js",
             "/faostat-browse-js/js/google-analytics-manager.js",
             "/faostat-browse-js/js/faostat-browse-tree.js",
             "/faostat-browse-js/js/UIBuilder.js",
@@ -28,12 +27,11 @@
     },
     "mes" : {
         "js" : [
-            "/mes/js/google-analytics-manager.js"
+            "/fenix-mes/js/google-analytics-manager.js"
         ]
     },
     "download" : {
         "js" : [
-            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqx-all.js",
             "/faostat-download-js/js/I18N.js",
             "/faostat-download-js/js/cpi.js",
             "/faostat-download-js/js/collector.js",
@@ -56,7 +54,6 @@
     },
     "search" : {
         "js" : [
-            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqx-all.js",
             "/faostat-search-js/js/faostat-search-export.js",
             "/faostat-search-js/js/faostat-search-google-analytics-manager.js",
             "/faostat-search-js/js/faostat-search-single-result.js",

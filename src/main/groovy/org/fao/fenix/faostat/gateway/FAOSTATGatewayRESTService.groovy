@@ -37,6 +37,8 @@ import org.fao.fenix.faostat.gateway.*;
 @Path("to")
 class FAOSTATGatewayRESTService {
 
+    def CONFIG_FILE = 'static/faostat/config/config.json'
+
     /**
      * @param section   FAOSTAT section: browse, download, search, compare, analysis, mes, home
      * @param group     FAOSTAT DB group
@@ -94,12 +96,15 @@ class FAOSTATGatewayRESTService {
         // Fetch the base HTML
         HashMap<String, String> configMap = readConfigFile();
         String main = replaceHtml(configMap, 'faostat-home-js', lang);
+
+        main = main.replace('$_BASE_URL', configMap.get("base_url"))
+
         // Return the page
         return main
     }
 
     String replaceHtml(configMap, section, lang) {
-        def base_index_url = ConfigServlet.PATH + "WEB-INF/config/base_index.html"
+        def base_index_url = ConfigServlet.PATH + "static/faostat/base_index.html"
         // Load main HTML content
         def content = null;
         def main =  new File(base_index_url).text;
@@ -115,13 +120,14 @@ class FAOSTATGatewayRESTService {
         main = main.replace('$_SECTION_NAME', "home")
 
         // Load the module
-        def sectionURL = ConfigServlet.PATH + "static/"+ section +"/index_gateway.html"
+        def sectionURL = ConfigServlet.PATH + "static/faostat/"+ section +"/index_gateway.html"
 
         // Fetch its content
         content = new File(sectionURL).text;
 
         // Replace wildcards with parameters from the REST
         content = content.replace('$_LANG', lang)
+        content = content.replace('$_BASE_URL', configMap.get("base_url"))
 
         // Inject the module into the main HTML
         main = main.replace('$_CONTENT', content);
@@ -129,7 +135,9 @@ class FAOSTATGatewayRESTService {
     }
 
     HashMap<String, String> readConfigFile() {
-        def config = ConfigServlet.PATH + 'WEB-INF/config/config.json';
+        def config = ConfigServlet.PATH + CONFIG_FILE;
+        println(ConfigServlet.PATH);
+        println(config);
         def configContent = new File(config).text;
         Gson g = new Gson();
         return g.fromJson(configContent, HashMap.class);
