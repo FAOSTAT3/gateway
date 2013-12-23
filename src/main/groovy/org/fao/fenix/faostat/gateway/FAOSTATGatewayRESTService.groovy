@@ -28,6 +28,7 @@ import javax.ws.rs.Path
 import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
+import org.fao.fenix.faostat.gateway.*;
 
 /**
  * @author <a href="mailto:guido.barbaglia@fao.org">Guido Barbaglia</a>
@@ -35,8 +36,6 @@ import javax.ws.rs.core.MediaType
  * */
 @Path("to")
 class FAOSTATGatewayRESTService {
-
-    def CONFIGFile = 'WEB-INF/config/config.json'
 
     /**
      * @param section   FAOSTAT section: browse, download, search, compare, analysis, mes, home
@@ -130,7 +129,7 @@ class FAOSTATGatewayRESTService {
     }
 
     HashMap<String, String> readConfigFile() {
-        def config = ConfigServlet.PATH + CONFIGFile;
+        def config = ConfigServlet.PATH + 'WEB-INF/config/config.json';
         def configContent = new File(config).text;
         Gson g = new Gson();
         return g.fromJson(configContent, HashMap.class);

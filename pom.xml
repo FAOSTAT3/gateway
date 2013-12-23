@@ -5,7 +5,7 @@
     <groupId>org.fao.fenix</groupId>
     <artifactId>faostat-gateway</artifactId>
     <version>4.1-SNAPSHOT</version>
-    <name>FAOSTAT Gateway</name>
+    <name>FENIX Gateway</name>
     <packaging>war</packaging>
     <properties>
         <jersey-version>1.17.1</jersey-version>
