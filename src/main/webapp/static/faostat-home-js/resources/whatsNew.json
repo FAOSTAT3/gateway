@@ -1,0 +1,39 @@
+[
+    {
+        "title": {
+            "E" : "DECEMBER 2013",
+            "F" : "DÉCEMBRE 2013",
+            "S" : "DICIEMBRE 2013"
+        },
+        "description":  {
+            "E" : "The new FAOSTAT feedback system is available to all our users by clicking on the blue button on the bottom left. We encourage you to register and to send us your comments.",
+            "F" : "Le nouveau système de feedback de FAOSTAT est disponible pour tous nos utilisateurs en cliquant sur le bouton bleu en bas à gauche. Nous vous encourageons à vous inscrire et à nous envoyer vos commentaires.",
+            "S" : "El nuevo sistema de comentarios FAOSTAT está disponible para todos los usuarios haciendo clic sobre el botón azul en la parte inferior izquierda. Le alentamos a que se registre y que nos envíe sus comentarios."
+        }
+    },
+    {
+        "title": {
+            "E" : "JUNE 2013",
+            "F" : "JUIN 2013",
+            "S" : "JUNIO 2013"
+        },
+        "description":  {
+            "E" : "The new Agri-environmental indicators database provides tools to monitor the environmental performance of agriculture; track trends in the environmental impacts and interactions between agriculture and the environment. The indicators are based on the OECD and Eurostat Agri-Environmental frameworks.",
+            "F" : "La nouvelle base de données des indicateurs agro-environnementaux permet de contrôler les performances environnementales de l’agriculture et de suivre les tendances et interactions des impacts environnementaux entre agriculture et environnement. Les indicateurs sont basés sur les cadres agro-environnementaux de l'OCDE et Eurostat.",
+            "S" : "La nueva base de datos de indicadores agroambientales proporciona herramientas para monitorear el desempeño ambiental de la agricultura, sigue la tendencia de los impactos ambientales y las interacciones entre la agricultura y el medio ambiente. Los indicadores se basan en el marco agroambiental de OCDE y Eurostat."
+        }
+    },
+    {
+        "title": {
+            "E" : "MARCH 2013",
+            "F" : "MARS 2013",
+            "S" : "MARZO 2013"
+        },
+        "description":  {
+            "E" : "The new version of the Food Balance Sheet is available in Download Data. The new table provides a well organized and easily readable view of all elements of the Food Balance Sheet and includes new and advanced features to scroll, filter and sort.",
+            "F" : "La nouvelle version du Bilan Alimentaire est maintenant disponible dans la rubrique téléchargement de données. Le nouveau tableau fournit une vue mieux organisée et plus lisible de tous les éléments du bilan alimentaire, elle inclut de nouvelles fonctionnalités avancées pour faire défiler, filtrer et trier le tableau.",
+            "S" : "La nueva versión de los Balances Alimentarios está disponible en Descarga de Datos. La nueva tabla proporciona una visión bien organizada y de fácil lectura de todos los elementos de los balances alimentarios e incluye nuevas y avanzadas características para desplazarse, filtrar y ordenar."
+        }
+    }
+   
+]

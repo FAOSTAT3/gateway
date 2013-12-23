@@ -1,0 +1,39 @@
+[
+    {
+        "title": {
+            "E" : "JANUARY 2014",
+            "F" : "JANVIER 2014",
+            "S" : "ENERO 2014"
+        },
+        "description":  {
+            "E" : "Launch of the new Government Expenditures domain. It comprises four main categories: credit to agriculture, government expenditure on agriculture, official development assistance (ODA) to agriculture, and foreign direct investment (FDI) in Agriculture.",
+            "F" : "Lancement d'un nouveau domaine des dépenses publiques. Il comprend quatre catégories principales: le crédit à l'agriculture, les dépenses publiques pour l'agriculture, l'aide publique au développement (APD) de l'agriculture et les investissements directs étrangers (IDE) dans l'agriculture.",
+            "S" : "Lanzamiento del nuevo dominio sobre gastos del gobierno. Se compone de cuatro categorías principales: crédito a la agricultura, el gasto público en la agricultura, la asistencia oficial para el desarrollo (AOD) destinada a la agricultura, y la inversión extranjera directa (IED) en la agricultura."
+        }
+    },
+
+    {
+        "title": {
+            "E" : "JANUARY 2014",
+            "F" : "JANVIER 2014",
+            "S" : "ENERO 2014"
+        },
+        "description":  {
+            "E" : "Launch of new Food Security domain. Data on determinants, outcomes, and vulnerability/stability.",
+            "F" : "Lancement d'un nouveau domaine de la sécurité alimentaire. Données sur les déterminants, les résultats et la vulnérabilité/stabilité. ",
+            "S" : "Lanzamiento del nuevo dominio sobre la seguridad alimentaria. Datos sobre los determinantes, los resultados y vulnerabilidad / estabilidad."
+        }
+    },
+    {
+        "title": {
+            "E" : "FEBRUARY 2014",
+            "F" : "FÉVRIER 2014",
+            "S" : "FEBRERO 2014"
+        },
+        "description":  {
+            "E" : "Launch of the new Food Security Database. It includes a set of food security statistics based on National Household Surveys. National and sub-national data, with special focus on gender disaggregated information.",
+            "F" : "Lancement de la nouvelle base de données de la sécurité alimentaire incluant un set de statistiques basé sur les enquêtes nationales auprès des ménages, données nationales et sous-nationales avec une attention toute particulière pour l'information détaillée sur le genre.",
+            "S" : "Lanzamiento de la nueva Base de Datos de la Seguridad Alimentaria. La base de datos incluye un conjunto de estadísticas de seguridad alimentaria basadas en Encuestas Nacionales de Hogares.Datos nacionales y sub-nacionales, con un enfoque especial en datos desagregados por género."
+        }
+    }
+]
