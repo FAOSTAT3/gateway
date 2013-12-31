@@ -73,7 +73,7 @@
     -->
 
     <!-- FAOSTAT Browse -->
-    <script type='text/javascript' src='http://$_BASE_URL/faostat-browse-js/js/faostat-browse.js'></script>
+    <script type='text/javascript' src='http://$_BASE_URL/fenix-browse/js/faostat-browse.js'></script>
 
     <!-- FAOSTAT Analysis -->
     <script type='text/javascript' src='http://$_BASE_URL/faostat-analysis-js/js/faostat-analysis.js'></script>
@@ -235,12 +235,17 @@
 
     <div class="centralHolder">$_CONTENT</div>
 
-    <div class="footerFS">
+    <div class="footerFS" style="position:relative">
         <div class="footerText">
             <p>
                 <a class="footer-link" target="_blank" href="http://www.fao.org/corp/copyright/$_ISO2_LANG/">&#169; FAO 2013</a>
             </p>
-            <a target="_blank" href="http://www.fao.org/knowledge/ask-question/$_ISO2_LANG/?tx_mblnewsevent_organizer=FAOSTAT@fao.org">AskFAOSTAT</a>
+            <div style="cursor: pointer; padding: 1px 5px 3px 9px; background-color: rgb(94, 173, 212); border-radius: 5px; height: 30px; background-image: url(&quot;http://faostat3.fao.org/faostat-gateway/static/faostat-images/icons/megaphone.png&quot;); background-repeat: no-repeat; position: absolute; right: 24px; top: 21px; border-top: 1px solid rgb(113, 208, 255); width: 104px; background-position: 87px 3px;" class="various myButton" id="btnFS2" data-fancybox-type="iframe" href="http://fenixapps.fao.org/feedbacksystem/" target="myFanzy">
+                <p style="font-style: italic; font-size: 9px;"> Help us with your</p>
+                <p style="font: 900 19px/16px 'Open Sans Condensed',sans-serif;"> FEEDBACK </p>
+            </div>
+
+
 
         </div>
     </div>
