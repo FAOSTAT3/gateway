@@ -48,6 +48,8 @@ if (!window.FAOSTATGateway) {
             $('.ico-ae').append($.i18n.prop('_agriEnviromental'));
             $('.ico-fb').append($.i18n.prop('_foodBalanceSheet'));
             $('.ico-asti').append($.i18n.prop('_asti'));
+            $('.ico-po').append($.i18n.prop('_population'));
+            $('.ico-cb').append($.i18n.prop('_commoditybalances'));
 
             /** enable menu **/
             UIUtils.initializeDDMenu('browse', 'menu-dropdown-browse', 'menu-dropdown-download');

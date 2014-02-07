@@ -3110,6 +3110,9 @@ div.obj-box-download:nth-child(even) {
 .ico-el {background-image:url(faostat-images/icons/ghg-ico.png);}
 .ico-in {background-image:url(faostat-images/icons/inv-ico.png);}
 .ico-fo {background-image:url(faostat-images/icons/for-ico.png);}
+.ico-asti {background-image:url(faostat-images/icons/ico-asti.png);}
+.ico-po {background-image:url(faostat-images/icons/ico-po.png);}
+.ico-cb {background-image:url(faostat-images/icons/ico-cb.png);}
 
 
 #container {min-height: 100%;}

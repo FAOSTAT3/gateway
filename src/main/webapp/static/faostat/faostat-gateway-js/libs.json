@@ -1,21 +1,21 @@
 {
     "browse" : {
         "js" : [
-            "/faostat-browse-js/js/google-analytics-manager.js",
-            "/faostat-browse-js/js/faostat-browse-tree.js",
-            "/faostat-browse-js/js/UIBuilder.js",
-            "/faostat-browse-js/js/UIBuilderGrowthRate.js",
-            "/faostat-browse-js/js/UIBuilderTable.js",
-            "/faostat-browse-js/js/UIBuilderMap.js",
-            "/faostat-browse-js/js/UIBuilderChart.js",
-            "/faostat-browse-js/js/UIBuilderObjectsStructure.js",
-            "/faostat-browse-js/js/UIBuilderSelectors.js",
-            "/faostat-browse-js/js/I18NInjector.js",
-            "/faostat-browse-js/js/UIBuilderByCountry.js",
-            "/faostat-browse-js/js/UIBuilderRankings.js",
-            "/faostat-browse-js/js/UIBuilderTabSelector.js",
-            "/faostat-browse-js/js/Export.js",
-            "/faostat-browse-js/js/FAOSTATBrowseUtils.js"
+            "/fenix-browse/js/google-analytics-manager.js",
+            "/fenix-browse/js/faostat-browse-tree.js",
+            "/fenix-browse/js/UIBuilder.js",
+            "/fenix-browse/js/UIBuilderGrowthRate.js",
+            "/fenix-browse/js/UIBuilderTable.js",
+            "/fenix-browse/js/UIBuilderMap.js",
+            "/fenix-browse/js/UIBuilderChart.js",
+            "/fenix-browse/js/UIBuilderObjectsStructure.js",
+            "/fenix-browse/js/UIBuilderSelectors.js",
+            "/fenix-browse/js/I18NInjector.js",
+            "/fenix-browse/js/UIBuilderByCountry.js",
+            "/fenix-browse/js/UIBuilderRankings.js",
+            "/fenix-browse/js/UIBuilderTabSelector.js",
+            "/fenix-browse/js/Export.js",
+            "/fenix-browse/js/FAOSTATBrowseUtils.js"
         ]
     },
     "analysis" : {
