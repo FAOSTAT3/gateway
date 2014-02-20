@@ -1,14 +1,14 @@
 [
     {
         "title": {
-            "E" : "JANUARY 2014",
-            "F" : "JANVIER 2014",
-            "S" : "ENERO 2014"
+            "E" : "APRIL 2014",
+            "F" : "AVRIL 14",
+            "S" : "ABRIL 14"
         },
         "description":  {
-            "E" : "Launch of the new Government Expenditures domain. It comprises four main categories: credit to agriculture, government expenditure on agriculture, official development assistance (ODA) to agriculture, and foreign direct investment (FDI) in Agriculture.",
-            "F" : "Lancement du nouveau domaine des dépenses publiques. Il comprend quatre catégories principales: le crédit à l’agriculture, les dépenses publiques pour l’agriculture, l’aide publique au développement (APD) de l’agriculture et les investissements directs étrangers (IDE) dans l’agriculture.",
-            "S" : "Lanzamiento del nuevo dominio sobre gastos del gobierno. Se compone de cuatro categorías principales: crédito a la agricultura, el gasto público en la agricultura, la asistencia oficial para el desarrollo (AOD) destinada a la agricultura, y la inversión extranjera directa (IED) en la agricultura"
+            "E" : "Government expenditure domain: Launch of the new Financing to agriculture domain. It comprises three main categories: credit, official development assistance (ODA), and foreign direct investment (FDI).",
+            "F" : "Domaine des dépenses gouvernementales:  lancement du nouveau financement du domaine agricole. Il inclut trois catégories principales: le credit, l’assistance officielle de développement (AOD) et les investissement étrangers directs (IED).",
+            "S" : "Dominio de gasto público: lanzamiento de la nueva financiación al dominio agricultura. Incluye tres categorias principales: el crédito, la asistencia officia de desarrollo (AOD), y la inversión extranjera directa (IED)."
         }
     },
 
@@ -36,5 +36,4 @@
             "S" : "Lanzamiento de la nueva Base de Datos de la Seguridad Alimentaria. La base de datos incluye un conjunto de estadísticas de seguridad alimentaria basadas en Encuestas Nacionales de Hogares.Datos nacionales y sub-nacionales, con un enfoque especial en datos desagregados por género."
         }
     }
-
 ]
