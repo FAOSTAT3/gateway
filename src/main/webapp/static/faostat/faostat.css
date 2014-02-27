@@ -3158,3 +3158,7 @@ div.obj-box-download:nth-child(even) {
     color: #666666 !important;
     font-weight: normal;
 }
+
+.feedback-system-icon {
+    background-image: url(faostat-images/icons/megaphone.png);
+}
