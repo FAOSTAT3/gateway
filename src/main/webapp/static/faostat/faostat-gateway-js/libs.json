@@ -67,6 +67,7 @@
             "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css"
         ]
     },
+
     "compare" : {
         "js" : [
             "/faostat-compare-js/js/CompareI18N.js",
