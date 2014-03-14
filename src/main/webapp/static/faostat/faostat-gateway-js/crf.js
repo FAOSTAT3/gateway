@@ -182,9 +182,12 @@ var CRF = (function() {
     };
 
     return {
-        CONFIG      :   CONFIG,
-        showCRF1996 :   showCRF1996,
-        showCRF2006 :   showCRF2006
+        CONFIG          :   CONFIG,
+        showCRF1996     :   showCRF1996,
+        showCRF2006     :   showCRF2006,
+        createCRF_G1    :   createCRF_G1,
+        createCRF_G2    :   createCRF_G2,
+        exportExcel     :   exportExcel
     };
 
 })();
