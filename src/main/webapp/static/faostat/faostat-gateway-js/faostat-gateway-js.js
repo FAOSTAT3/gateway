@@ -9,6 +9,9 @@ if (!window.FAOSTATGateway) {
         loadUI : function() {
             FAOSTATGateway._loadLabels();
             FAOSTATGateway._loadListeners();
+
+            // Enable the feedback System
+            FAOSTATGateway._loadFeedbackSystem('faostat-feedback-system');
         },
 
         _loadListeners: function() {
@@ -54,6 +57,10 @@ if (!window.FAOSTATGateway) {
             /** enable menu **/
             UIUtils.initializeDDMenu('browse', 'menu-dropdown-browse', 'menu-dropdown-download');
             UIUtils.initializeDDMenu('download', 'menu-dropdown-download', 'menu-dropdown-browse');
+        },
+
+        _loadFeedbackSystem: function(id) {
+            $("#" + id).fancybox();
         }
 
     };

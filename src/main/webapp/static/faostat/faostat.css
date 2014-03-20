@@ -1127,7 +1127,7 @@ rispetto a questo div */
 }
 
 .bullet-list a {
-    color: #666666 !important;
+    color: #399BCC !important;
     text-decoration: none;
     font-size:12px;
 }
@@ -3157,4 +3157,24 @@ div.obj-box-download:nth-child(even) {
 .FAOSTAT-ZIP-light-text-small-date {
     color: #666666 !important;
     font-weight: normal;
+}
+
+.feedback-system-icon {
+    background-image: url(faostat-images/icons/megaphone.png);
+}
+
+a {
+    color: #399BCC !important;
+    text-decoration: none;
+    font-size:12px;
+}
+
+a:hover {
+    color: #399BCC !important;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #399BCC !important;
+    text-decoration: none;
 }
