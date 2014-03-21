@@ -163,9 +163,11 @@ var CRF = (function() {
                 for (var i = 0 ; i < sums.length ; i++) {
                     var addends = sums[i].children;
                     var sum = 0;
+                    var id = addends[addends.length - 1].id;
                     for (var j = 0 ; j < addends.length ; j++)
                         sum += (addends[j].innerHTML == '') ? 0 : parseFloat(addends[j].innerHTML);
-                    sums[i].innerHTML = sum;
+//                    sums[i].innerHTML = sum;
+                    document.getElementById(id).innerHTML = sum;
                 }
             },
             error : function(err, b, c) {
@@ -175,10 +177,14 @@ var CRF = (function() {
     };
 
     function exportExcel(tableID) {
-        var s = document.getElementById(tableID).innerHTML;
-        s = s.replace(/\n|\t/g, '');
-        $('#' + tableID + '_DATA').val(JSON.stringify(s));
-        document[tableID + 'FORM'].submit();
+//        var s = document.getElementById(tableID).innerHTML;
+//        s = s.replace(/\n|\t/g, '');
+//        $('#' + tableID + '_DATA').val(JSON.stringify(s));
+//        document[tableID + 'FORM'].submit();
+        var addends = $('.addend');
+        for (var i = 0 ; i < addends.length ; i++)
+            addends[i].innerHTML = null;
+        tableToExcel(tableID + "TABLE", "CRF " + tableID);
     };
 
     return {
