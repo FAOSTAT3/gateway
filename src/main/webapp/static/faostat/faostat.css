@@ -1082,7 +1082,7 @@ rispetto a questo div */
 }
 
 .backBtn {
-    background-image: url(../images/backBg.png);
+    background-image: url(http://faostat3.fao.org/faostat-download-js/images/backBg.png);
     width: 50px;
     height: 20px;
     color: #ffffff;
