@@ -263,7 +263,10 @@ if (!window.CORE) {
                 name: 'I18N',
                 path: path,
                 mode: 'both',
-                language: I18NLang
+                language: I18NLang,
+                callback: function() {
+                    FAOSTATGateway._loadLabels();
+                }
             });
         },
 

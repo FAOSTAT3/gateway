@@ -7,7 +7,9 @@ if (!window.FAOSTATGateway) {
          * This map is used to avoid modules libraries to be loaded more than once.
          */
         loadUI : function() {
-            FAOSTATGateway._loadLabels();
+            // fix to load async labels. TODO: make it nicer
+            CORE.getLangProperties();
+            //FAOSTATGateway._loadLabels();
             FAOSTATGateway._loadListeners();
 
             // Enable the feedback System
