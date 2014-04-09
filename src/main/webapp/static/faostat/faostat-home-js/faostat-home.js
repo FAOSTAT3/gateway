@@ -43,22 +43,22 @@ if (!window.FAOSTATHome) {
 
         _labels: function() {
             /** setting lang properties **/
-            CORE.getLangProperties();
+           // CORE.getLangProperties();
 
             /* labels */
-            $('#whatsNewText').append($.i18n.prop('_whatsNew'));
-            $('#databaseUpdatesText').append($.i18n.prop('_databaseUpdates'));
-            $('#comingUpText').append($.i18n.prop('_comingUp'));
-            $('#releaseCalendarText').append($.i18n.prop('_releaseCalendar'));
-            $('#partners').append($.i18n.prop('_partners'));
-            $('#faoLinks').append($.i18n.prop('_faoLinks'));
+            $('#whatsNewText').html($.i18n.prop('_whatsNew'));
+            $('#databaseUpdatesText').html($.i18n.prop('_databaseUpdates'));
+            $('#comingUpText').html($.i18n.prop('_comingUp'));
+            $('#releaseCalendarText').html($.i18n.prop('_releaseCalendar'));
+            $('#partners').html($.i18n.prop('_partners'));
+            $('#faoLinks').html($.i18n.prop('_faoLinks'));
 
-            $('#chart1Title').append($.i18n.prop('_chart1Title'));
-            $('#chart1SubTitle').append($.i18n.prop('_chart1SubTitle'));
-            $('#chart2Title').append($.i18n.prop('_chart2Title'));
-            $('#chart2SubTitle').append($.i18n.prop('_chart2SubTitle'));
-            $('#chart3Title').append($.i18n.prop('_chart3Title'));
-            $('#chart3SubTitle').append($.i18n.prop('_chart3SubTitle'));
+            $('#chart1Title').html($.i18n.prop('_chart1Title'));
+            $('#chart1SubTitle').html($.i18n.prop('_chart1SubTitle'));
+            $('#chart2Title').html($.i18n.prop('_chart2Title'));
+            $('#chart2SubTitle').html($.i18n.prop('_chart2SubTitle'));
+            $('#chart3Title').html($.i18n.prop('_chart3Title'));
+            $('#chart3SubTitle').html($.i18n.prop('_chart3SubTitle'));
 
             /** tooltips **/
             $('#ifpri').attr("title", "International Food Policy Research Institute (IFPRI)");

@@ -14,6 +14,9 @@ if (!window.FAOSTATGateway) {
 
             // Enable the feedback System
             FAOSTATGateway._loadFeedbackSystem('faostat-feedback-system');
+
+            FAOSTATGateway._inizializeDD('faostat-feedback-system');
+
         },
 
         _loadListeners: function() {
@@ -30,32 +33,34 @@ if (!window.FAOSTATGateway) {
 
         _loadLabels: function() {
             /** setting lang properties **/
-            CORE.getLangProperties();
+                //CORE.getLangProperties();
 
-            $('#home').append($.i18n.prop('_home'));
-            $('#browse').append($.i18n.prop('_browse'));
-            $('#download').append($.i18n.prop('_download'));
-            $('#compare').append($.i18n.prop('_compare'));
-            $('#search').append($.i18n.prop('_search'));
-            $('#analysis').append($.i18n.prop('_analysis'));
-            $('#mes').append($.i18n.prop('_mes'));
+            $('#home').html($.i18n.prop('_home'));
+            $('#browse').html($.i18n.prop('_browse'));
+            $('#download').html($.i18n.prop('_download'));
+            $('#compare').html($.i18n.prop('_compare'));
+            $('#search').html($.i18n.prop('_search'));
+            $('#analysis').html($.i18n.prop('_analysis'));
+            $('#mes').html($.i18n.prop('_mes'));
 
             /** labels **/
-            $('.ico-pr').append($.i18n.prop('_production'));
-            $('.ico-tr').append($.i18n.prop('_trade'));
-            $('.ico-fs').append($.i18n.prop('_foodSupply'));
-            $('.ico-re').append($.i18n.prop('_resources'));
-            $('.ico-em').append($.i18n.prop('_ghg'));
-            $('.ico-el').append($.i18n.prop('_ghgLandUse'));
-            $('.ico-in').append($.i18n.prop('_investment'));
-            $('.ico-fo').append($.i18n.prop('_forestry'));
-            $('.ico-pi').append($.i18n.prop('_prices'));
-            $('.ico-ae').append($.i18n.prop('_agriEnviromental'));
-            $('.ico-fb').append($.i18n.prop('_foodBalanceSheet'));
-            $('.ico-asti').append($.i18n.prop('_asti'));
-            $('.ico-po').append($.i18n.prop('_population'));
-            $('.ico-cb').append($.i18n.prop('_commoditybalances'));
+            $('.ico-pr').html($.i18n.prop('_production'));
+            $('.ico-tr').html($.i18n.prop('_trade'));
+            $('.ico-fs').html($.i18n.prop('_foodSupply'));
+            $('.ico-re').html($.i18n.prop('_resources'));
+            $('.ico-em').html($.i18n.prop('_ghg'));
+            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
+            $('.ico-in').html($.i18n.prop('_investment'));
+            $('.ico-fo').html($.i18n.prop('_forestry'));
+            $('.ico-pi').html($.i18n.prop('_prices'));
+            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
+            $('.ico-fb').html($.i18n.prop('_foodBalanceSheet'));
+            $('.ico-asti').html($.i18n.prop('_asti'));
+            $('.ico-po').html($.i18n.prop('_population'));
+            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
+        },
 
+        _inizializeDD: function() {
             /** enable menu **/
             UIUtils.initializeDDMenu('browse', 'menu-dropdown-browse', 'menu-dropdown-download');
             UIUtils.initializeDDMenu('download', 'menu-dropdown-download', 'menu-dropdown-browse');
