@@ -7,7 +7,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : '168.202.28.214:8085',
+        baseURL : 'localhost:8080',
 
         groupCode : null,
 
@@ -18,9 +18,9 @@ if (!window.CORE) {
         lang : null,
 
         CONFIG_MES: {
-            prefix                  : 'http://168.202.28.214:8085/fenix-mes/',
-            datasource              : 'faostat2',
-            html_structure          : 'http://168.202.28.214:8085/fenix-mes/structure.html',
+            prefix                  : 'http://localhost:8080/fenix-mes/',
+            datasource              : 'faostatproddiss',
+            html_structure          : 'http://localhost:8080/fenix-mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
             rest_domains            : 'http://faostat3.fao.org/wds/rest/domains'

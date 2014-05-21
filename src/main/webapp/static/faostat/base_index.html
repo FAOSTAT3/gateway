@@ -6,7 +6,9 @@
 <head>
 
     <title>FAOSTAT Gateway</title>
+
     <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700|Roboto' rel='stylesheet' type='text/css'>
 
     <!-- JQuery -->
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/jquery/1.9.1/jquery-1.9.1.min.js'></script>
@@ -15,12 +17,27 @@
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/jquery.number/2.1.0/jquery.number.js'></script>
     <!-- <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js'></script> -->
 
+    <!-- START BOOTSTRAP -->
+    <!--<meta name='viewport' content='width=device-width, initial-scale=1.0'>-->
+    <!--<script type='text/javascript' src='http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js'></script>-->
+    <!--<link href='http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css' rel='stylesheet'>-->
+    <!-- END BOOTSTRAP -->
+
     <!-- Highcharts -->
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/highcharts/3.0.9/js/highcharts.js'></script>
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/FENIXChartsLibrary/0.2/FENIXChartsLibrary.js'></script>
 
     <!-- JQWidgets -->
-    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqx-all.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxpanel.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtree.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxexpander.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxbuttons.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxlistbox.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcheckbox.js"></script>
 
     <!-- StickyJS -->
     <script type="text/javascript" src="http://fenixapps.fao.org/repository/js/stickyjs/1.0/jquery.sticky.js"></script>
@@ -254,7 +271,7 @@
         </div>
     </div>
 
-    <form style='display: none;' name='excelForm' method='POST' action='http://faostat3.fao.org/wds/rest/table/excel' target='_blank'>
+    <form style='display: none;' id='excelForm' name='excelForm' method='POST' action='http://faostat3.fao.org/wds/rest/table/excel' target='_blank'>
         <div><input type='text' value='faostat' name='cssFilename' id='cssFilename'/></div>
         <div><input type='text' value='' name='datasource' id='datasource'/></div>
         <div><input type='text' value='2' name='decimalNumbers' id='decimalNumbers'/></div>
@@ -264,7 +281,7 @@
         <div><input type='text' value='' name='json' id='json'/></div>
     </form>
 
-    <form style='display: none;' name='excelFormWithQuotes' method='POST' action='http://faostat3.fao.org/wds/rest/exporter/streamexcel' target='_blank'>
+    <form style='display: none;' onsubmit='F3DWLD.onSubmit();' id='excelFormWithQuotes' name='excelFormWithQuotes' method='POST' action='http://faostat3.fao.org/wds/rest/exporter/streamexcel' target='_new'>
         <div><input type='text' value='faostat' name='cssFilename_WQ' id='cssFilename_WQ'/></div>
         <div><input type='text' value='' name='datasource_WQ' id='datasource_WQ'/></div>
         <div><input type='text' value='2' name='decimalNumbers_WQ' id='decimalNumbers_WQ'/></div>
@@ -277,7 +294,7 @@
         <div><input type='text' value='' name='subtitle_WQ' id='subtitle_WQ'/></div>
     </form>
 
-    <form style='display: none;' name='growthRateExcelForm' method='POST' action='http://faostat3.fao.org/wds/rest/exporter/excel' target='_blank'>
+    <form style='display: none;' id='growthRateExcelForm' name='growthRateExcelForm' method='POST' action='http://faostat3.fao.org/wds/rest/exporter/excel' target='_blank'>
         <div><input type='text' value='data' name='data' id='data'/></div>
     </form>
 
