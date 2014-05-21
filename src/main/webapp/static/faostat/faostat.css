@@ -3178,3 +3178,11 @@ a:visited {
     color: #399BCC !important;
     text-decoration: none;
 }
+.fa {
+    font-family: FontAwesome !important;
+}
+
+* {
+    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Roboto Condensed', sans-serif;
+}
