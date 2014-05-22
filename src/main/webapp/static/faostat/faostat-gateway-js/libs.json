@@ -80,7 +80,15 @@
             "/faostat-compare-js/js/jshashtable.js",
             "/faostat-compare-js/js/compare-google-analytics-manager.js",
             "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
-            "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js"
+            "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxmenu.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.filter.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.grouping.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.columnsresize.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.sort.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.selection.js"
         ],
         "css" : [
             "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
