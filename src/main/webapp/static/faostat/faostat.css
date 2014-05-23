@@ -2415,37 +2415,45 @@ div.obj-box-download:nth-child(even) {
 }
 
 .compare-summary {
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .compare-summary-element {
     display: inline-block;
+    width: 670px;
 }
 
 .compare-summary-title {
     width: 70px;
-    color: #399BCC;
-    font-size: 9px;
+    color: #666666;
+    font-size: 11px;
     display: inline-block;
     text-transform: uppercase;
+    font-weight: bold;
+    padding: 2px;
+    margin: 3px 3px 3px 0;
 }
 
 .summary-item {
     display: inline-block;
     margin-right: 8px;
     cursor: pointer;
-    border: 1px solid #FFFFFF;
     padding: 2px;
-}
-
-.summary-item:hover {
-    margin-right: 8px;
-    background: none repeat scroll 0 0 #EFEFEF;
+    background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #AAAAAA;
+    color: #666666;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding: 2px;
+    cursor: pointer;
+    margin: 3px 3px 3px 0;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.summary-item:hover {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border: 1px solid #AAAAAA;
 }
 
 .summary-item-groupdomain {
@@ -2530,7 +2538,7 @@ div.obj-box-download:nth-child(even) {
 }
 
 .dataTable thead th {
-    background-color: #399BCC !important;
+    background-color: #90AEC3 !important;
     border-image: none !important;
     font-weight: normal !important;
     color: #FFFFFF !important;
@@ -3352,4 +3360,17 @@ a:visited {
 
 #output_area {
     min-height: 350px;
+}
+
+.summary-box {
+    position: relative;
+}
+
+.compare-summary-title {
+    position: absolute;
+    top:0;
+}
+
+.compare-summary-element{
+    margin-left: 80px;
 }
