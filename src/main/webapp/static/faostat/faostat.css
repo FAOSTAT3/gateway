@@ -71,7 +71,7 @@ a, img {
 .head{
     width:961px;
     height:117px;
-    background-image:url(head.png);
+    /*background-image:url(head.png);*/
     margin: 0 auto;
     top:0px;
 }
@@ -1073,9 +1073,9 @@ rispetto a questo div */
     margin: 0 0 0 0;
     background-color: #FFF;
     top: 0px;
-    height: 60px;
+    height: 38px;
     border: 1px solid;
-    border-bottom-color: #399bcc;
+    border-bottom-color: #CCCCCC;
     border-top-color: #ffffff;
     border-left-color: #ffffff;
     border-right-color: #ffffff;
@@ -1102,13 +1102,12 @@ rispetto a questo div */
 }
 
 .noteHead h2 {
-    color: #399bcc;
+    color: #2471AA;
     width: 590px;
     float: left;
-    padding: 23px 0 0 0;
+    padding: 6px 0 0 0;
     margin: 0px;
-    *font-size: 16px !important;
-    font-size: 16px !important;
+    font: 300 19px 'Roboto Condensed',sans-serif !important;
 }
 
 .noteHead img {
@@ -1121,7 +1120,7 @@ rispetto a questo div */
 
 
 .bullet-list li {
-    background-image: url(faostat-images/icons/blue_circle_bullet.png) no-repeat scroll 0 4px;
+    /*background-image: url(faostat-images/icons/blue_circle_bullet.png) no-repeat scroll 0 4px;*/
     line-height: 1.2em;
     margin: 10px 0 0 14px;
 }
@@ -2107,10 +2106,6 @@ div.obj-box-news:nth-child(even) {
 
 /** DOWNLOAD **/
 
-.download-selector {
-    margin-top:10px;
-}
-
 .download-selection-buttons{
     float:right;
     display: inline-block;
@@ -2134,7 +2129,7 @@ a.download-btn:nth-child(2){
 
 .obj-box-download {
     display:inline-block;
-    height: 190px;
+    height: 175px;
     width: 353px !important;
 }
 
@@ -2150,9 +2145,9 @@ div.obj-box-download:nth-child(even) {
     margin-left: 0;
 }
 
-#output_area {
-    margin: 0px 20px 10px 20px;
-}
+/*#output_area {*/
+    /*margin: 0px 20px 10px 20px;*/
+/*}*/
 
 .drag-tip {
     background-image: url(faostat-images/icons/drag-tip.png);
@@ -2607,38 +2602,17 @@ div.obj-box-download:nth-child(even) {
     *margin-left: .3em;
     color: #399BCC !important;
     text-align: center;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
     text-transform: uppercase;
     vertical-align: middle;
     cursor: pointer;
     background-color: #f5f5f5;
     *background-color: #e6e6e6;
-    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff),
-    to(#e6e6e6));
-    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
-    background-repeat: repeat-x;
-    border: 1px solid #cccccc;
+
+    border: 1px solid #999999;
     *border: 0;
-    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    border-bottom-color: #b3b3b3;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    filter:
-        progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',
-        endColorstr='#ffe6e6e6', GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-    *zoom: 1;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px
-    rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px
-    rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0,
-    0, 0.05);
 }
 
 .btn.dwld {
@@ -2835,7 +2809,7 @@ div.obj-box-download:nth-child(even) {
 .tree-sidebar-scroll{
     overflow-y:auto; float:left; display:inline;
     width: 160px;
-    height: 700px;
+    height: 580px;
     overflow-x: hidden;
 }
 
@@ -3210,7 +3184,38 @@ a:visited {
 #options-menu.jqx-widget-header {
     background: none repeat scroll 0 0 rgba(255,255,255,0);
     border-color: rgba(255,255,255,0);
+}
 
+#bulk-downloads-menu.jqx-widget-header {
+    background: none repeat scroll 0 0 rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    margin-top: 7px;
+}
+
+#bulk-downloads-menu{
+    overflow: visible;
+    top:-9px !important;
+    width: 224px !important;
+}
+
+#arrowbulk-root{
+    display: none !important;
+}
+
+#bulk-root {
+    background-color: #399BCC;
+    border-color: #2471AA;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 25px 1px 25px!important;
+    text-transform: uppercase;
+    width: 140px;
+    height: 21px;
+}
+
+#bulk-root:hover {
+    background-color: #2471AA;
 }
 
 .jqx-widget-header, .jqx-tabs-header {
@@ -3228,4 +3233,123 @@ a:visited {
 .jqx-tabs-content {
     border-left: 1px solid #AAAAAA;
     border-bottom: 1px solid #AAAAAA;
+}
+
+.table-switch-radio{
+    display: inline-block;
+    margin-right: 35px;
+}
+.table-switch-radio .jqx-radiobutton-default {
+    margin-top: 3px;
+}
+
+.fa-stack{
+    margin-right: 4px;
+}
+
+#output_buttons div[aria-checked="true"]{
+    color: #399BCC !important;
+}
+
+.obj-box-download li[aria-selected="true"]{
+    color: #399BCC !important;
+}
+
+#output_buttons .jqx-fill-state-pressed {
+    background: none repeat scroll 0 0 #399BCC;
+    border-color: #399BCC;
+}
+
+#output_buttons .download-selection-buttons{
+   padding-top: 0;
+   position: relative;
+   top: -4px;
+}
+
+.pivot-btn .fa-stack{
+    margin-left:12px;
+    top:1px:
+}
+.pivot-btn .fa-rotate-right{
+    position: absolute;
+    top: 0;
+    left: -18px;
+}
+
+.btn-big {
+    padding: 8px 45px 1px 45px !important;
+    height: 22px;
+    margin-left: 15px;
+    background-color: #399BCC;
+    border-color: #2471AA;
+    color: #FFFFFF ;
+}
+
+.btn-big:hover {
+    background-color: #055C97;
+    transition:background-color 0.318s ease 0s;
+}
+
+.btn-big .btnText{
+    font-size: 12px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.btn-big i{
+    color: #FFFFFF !important;
+}
+
+.table-selection-title{
+    font-size: 16px !important;
+    color: #666666 !important;
+    position: relative;
+    top: 1px;
+    margin-right: 6px;
+}
+
+.faostat-download-list .grid-element {
+    padding: 2px 0 2px 13px;
+}
+
+#output_buttons {
+    margin-top: 10px;
+}
+
+.jqx-tree-item{
+    overflow: visible;
+}
+
+.metadata-hr{
+    border-top: 1px solid #CCCCCC;
+    margin-top: 10px;
+}
+
+.metadata-available-title{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: normal !important;
+}
+
+.metadata-links {
+     display: inline-block;
+    background-color: #FFFFFF;
+    color: #399BCC !important;
+    padding: 3px;
+    padding-left: 10px; padding-right: 12px;
+    margin: 5px 5px 5px 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid #399BCC;
+}
+
+.metadata-links:hover {
+    background-color: #399BCC;
+    color: #FFFFFF !important;
+    text-decoration: none;
 }
