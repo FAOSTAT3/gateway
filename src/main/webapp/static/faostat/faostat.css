@@ -2440,7 +2440,7 @@ div.obj-box-download:nth-child(even) {
     cursor: pointer;
     padding: 2px;
     background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #AAAAAA;
+    border: 1px solid #FFFFFF;
     color: #666666;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
