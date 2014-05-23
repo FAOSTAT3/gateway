@@ -2530,14 +2530,14 @@ div.obj-box-download:nth-child(even) {
 }
 
 .dataTable thead th {
-    background-color: #90aec3 !important;
+    background-color: #399BCC !important;
     border-image: none !important;
     font-weight: normal !important;
     color: #FFFFFF !important;
     font-size: 12px !important;
     height: 20px !important;
     margin-bottom: 0 !important;
-    text-align: center !important;
+    text-align: left !important;
     vertical-align: middle !important;
 }
 
@@ -3348,4 +3348,8 @@ a:visited {
     background-color: #399BCC;
     color: #FFFFFF !important;
     text-decoration: none;
+}
+
+#output_area {
+    min-height: 350px;
 }
