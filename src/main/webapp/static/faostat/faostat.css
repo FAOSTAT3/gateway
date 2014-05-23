@@ -2145,10 +2145,6 @@ div.obj-box-download:nth-child(even) {
     margin-left: 0;
 }
 
-/*#output_area {*/
-    /*margin: 0px 20px 10px 20px;*/
-/*}*/
-
 .drag-tip {
     background-image: url(faostat-images/icons/drag-tip.png);
     position:relative;
