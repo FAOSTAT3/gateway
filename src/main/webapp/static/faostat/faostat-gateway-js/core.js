@@ -252,7 +252,7 @@ if (!window.CORE) {
             return temp;
         },
 
-        getLangProperties: function() {
+        getLangProperties: function(callback) {
             var I18NLang = '';
             switch (CORE.lang) {
                 case 'F' : I18NLang = 'fr'; break;
@@ -267,7 +267,8 @@ if (!window.CORE) {
                 mode: 'both',
                 language: I18NLang,
                 callback: function() {
-                    FAOSTATGateway._loadLabels();
+                    // FAOSTATGateway._loadLabels();
+                    callback();
                 }
             });
         },

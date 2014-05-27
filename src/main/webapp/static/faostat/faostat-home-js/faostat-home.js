@@ -6,8 +6,9 @@ if (!window.FAOSTATHome) {
         /**
          * This map is used to avoid modules libraries to be loaded more than once.
          */
-        loadUI : function(lang) {
-            FAOSTATHome._labels();
+       loadUI : function(lang) {
+            //FAOSTATHome._labels();
+            CORE.getLangProperties(FAOSTATHome._labels)
             FAOSTATHome._loadNews('whatsNew-content', 'whatsNew', lang);
             FAOSTATHome._loadNews('comingUp-content', 'comingUp', lang);
             FAOSTATHome._loadLinks('partner-content', lang);
@@ -43,7 +44,7 @@ if (!window.FAOSTATHome) {
 
         _labels: function() {
             /** setting lang properties **/
-           // CORE.getLangProperties();
+           // CORE.getLangProperties(FAOSTATHome._loadLabels);
 
             /* labels */
             $('#whatsNewText').html($.i18n.prop('_whatsNew'));

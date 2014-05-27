@@ -8,7 +8,7 @@ if (!window.FAOSTATGateway) {
          */
         loadUI : function() {
             // fix to load async labels. TODO: make it nicer
-            CORE.getLangProperties();
+            CORE.getLangProperties(FAOSTATGateway._loadLabels);
             //FAOSTATGateway._loadLabels();
             FAOSTATGateway._loadListeners();
 
