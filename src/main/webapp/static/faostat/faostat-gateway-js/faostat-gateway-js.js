@@ -15,7 +15,7 @@ if (!window.FAOSTATGateway) {
             // Enable the feedback System
             FAOSTATGateway._loadFeedbackSystem('faostat-feedback-system');
 
-            FAOSTATGateway._inizializeDD('faostat-feedback-system');
+            FAOSTATGateway._inizializeDD();
 
         },
 
