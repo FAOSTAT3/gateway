@@ -33,7 +33,8 @@
     },
     "mes" : {
         "js" : [
-            "/mes/js/google-analytics-manager.js"
+            "/mes/js/google-analytics-manager.js",
+            "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js"
         ]
     },
     "download" : {
