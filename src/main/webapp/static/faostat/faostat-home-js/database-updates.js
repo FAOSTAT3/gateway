@@ -2,15 +2,23 @@ if (!window.FAOSTATDatabaseUpdate) {
 
     window.FAOSTATDatabaseUpdate = {
 
-        getDatabaseUpdates: function(db, lang) {
+        lang: '',
+        db: '',
 
+        getDatabaseUpdates: function(db, lang) {
+            FAOSTATDatabaseUpdate.lang = lang;
+            FAOSTATDatabaseUpdate.db = db;
+            CORE.getLangProperties(FAOSTATDatabaseUpdate._getDatabaseUpdates);
+        },
+
+        _getDatabaseUpdates: function(db, lang) {
             var q = {};
-            q.query = "SELECT TOP 10 groupcode, groupname" + lang + ", domaincode, domainname" + lang + ", DATENAME(mm, dateupdate) AS Month,  DATENAME(yyyy, dateupdate) AS Year  " +
-                      "FROM Domain " +
-                      "ORDER BY dateupdate DESC ";
+            q.query = "SELECT TOP 10 groupcode, groupname" + FAOSTATDatabaseUpdate.lang + ", domaincode, domainname" + FAOSTATDatabaseUpdate.lang + ", DATENAME(mm, dateupdate) AS Month,  DATENAME(yyyy, dateupdate) AS Year  " +
+                "FROM Domain " +
+                "ORDER BY dateupdate DESC ";
             var data = {};
-            data.datasource = db,
-            data.thousandSeparator = ',';
+            data.datasource = FAOSTATDatabaseUpdate.db,
+                data.thousandSeparator = ',';
             data.decimalSeparator = '.';
             data.decimalNumbers = this.decimalValues;
             data.json = JSON.stringify(q);
@@ -27,10 +35,7 @@ if (!window.FAOSTATDatabaseUpdate) {
                     if (typeof response == 'string')
                         response = $.parseJSON(response);
 
-
-                   //CORE.getLangProperties();
-
-                   var html = '';
+                    var html = '';
                     html += '<ul>';
                     var month = ""
                     var year = ""
@@ -52,7 +57,7 @@ if (!window.FAOSTATDatabaseUpdate) {
                         var g = response[i][0];
                         var d =  response[i][2];
                         $("#update_" + response[i][2]).click({group: g, domain: d}, function(event) {
-                           CORE.loadModule('download', event.data.group + '/' + event.data.domain);
+                            CORE.loadModule('download', event.data.group + '/' + event.data.domain);
                         });
 
                         $("#update_" + response[i][2]).attr('title', $.i18n.prop('_goToDownload'));
@@ -62,5 +67,7 @@ if (!window.FAOSTATDatabaseUpdate) {
                 error : function(err, b, c) { }
             });
         }
+
+
     };
 }	
