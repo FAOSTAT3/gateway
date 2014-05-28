@@ -2424,7 +2424,7 @@ div.obj-box-download:nth-child(even) {
 }
 
 .compare-summary-title {
-    width: 70px;
+    width: 120px;
     color: #666666;
     font-size: 11px;
     display: inline-block;
@@ -3372,5 +3372,5 @@ a:visited {
 }
 
 .compare-summary-element{
-    margin-left: 80px;
+    margin-left: 120px;
 }
