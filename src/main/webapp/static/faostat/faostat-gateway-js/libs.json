@@ -39,6 +39,8 @@
     },
     "download" : {
         "js" : [
+            "/faostat-download-js/js/F3DWLD.js",
+            "/faostat-download-js/js/F3DWLDNotes.js",
             "/faostat-download-js/js/I18N.js",
             "/faostat-download-js/js/cpi.js",
             "/faostat-download-js/js/collector.js",
