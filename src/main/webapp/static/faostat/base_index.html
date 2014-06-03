@@ -324,6 +324,13 @@
     </form>
 
 </div>
+ <form id="formExcel" action="http://faostat3.fao.org/faostat.olap.ws/rest/ExcelCreator" method="post" >
+        <input type="hidden" id="excelData" name="data" value="">
+        <input type="hidden" name="type" value="xls">
+    </form>
+    <form id="csvDataForm" method="POST" action="/faostat-download-js/pivotAgg/json.jsp">
+	<input type="hidden" name="data" id="csvData">
+	</form>
 
 </body>
 
