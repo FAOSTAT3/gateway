@@ -7,7 +7,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : '168.202.28.210:8080',
+        baseURL : 'localhost:8080',
 
         groupCode : null,
 
@@ -18,13 +18,13 @@ if (!window.CORE) {
         lang : null,
 
         CONFIG_MES: {
-            prefix                  : 'http://168.202.28.214:8080/mes/',
+            prefix                  : 'http://localhost:8080/mes/',
             datasource              : 'faostat2',
-            html_structure          : 'http://168.202.28.214:8080/mes/structure.html',
+            html_structure          : 'http://localhost:8080/mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
             rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
-            I18N_URL                : 'http://168.202.28.214:8080/faostat-gateway/static/faostat/I18N/'
+            I18N_URL                : 'http://localhost:8080/faostat-gateway/static/faostat/I18N/'
 
         },
 
