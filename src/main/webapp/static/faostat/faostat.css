@@ -3374,3 +3374,39 @@ a:visited {
 .compare-summary-element{
     margin-left: 120px;
 }
+
+#download_button_menu{
+    display: inline-block !important;
+}
+
+#download_button_menu.jqx-widget-header {
+    border: none !important;
+}
+
+#download_button_menu_root{
+    background-color: #399BCC;
+    border-color: #2471AA;
+    color: #FFFFFF;
+    height: 22px;
+    margin-left: 15px;
+    padding: 8px 20px 1px !important;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+#download_button_menu_root .fa{
+    font-size: 16px;
+}
+
+#download_button_menu_root:hover{
+    background-color: #055C97;
+    border-color: #2471AA;
+    transition: background-color 0.318s ease 0s;
+}
+
+
+#dwl-preview-btn{
+    position: relative;
+    top: -15px;
+}
