@@ -3196,9 +3196,10 @@ a:visited {
     margin-top: 7px;
 }
 
-#bulk-downloads-menu{
+#bulk-downloads-menu {
     overflow: visible;
-    top:-9px !important;
+    top:-16px !important;
+    right: 0px;
     width: 224px !important;
 }
 
@@ -3214,8 +3215,12 @@ a:visited {
     font-weight: 700;
     padding: 8px 25px 1px 25px!important;
     text-transform: uppercase;
-    width: 145px;
     height: 21px;
+    float: none !important;
+}
+
+#listArea {
+    position:relative;
 }
 
 #bulk-root:hover {
@@ -3440,8 +3445,8 @@ a:visited {
 
 #btnFS {
     position: absolute;
-    right: 87px;
-    top: 8px;
+    right: 110px;
+    top: 7px;
     background-color: transparent;
     border: none;
     text-transform: none;
