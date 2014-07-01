@@ -5,6 +5,7 @@ if (!window.CORE) {
         datasource : "faostat",
 
         timestamps : [],
+        
 
         /**
          * The base URL is used to load FAOSTAT modules.
