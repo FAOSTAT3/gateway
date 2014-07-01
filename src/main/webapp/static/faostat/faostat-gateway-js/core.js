@@ -4,10 +4,13 @@ if (!window.CORE) {
 
         datasource : "faostat",
 
+        timestamps : [],
+
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : 'localhost:8080',
+        baseURL : '168.202.28.214:8080',
+
 
         groupCode : null,
 
@@ -61,7 +64,7 @@ if (!window.CORE) {
          * @param lang          UI language, e.g. 'E'
          */
         initModule : function(module, groupCode, domainCode, lang) {
-
+            //console.log("INIT MODULE");
             // method to calculate DIV min height
             CORE.contentDIVMinHeight();
 
@@ -78,7 +81,15 @@ if (!window.CORE) {
                 case 'browse':      CORE.loadModuleLibs(module, function() { FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
                 case 'download':    CORE.loadModuleLibs(module, function() { FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
                 case 'compare':     CORE.loadModuleLibs(module, function() { FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
-                case 'analysis':    CORE.loadModuleLibs(module, function() { ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
+//                case 'analysis':    CORE.loadModuleLibs(module, function() { ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
+                case 'analysis':    CORE.loadModuleLibs(module, function() {
+                        F3_ANALYSIS.init(
+                            {
+                                lang : lang
+                            }
+                        )
+                    });
+                    break;
                 case 'mes':
                     CORE.CONFIG_MES.sectionCode = groupCode;
                     CORE.CONFIG_MES.subSectionCode = domainCode;
@@ -97,7 +108,6 @@ if (!window.CORE) {
          * @param lang          UI language, e.g. 'E'
          */
         initModuleSearch : function(module, word, lang) {
-
             // method to calculate DIV min height
             CORE.contentDIVMinHeight();
 
@@ -147,7 +157,12 @@ if (!window.CORE) {
         upgradeURL : function(module, group, domain, lang) {
             /** TODO: make is as load module **/
             if (CORE.testHTML5()) {
-                window.history.pushState(null, 'Test', '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang);
+                var state = '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang;
+                if ( History.getState().data.state != state ) {
+                    var t = new Date().getTime();
+                    CORE.timestamps[t] = t;
+                    History.pushState({timestamp: t, state : state}, state, state);
+                }
             }
         },
 
@@ -200,7 +215,7 @@ if (!window.CORE) {
                 })
 
             } else {
-                console.log('JS libraries for module ' + module + ' won\'t be loaded again');
+                //console.log('JS libraries for module ' + module + ' won\'t be loaded again');
             }
         },
 

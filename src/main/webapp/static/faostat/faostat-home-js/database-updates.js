@@ -32,6 +32,8 @@ if (!window.FAOSTATDatabaseUpdate) {
                 data : data,
                 success : function(response) {
 
+                    $("#database-updates").empty();
+
                     if (typeof response == 'string')
                         response = $.parseJSON(response);
 
@@ -39,29 +41,29 @@ if (!window.FAOSTATDatabaseUpdate) {
                     html += '<ul>';
                     var month = ""
                     var year = ""
-                    for (var i = 0 ; i < response.length ; i++) {
+                    for (
+                        var i = 0 ; i < response.length ; i++) {
                         if (month != response[i][4]) {
                             // create new div with month and year
                             month = response[i][4];
                             year = response[i][5];
                             // TODO: month multilanguage
-                            html += '<div>'+ month + ' ' + year + '</div>'
+                            html += '<h5>'+ month + ' ' + year + '</h5>'
                         }
-                        html += '<li id="update_' +response[i][2] +'" class="db-update-item"><b>'+ response[i][3] + "</b> " + d +' (' + response[i][1]  +')</li>';
+                        html += '<span style="cursor:pointer;" id="update_' +response[i][2] +'"><b>'+ response[i][3] + "</b> - " + response[i][1]  +'</span>';
                     }
 
 
                     html += '</ul>';
-                    $("#database-updates").append(html);
+                    $("#database-updates").html(html);
                     for (var i = 0 ; i < response.length ; i++) {
                         var g = response[i][0];
                         var d =  response[i][2];
                         $("#update_" + response[i][2]).click({group: g, domain: d}, function(event) {
                             CORE.loadModule('download', event.data.group + '/' + event.data.domain);
                         });
-
                         $("#update_" + response[i][2]).attr('title', $.i18n.prop('_goToDownload'));
-                        $("#update_" + response[i][2]).powerTip({placement: 'w'});
+                        $("#update_" + response[i][2]).powerTip({placement: 'n'});
                     }
                 },
                 error : function(err, b, c) { }
@@ -70,4 +72,4 @@ if (!window.FAOSTATDatabaseUpdate) {
 
 
     };
-}	
+}

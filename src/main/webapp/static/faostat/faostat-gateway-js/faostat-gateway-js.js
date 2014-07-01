@@ -6,7 +6,10 @@ if (!window.FAOSTATGateway) {
         /**
          * This map is used to avoid modules libraries to be loaded more than once.
          */
-        loadUI : function() {
+        loadUI : function(module) {
+            // Select the module on the Menu
+            $('#'  + module).addClass("fs-menu-selected");
+
             // fix to load async labels. TODO: make it nicer
             CORE.getLangProperties(FAOSTATGateway._loadLabels);
             //FAOSTATGateway._loadLabels();
@@ -16,6 +19,20 @@ if (!window.FAOSTATGateway) {
             FAOSTATGateway._loadFeedbackSystem('faostat-feedback-system');
 
             FAOSTATGateway._inizializeDD();
+
+            $.scrollUp({
+                scrollName: 'scrollUp', // Element ID
+                scrollDistance: 150, // Distance from top/bottom before showing element (px)
+                scrollFrom: 'top', // 'top' or 'bottom'
+                scrollSpeed: 300, // Speed back to top (ms)
+                easingType: 'linear', // Scroll to top easing (see http://easings.net/)
+                animation: 'fade', // Fade, slide, none
+                animationSpeed: 200, // Animation speed (ms)
+                scrollText: '<i class="fa fa-chevron-circle-up fa-2x"></i>', // Text for element, can contain HTML
+                activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+                zIndex: 2147483647 // Z-Index for the overlay
+            });
+
 
         },
 
@@ -33,8 +50,8 @@ if (!window.FAOSTATGateway) {
 
         _loadLabels: function() {
             /** setting lang properties **/
-                //CORE.getLangProperties();
 
+            $('#fs-fao').html($.i18n.prop('_fao'));
             $('#home').html($.i18n.prop('_home'));
             $('#browse').html($.i18n.prop('_browse'));
             $('#download').html($.i18n.prop('_download'));
@@ -43,21 +60,7 @@ if (!window.FAOSTATGateway) {
             $('#analysis').html($.i18n.prop('_analysis'));
             $('#mes').html($.i18n.prop('_mes'));
 
-            /** labels **/
-            $('.ico-pr').html($.i18n.prop('_production'));
-            $('.ico-tr').html($.i18n.prop('_trade'));
-            $('.ico-fs').html($.i18n.prop('_foodSupply'));
-            $('.ico-re').html($.i18n.prop('_resources'));
-            $('.ico-em').html($.i18n.prop('_ghg'));
-            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
-            $('.ico-in').html($.i18n.prop('_investment'));
-            $('.ico-fo').html($.i18n.prop('_forestry'));
-            $('.ico-pi').html($.i18n.prop('_prices'));
-            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
-            $('.ico-fb').html($.i18n.prop('_foodBalanceSheet'));
-            $('.ico-asti').html($.i18n.prop('_asti'));
-            $('.ico-po').html($.i18n.prop('_population'));
-            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
+            $("#searchFStext").attr('placeholder', $.i18n.prop('_searchText'));
         },
 
         _inizializeDD: function() {

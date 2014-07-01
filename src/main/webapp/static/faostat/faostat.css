@@ -319,7 +319,6 @@ modules **/
     margin-top: 5px;
     position: relative; /* Tutti gli elementi interni saranno posizionati
 rispetto a questo div */
-    width: 960px;
     padding: 0 20px 20px 20px;
     min-height: 500px;
 }
@@ -3092,20 +3091,20 @@ div.obj-box-download:nth-child(even) {
     color: #399BCC;
 }
 
-.ico-pr {background-image:url(faostat-images/icons/prod-ico.png);}
-.ico-tr {background-image:url(faostat-images/icons/trad-ico.png);}
-.ico-fs {background-image:url(faostat-images/icons/foodsup-ico.png);}
-.ico-ae {background-image:url(faostat-images/icons/agri-ico.png);}
-.ico-fb {background-image:url(faostat-images/icons/fbs-ico.png);}
-.ico-pi {background-image:url(faostat-images/icons/price-ico.png);}
-.ico-re {background-image:url(faostat-images/icons/reso-ico.png);}
-.ico-em {background-image:url(faostat-images/icons/ghg-ico.png);}
-.ico-el {background-image:url(faostat-images/icons/ghg-ico.png);}
-.ico-in {background-image:url(faostat-images/icons/inv-ico.png);}
-.ico-fo {background-image:url(faostat-images/icons/for-ico.png);}
-.ico-asti {background-image:url(faostat-images/icons/ico-asti.png);}
-.ico-po {background-image:url(faostat-images/icons/ico-po.png);}
-.ico-cb {background-image:url(faostat-images/icons/ico-cb.png);}
+/*.ico-pr {background-image:url(faostat-images/icons/prod-ico.png);}*/
+/*.ico-tr {background-image:url(faostat-images/icons/trad-ico.png);}*/
+/*.ico-fs {background-image:url(faostat-images/icons/foodsup-ico.png);}*/
+/*.ico-ae {background-image:url(faostat-images/icons/agri-ico.png);}*/
+/*.ico-fb {background-image:url(faostat-images/icons/fbs-ico.png);}*/
+/*.ico-pi {background-image:url(faostat-images/icons/price-ico.png);}*/
+/*.ico-re {background-image:url(faostat-images/icons/reso-ico.png);}*/
+/*.ico-em {background-image:url(faostat-images/icons/ghg-ico.png);}*/
+/*.ico-el {background-image:url(faostat-images/icons/ghg-ico.png);}*/
+/*.ico-in {background-image:url(faostat-images/icons/inv-ico.png);}*/
+/*.ico-fo {background-image:url(faostat-images/icons/for-ico.png);}*/
+/*.ico-asti {background-image:url(faostat-images/icons/ico-asti.png);}*/
+/*.ico-po {background-image:url(faostat-images/icons/ico-po.png);}*/
+/*.ico-cb {background-image:url(faostat-images/icons/ico-cb.png);}*/
 
 
 #container {min-height: 100%;}
