@@ -48,7 +48,7 @@ if (!window.FAOSTATDatabaseUpdate) {
                             month = response[i][4];
                             year = response[i][5];
                             // TODO: month multilanguage
-                            html += '<h5>'+ month + ' ' + year + '</h5>'
+                            html += '<h5>'+ $.i18n.prop('_' + month.toLocaleLowerCase()) + ' ' + year + '</h5>'
                         }
                         html += '<span style="cursor:pointer;" id="update_' +response[i][2] +'"><b>'+ response[i][3] + "</b> - " + response[i][1]  +'</span>';
                     }

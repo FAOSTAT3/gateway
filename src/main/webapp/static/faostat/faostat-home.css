@@ -65,8 +65,10 @@
   top: 0;
   left: -10px; }
 
-.fs-hp-content .fs_column_8 {
-  padding: 10px 30px 0px 10px; }
+.fs-hp-content {
+  margin-bottom: 0; }
+  .fs-hp-content .fs_column_8 {
+    padding: 10px 30px 0px 10px; }
 
 .fs-goToBottom {
   position: absolute;
@@ -81,6 +83,10 @@
   position: relative; }
   .obj-box-bottom-btn-content div {
     float: left; }
+
+.fs-max-image {
+  width: 100%;
+  height: auto; }
 
 /* FAOSTAT Typography */
 .fs-bold {
@@ -112,6 +118,72 @@ a {
 
 em {
   font-style: normal; }
+
+input {
+  padding-left: 5px !important; }
+
+/* TOOLTIP */
+#powerTip {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  color: white;
+  cursor: default;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  /*white-space: nowrap; Rimettere se c'è qualche problema */
+  z-index: 2;
+  max-width: 150px; }
+
+#powerTip.n:before, #powerTip.e:before, #powerTip.s:before, #powerTip.w:before, #powerTip.ne:before, #powerTip.nw:before, #powerTip.se:before, #powerTip.sw:before {
+  content: "";
+  position: absolute; }
+
+#powerTip.n:before, #powerTip.s:before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  left: 50%;
+  margin-left: -5px; }
+
+#powerTip.e:before, #powerTip.w:before {
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  margin-top: -5px;
+  top: 50%; }
+
+#powerTip.n:before {
+  border-top: 10px solid rgba(0, 0, 0, 0.7);
+  bottom: -10px; }
+
+#powerTip.e:before {
+  border-right: 10px solid rgba(0, 0, 0, 0.7);
+  left: -10px; }
+
+#powerTip.s:before {
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  top: -10px; }
+
+#powerTip.w:before {
+  border-left: 10px solid rgba(0, 0, 0, 0.7);
+  right: -10px; }
+
+#powerTip.ne:before, #powerTip.se:before {
+  border-left: 0 none;
+  border-right: 10px solid transparent;
+  left: 10px; }
+
+#powerTip.nw:before, #powerTip.sw:before {
+  border-left: 10px solid transparent;
+  border-right: 0 none;
+  right: 10px; }
+
+#powerTip.ne:before, #powerTip.nw:before {
+  border-top: 10px solid rgba(0, 0, 0, 0.7);
+  bottom: -10px; }
+
+#powerTip.se:before, #powerTip.sw:before {
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  top: -10px; }
 
 /* DOMAIN ICONS */
 .fs-domain, .fs-domain-prod, .fs-domain-emiag, .fs-domain-pric, .fs-domain-popu, .fs-domain-trade, .fs-domain-emilu, .fs-domain-reso, .fs-domain-fores, .fs-domain-foodsec, .fs-domain-foodsup, .fs-domain-inves, .fs-domain-asti, .fs-domain-fbs, .fs-domain-commbal, .fs-domain-agriind {
@@ -155,13 +227,15 @@ em {
       z-index: 1;
       /* remove if there is no animation */
       top: 6px;
-      /* remove if there is no animation */ }
+      /* remove if there is no animation */
+      transition: top 0.1s ease 0s; }
     .fs-domain .fs-domain-text span, .fs-domain-prod .fs-domain-text span, .fs-domain-emiag .fs-domain-text span, .fs-domain-pric .fs-domain-text span, .fs-domain-popu .fs-domain-text span, .fs-domain-trade .fs-domain-text span, .fs-domain-emilu .fs-domain-text span, .fs-domain-reso .fs-domain-text span, .fs-domain-fores .fs-domain-text span, .fs-domain-foodsec .fs-domain-text span, .fs-domain-foodsup .fs-domain-text span, .fs-domain-inves .fs-domain-text span, .fs-domain-asti .fs-domain-text span, .fs-domain-fbs .fs-domain-text span, .fs-domain-commbal .fs-domain-text span, .fs-domain-agriind .fs-domain-text span {
       margin-right: 20px;
       position: relative;
       /* remove if there is no animation */
       top: -6px;
-      /* remove if there is no animation */ }
+      /* remove if there is no animation */
+      transition: top 0.1s ease 0s; }
   .fs-domain:hover, .fs-domain-prod:hover, .fs-domain-emiag:hover, .fs-domain-pric:hover, .fs-domain-popu:hover, .fs-domain-trade:hover, .fs-domain-emilu:hover, .fs-domain-reso:hover, .fs-domain-fores:hover, .fs-domain-foodsec:hover, .fs-domain-foodsup:hover, .fs-domain-inves:hover, .fs-domain-asti:hover, .fs-domain-fbs:hover, .fs-domain-commbal:hover, .fs-domain-agriind:hover {
     /* remove if there is no animation */ }
     .fs-domain:hover .fs-domain-text .fs-domain-title, .fs-domain-prod:hover .fs-domain-text .fs-domain-title, .fs-domain-emiag:hover .fs-domain-text .fs-domain-title, .fs-domain-pric:hover .fs-domain-text .fs-domain-title, .fs-domain-popu:hover .fs-domain-text .fs-domain-title, .fs-domain-trade:hover .fs-domain-text .fs-domain-title, .fs-domain-emilu:hover .fs-domain-text .fs-domain-title, .fs-domain-reso:hover .fs-domain-text .fs-domain-title, .fs-domain-fores:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsec:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsup:hover .fs-domain-text .fs-domain-title, .fs-domain-inves:hover .fs-domain-text .fs-domain-title, .fs-domain-asti:hover .fs-domain-text .fs-domain-title, .fs-domain-fbs:hover .fs-domain-text .fs-domain-title, .fs-domain-commbal:hover .fs-domain-text .fs-domain-title, .fs-domain-agriind:hover .fs-domain-text .fs-domain-title {
@@ -475,7 +549,7 @@ em {
 .centralHolder {
   background-color: white;
   min-height: 150px;
-  padding: 10px 0 10px 0; }
+  padding: 10px 0 0 0; }
 
 /* HEADER */
 .fs-head {
@@ -522,9 +596,9 @@ em {
   padding: 0 20px 0 10px;
   background-color: white;
   position: relative;
-  -webkit-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2); }
+  -webkit-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1); }
 
 .fs-menu {
   /** Apply to menu element if selected */ }
@@ -564,7 +638,7 @@ em {
   /* End reset */
   border: 1px solid #d1d1d1;
   border-radius: 20px;
-  padding: 4px 15px 4px 30px;
+  padding: 4px 15px 4px 30px !important;
   transition: all 0.7s ease 0s;
   width: 100px; }
   #searchFS input[type="text"]:focus {
@@ -588,7 +662,7 @@ em {
 
 /* FOOTER */
 .fs-footer {
-  height: 125px;
+  height: 75px;
   background-color: #174c74;
   position: relative; }
 
@@ -788,6 +862,16 @@ em {
     height: 35px;
     background-position: -70px 0px; }
 
+/* PARTNERS */
+.fs-partners-container {
+  display: table; }
+
+.fs-partner-grid {
+  width: 11.11111%;
+  float: left;
+  position: relative;
+  cursor: pointer; }
+
 /* DATABASE UPDATES */
 .fs-updates-content span {
   display: block;
@@ -824,3 +908,30 @@ em {
       font: normal normal 300 18px/normal "Roboto Condensed", sans-serif !important;
       color: #40769e;
       margin: 12px 0 0 8px; }
+
+/* STATISTICAL YEARBOOK */
+.fs-yearbook-content img {
+  float: left;
+  margin: 0 20px 20px 0; }
+
+/* LINKS */
+.fs-links-content a {
+  display: block;
+  color: #666666 !important;
+  font-weight: 700;
+  padding: 0 0 10px 25px;
+  position: relative; }
+  .fs-links-content a:before {
+    display: block;
+    content: '';
+    background-image: url("images/arrow-link.png");
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 5px;
+    left: 0; }
+  .fs-links-content a:hover {
+    text-decoration: none; }
+    .fs-links-content a:hover:before {
+      transform: rotate(-45deg);
+      transition: transform 0.218s ease 0s; }

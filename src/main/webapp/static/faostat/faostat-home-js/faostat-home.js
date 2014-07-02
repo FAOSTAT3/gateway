@@ -8,15 +8,19 @@ if (!window.FAOSTATHome) {
          */
        loadUI : function(lang) {
              //FAOSTATHome._labels();
+            FAOSTATDatabaseUpdate.getDatabaseUpdates(CORE.datasource, CORE.lang);
+            FS_HOME_CHART.init();
+
             CORE.getLangProperties(FAOSTATHome._labels)
             FAOSTATHome._loadNews('whatsNew-content', 'whatsNew', lang);
             FAOSTATHome._loadNews('comingUp-content', 'comingUp', lang);
-            FAOSTATHome._loadLinks('partner-content', lang);
+            FAOSTATHome._loadLinks('fs-links-content', lang);
             FAOSTATHome._showBulkDownload();
         },
 
         _loadNews: function(id, type, lang) {
             var url = 'http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-home-js/resources/' + type +'.json';
+            $('#' + id).empty()
             $.getJSON(url, function(data) {
                 for( var i=0; i < data.length; i++) {
                     var html = '<h4>'+ data[i].title[lang] + '</h3>';
@@ -28,13 +32,12 @@ if (!window.FAOSTATHome) {
         },
 
         _loadLinks: function(id, lang) {
+
             var url = 'http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-home-js/resources/links.json';
             $.getJSON(url, function(data) {
+                $('#' + id).empty()
                 for( var i=0; i < data.length; i++) {
-                    var html = '<div class="partner-link">';
-                    html += '<b>'+ data[i].title[lang] + '</b>';
-                    html += '<a href="' + data[i].link[lang] +'" target="_blank">'+ data[i].link[lang] +'</a>';
-                    html += '</div>';
+                    var html = '<a href="' + data[i].link[lang] +'" target="_blank">'+ data[i].title[lang] +'</a>';
                     $('#' + id).append(html);
                 }
             });
@@ -117,12 +120,17 @@ if (!window.FAOSTATHome) {
             $('#fs-coming-soon').html($.i18n.prop('_fs_coming_soon'));
 
             $('#fs-country-profiles').html($.i18n.prop('_fs_country_profiles'));
-//            $('#fs-country-profiles').click(function() {
-//               alert("add country profile")
-//            });
+            $('#fs-country-profiles').click(function() {
+               alert("add country profile")
+            });
 
-            $('.fs-statistics-division').html($.i18n.prop('_statistics_division'));
             $('#fs-essdd').prepend($.i18n.prop('_essdd'));
+
+            $('#fs-release-calendar').prepend($.i18n.prop('_releaseCalendar'));
+
+            $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_downloadZip'));
+            $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_database'));
+            $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_withoneclick'));
         },
 
         _showBulkDownload: function() {

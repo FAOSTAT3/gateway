@@ -5,13 +5,12 @@ if (!window.CORE) {
         datasource : "faostat",
 
         timestamps : [],
-        
+
 
         /**
          * The base URL is used to load FAOSTAT modules.
          */
         baseURL : '168.202.28.214:8080',
-
 
         groupCode : null,
 
@@ -22,13 +21,13 @@ if (!window.CORE) {
         lang : null,
 
         CONFIG_MES: {
-            prefix                  : 'http://localhost:8080/mes/',
+            prefix                  : 'http://168.202.28.214:8080/mes/',
             datasource              : 'faostat2',
-            html_structure          : 'http://localhost:8080/mes/structure.html',
+            html_structure          : 'http://168.202.28.214:8080/mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
             rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
-            I18N_URL                : 'http://localhost:8080/faostat-gateway/static/faostat/I18N/'
+            I18N_URL                : 'http://168.202.28.214:8080/faostat-gateway/static/faostat/I18N/'
 
         },
 
@@ -65,7 +64,6 @@ if (!window.CORE) {
          * @param lang          UI language, e.g. 'E'
          */
         initModule : function(module, groupCode, domainCode, lang) {
-            //console.log("INIT MODULE");
             // method to calculate DIV min height
             CORE.contentDIVMinHeight();
 
@@ -82,20 +80,23 @@ if (!window.CORE) {
                 case 'browse':      CORE.loadModuleLibs(module, function() { FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
                 case 'download':    CORE.loadModuleLibs(module, function() { FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
                 case 'compare':     CORE.loadModuleLibs(module, function() { FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
-//                case 'analysis':    CORE.loadModuleLibs(module, function() { ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
                 case 'analysis':    CORE.loadModuleLibs(module, function() {
-                        F3_ANALYSIS.init(
-                            {
-                                lang : lang
-                            }
-                        )
-                    });
+                    ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
                     break;
+//                case 'analysis':    CORE.loadModuleLibs(module, function() {
+//                        F3_ANALYSIS.init(
+//                            {
+//                                lang : lang
+//                            }
+//                        )
+//                    });
+//                    break;
                 case 'mes':
                     CORE.CONFIG_MES.sectionCode = groupCode;
                     CORE.CONFIG_MES.subSectionCode = domainCode;
                     CORE.CONFIG_MES.lang = lang;
                     CORE.loadModuleLibs(module, function() {
+                        console.log(CORE.CONFIG_MES );
                         MES.init( CORE.CONFIG_MES )
                     });
                     break;
@@ -178,46 +179,60 @@ if (!window.CORE) {
          * Each module has its own libraries, the full list is in the <code>libs.json</code> file.
          */
         loadModuleLibs : function(module, initFunction) {
+            $.getJSON('http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-gateway-js/libs_fallback.json', function (data) {
+                data = (typeof data == 'string')? $.parseJSON(data) : data;
+                var toload = [];
 
-            if (!CORE.loadMapJS[module]) {
-
-                // Register the module
-                CORE.loadMapJS[module] = true;
-
-                // Load module's libraries.
-                $.getJSON('http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-gateway-js/libs.json', function (data) {
-
-                    if(typeof data == 'string')
-                        data = $.parseJSON(data);
-
-                    if ( data[module] )  {
-                        var moduleLibs = data[module];
-
-                        var requests = []
-                        if ( moduleLibs.css ) {
-                            for (var i = 0 ; i < moduleLibs.css.length ; i++) {
-                                requests.push(moduleLibs.css[i]);
-                            }
-                        }
-
-                        if ( moduleLibs.js ) {
-                            for (var i = 0 ; i < moduleLibs.js.length ; i++) {
-                                requests.push(moduleLibs.js[i]);
-                            }
-                        }
-                        //ImportDependencies.importAsync(requests, initFunction);
-                        ImportDependencies.importSequentially(requests, initFunction );
-
+                yepnope({
+                    load: data[module],
+                    callback: function(e) {
+                        console.log(e);
+                    },
+                    complete: function() {
+                        initFunction()
                     }
-                    else{
-                        initFunction();
-                    }
+                });
+            })
 
-                })
-
-            } else {
-                //console.log('JS libraries for module ' + module + ' won\'t be loaded again');
-            }
+//            if (!CORE.loadMapJS[module]) {
+//
+//                // Register the module
+//                CORE.loadMapJS[module] = true;
+//
+//                // Load module's libraries.
+//                $.getJSON('http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-gateway-js/libs.json', function (data) {
+//
+//                    if(typeof data == 'string')
+//                        data = $.parseJSON(data);
+//
+//                    if ( data[module] )  {
+//                        var moduleLibs = data[module];
+//
+//                        var requests = []
+//                        if ( moduleLibs.css ) {
+//                            for (var i = 0 ; i < moduleLibs.css.length ; i++) {
+//                                requests.push(moduleLibs.css[i]);
+//                            }
+//                        }
+//
+//                        if ( moduleLibs.js ) {
+//                            for (var i = 0 ; i < moduleLibs.js.length ; i++) {
+//                                requests.push(moduleLibs.js[i]);
+//                            }
+//                        }
+//                        //ImportDependencies.importAsync(requests, initFunction);
+//                        ImportDependencies.importSequentially(requests, initFunction );
+//
+//                    }
+//                    else{
+//                        initFunction();
+//                    }
+//
+//                })
+//
+//            } else {
+//                //console.log('JS libraries for module ' + module + ' won\'t be loaded again');
+//            }
         },
 
         breakLabel: function (lbl) {

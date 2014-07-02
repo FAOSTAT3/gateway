@@ -137,6 +137,9 @@
             </div>
         </div>
 
+        <!--div appended as last-child to avoid last-child-line problem -->
+        <div></div>
+
     </div>
     <div class="fs_column_3">
 
@@ -192,7 +195,19 @@
         <div class="obj-box">
             <div class="obj-box-title" id="partners">Partners</div>
             <div class="fs-partners-container">
-
+                <div class="fs-partner-grid" id="ifpri"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-ifpri.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-ilo.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-oecd.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-climatechange.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-unstats.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-usda.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-worldbank.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-wto.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-eurostat.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-itto.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-unece.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-wco.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-wfp.png"></div>
             </div>
         </div>
 
@@ -203,40 +218,31 @@
                     <div id="database-updates" class="fs-updates-content">
                         <i class='fa fa-refresh fa-spin fa-5x'></i>
                     </div>
-                    <!--<div class="obj-box-title" id="">Database Updates</div>-->
-                    <!--<div class="fs-updates-content">-->
-                        <!--<h5>MAY</h5>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<h5>APRIL</h5>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<h5>MARCH</h5>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                        <!--<span><b>Consumer Price Indices</b> - Prices</span>-->
-                    <!--</div>-->
                     <div class="obj-box-bottom-btn">
-                        <div class="obj-box-bottom-btn-content">
-                            <div class="fs-calendar-icon"></div><div class="obj-box-bottom-text">Release Calendar</div>
+                        <div onclick="window.open('http://faostat3.fao.org/home/faostatReleaseCalendar.html','window');" class="obj-box-bottom-btn-content">
+                            <div class="fs-calendar-icon"></div><div id="fs-release-calendar" class="obj-box-bottom-text"></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="fs_column_split">
-                <div class="obj-box">
-                    <div class="obj-box-title">Fao Statistical Year book</div>
+                <div class="obj-box obj-box-bottom">
+                    <div class="obj-box-title" id="">Fao Statistical Year book</div>
+                    <div class="fs-yearbook-content">
+                        <p><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/statisticalYearbook.png" width="81px" height="163px" alt="fao statistical yearbook"/>
+                            Issued annually, FAO's Statistical Yearbook is an authoritative compendium of data on the major trends shaping global food and agriculture today. For each thematic area, brief analyses of the main trends are paired with graphical data visualizations as well as tables with key indicators.</p>
+                    </div>
+                    <div class="obj-box-bottom-btn">
+                        <div class="obj-box-bottom-btn-content">
+                            <div class="fs-download-icon"></div><div class="obj-box-bottom-text">FAO Statistical Yearbook 2013</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="obj-box">
-                    <div class="obj-box-title">Fao Statistical Year book</div>
+                    <div class="obj-box-title">FAO Links</div>
+                    <div id="fs-links-content" class="fs-links-content">
+                        <i class='fa fa-refresh fa-spin fa-5x'></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -248,9 +254,13 @@
         <div class="fs-btn-database"><span id="FAOSTAT-ZIP-Download"></span></div>
         <div class="fs-btn-countryProfile"><span id="fs-country-profiles"></span></div>
         <h3 id='whatsNewText'></h3>
-        <div id='whatsNew-content'></div>
+        <div id='whatsNew-content'>
+            <i class='fa fa-refresh fa-spin fa-5x'></i>
+        </div>
         <h3 id='comingUpText'></h3>
-        <div id='comingUp-content'></div>
+        <div id='comingUp-content'>
+            <i class='fa fa-refresh fa-spin fa-5x'></i>
+        </div>
         <h3 id="fs-contacts">Contacts</h3>
         <h4 class="fs-statistics-division"></h4>
         <p id="fs-essdd"><br> Viale delle Terme di Caracalla <br> 00153 Rome, Italy <br><br> <a href='mailto:FAO-statistics@fao.org '> FAO-statistics@fao.org </a></p>
@@ -259,247 +269,5 @@
 
 
 <script>
-    FAOSTATDatabaseUpdate.getDatabaseUpdates(CORE.datasource, CORE.lang);
-//    FAOSTATHomeCharts.createCharts(CORE.lang);
-
-//
-//    /** load of the image TODO: make it dynamic**/
-//    document.getElementById("SPLASH").src = "http://"+ CORE.baseURL +"/faostat-gateway/static/faostat/faostat-images/welcome_"+ CORE.lang +".gif";
-//    document.getElementById("release-calendar-img").src = "http://"+ CORE.baseURL +"/faostat-gateway/static/faostat/faostat-images/icons/calendar-ico.png";
-//
-//    $("#release-calendar").click(function(){
-//        window.open("http://faostat3.fao.org/home/faostatReleaseCalendar.html", "_blank")
-//    });
-
     FAOSTATHome.loadUI(CORE.lang);
-
-    $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_downloadZip'));
-    $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_database'));
-    $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_withoneclick'));
-
-</script>
-
-
-
-<!--------------- Line (Area) Chart -->
-<script>
-$(document).ready(function () {
-
-    var title = $.i18n.prop('_number_of_undernourished_declining')
-    var chart1_title = $.i18n.prop('_number_of_undernourished_declining')
-
-    $('#chart1').highcharts({
-        chart: {
-            type: 'area', //Tipo di grafico:  area, areaspline, boxplot, bubble, column, line, pie, scatter, spline
-            alignTicks: false,
-            backgroundColor: '#FFFFFF', //Colore di background
-            spacing: [20,1,1,1],//Spacing intorno (molto simile al margin - Di default il bottom è 15, qui l'ho messo a 10 per essere uguale agli altri)
-            plotBorderColor: '#ffffff', //Colore bordo intorno solo area chart
-            plotBorderWidth: 0, //Spessore bordo intorno solo area chart
-            style: {
-                fontFamily: 'Roboto', // Font di tutto
-                fontSize: '12px', // La dimensione qui vale solo per i titoli
-                fontWeight: 300 // Con Roboto è molto bello giocare con i pesi
-            },
-            zoomType: 'xy', //Attiva lo zoom e stabilisce in quale dimensione
-            resetZoomButton: {
-                position: {
-                    align: 'right', //Allineamento zoom orizzontale
-                    //verticalAlign:'middle' //Allineamento zoom verticale
-                    x: -10 //Posizione del pulsante rispetto all'allineamento (valori positivi > destra) e al PLOT
-                },
-                theme: {
-                    fill: '#FFFFFF', //Colore di background pulsante reset zoom
-                    stroke: '#666666', //Colore di stroke pulsante reset zoom
-                    width: 60, //Larghezza del pulsante reset
-                    style: {
-                        textAlign: 'center', //CSS style aggiunto da me per centrare il testo
-                        fontSize: 10
-                    },
-                    states: {
-                        hover: {
-                            fill: '#e6e6e6', //Colore di background hover pulsante reset zoom
-                            stroke: '#666666', //Colore di stroke hover pulsante reset zoom
-                            style: {
-                                //color: 'white' //Colore testo hover pulsante reset zoom
-                            }
-                        }
-                    }
-                }
-
-            }
-        },
-        colors: [ //Colori delle charts
-            '#379bcd',
-            '#76BE94',
-            '#744490',
-            '#E10079',
-            '#2D1706',
-            '#F1E300',
-            '#F7AE3C',
-            '#DF3328'
-        ],
-        credits: {
-            enabled: false //Attiva o disattiva il link di HighCharts dalla chart
-        },
-        exporting: {
-            enabled: false
-        },
-        navigation: { //Modifica lo stile dei bottoni e spesso del solo bottone dell'esportazione (lo sfondo)
-            buttonOptions: {
-                theme: {
-                    'stroke-width': 1, // Peso stroke del bottone
-                    stroke: '#666666', // Colore stroke del bottone
-                    r: 0, // Smusso stroke del bottone,
-                    states: {
-                        hover: {
-                            stroke: '#666666', // Press stroke del bottone
-                            fill: '#e6e6e6' // Rollover del bottone
-                        },
-                        select: {
-                            stroke: '#666666', // Press stroke del bottone
-                            fill: '#e6e6e6' // Press Fill del bottone
-                        }
-                    }
-                }
-            }
-        },
-        legend: { //Modifica style della legenda
-            enabled: true, //Attiva la legenda
-            floating: false, // IMPORTANTE - Permette alla plot area di stare sotto alla legenda - si guadagna molto spazio
-            backgroundColor: '#FFFFFF', //Colore di sfondo della legenda
-            align: 'center', //Allineamento orizzontale del box della legenda (left, center, right)
-            verticalAlign: 'bottom', //allineamento verticale della legenda (top, middle, bottom)
-            borderWidth: 0, //Spessore bordo della legenda
-            symbolPadding: 10, //Distanza tra simbolo e legenda (default 5)
-            itemStyle: {
-                cursor: 'pointer',
-                color: '#666666',
-                fontSize: '14px',
-                fontWeight: 300
-            },
-            itemHiddenStyle: { //Colore dell'elemento legenda quando è disattivato
-                color: '#eeeeee'
-            },
-            itemHoverStyle: { //Colore dell'elemento legenda in rollover
-                color: '#3ca7da'
-            },
-            navigation: { //Paginazione Legenda - stilizzazione
-                activeColor: '#3ca7da', //Colore freccia attiva legenda
-                inactiveColor: '#666666', //Colore freccia disattiva legenda
-                arrowSize: 8, //Dimensioni freccia
-                animation: true, //Attiva/Disattiva animazione
-                style: { //Stile CSS applicato solo alla navigazione della legenda
-                    color: '#666666',
-                    fontSize: '10px'
-                }
-            }
-        },
-        plotOptions: {
-            series: {
-                allowPointSelect: true, //Permette di selezionare i punti della chart
-                animation: { // Configura l'animazione di entrata
-                    duration: 1000,
-                    easing: 'swing'
-                },
-                connectNulls: true,
-                cropThreshold: 3,
-                lineWidth: 1, // IMPORTANTE - Cambia lo spessore delle linee della chart
-                states: {
-                    hover: {
-                        lineWidth: 1
-                    }
-                },
-                fillColor: {
-                    linearGradient: [0, 0, 0, 350],
-                    stops: [
-                        [0, 'rgba(55, 155, 205,0.5)'],
-                        [1, 'rgba(255,255,255,0)']
-                    ]
-                },
-                marker: {
-                    enabled: true, //Attiva o disattiva i marker
-                    //symbol: 'url(http://www.mentaltoy.com/resources/logoChart.png)', //Questo paramentro carica un simbolo personalizzato. Si può anche avere una chart con marker diverse sulle linee
-                    symbol: 'circle', // Tipologia di marker
-                    radius: 4,
-                    lineWidth: 1,
-                    lineColor: '#379bcd',
-                    fillColor: '#FFFFFF',
-                    states: {
-                        hover: {
-                            enabled: true, // Attiva o disattiva il marker quando si passa sopra la chart
-                            symbol: 'circle',
-                            fillColor: '#FFFFFF',
-                            lineColor: '#3ca7da',
-                            radius: 5,
-                            lineWidth: 2
-                        }
-                    }
-                }
-            }
-        },
-        title: {
-            enabled: false,
-            text: null,
-            x: -20 //center
-        },
-        subtitle: {
-            text: null,
-            x: -20
-        },
-        xAxis: {
-            categories: ['1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012'],
-            gridLineWidth:1, // IMPORTANTE - Attiva le linee verticali
-            lineColor: '#e0e0e0',
-            tickColor: '#e0e0e0',
-            gridLineColor: '#eeeeee',
-            tickLength: 7,
-            //tickmarkPlacement: 'on', Per partire dall'origine
-            labels: {
-                y: 25,
-                style: {
-                    color: '#666666',
-                    fontWeight: '300',
-                    fontSize: 12
-                }
-            }
-        },
-        yAxis: {
-            floor: 800,
-            ceiling: 1100,
-            gridLineWidth: 1, // IMPORTANTE - Attiva le linee verticali
-            lineWidth:1,
-            //tickWidth: 1,
-            lineColor: '#e0e0e0',
-            gridLineColor: '#eeeeee',
-            labels: {
-                style: {
-                    color: '#666666',
-                    fontWeight: '300',
-                    fontSize: 12
-                }
-            },
-            title: {
-                enabled: false,
-                text: 'null'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1
-            }]
-        },
-        tooltip: {
-            valueSuffix: 'M',
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            borderWidth: 1,
-            shadow: false
-        },
-        series: [{
-            name: $.i18n.prop('_number_of_undernourished_declining'),
-            data: [1015, 1030, 1026, 1010, 973, 949, 944, 932, 933, 940, 957, 949, 944, 934, 931, 907, 890, 883, 878, 870, 854, 842]
-        }]
-    });
-
-
-})
 </script>
