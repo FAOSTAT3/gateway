@@ -112,6 +112,8 @@ if (!window.FAOSTATHome) {
             $('.fs-browse-text').html($.i18n.prop('_fs_browse_text'));
             $('.fs-download-text').html($.i18n.prop('_fs_download_text'));
 
+            $('#fs-home-find-data').html($.i18n.prop('_fs_home_find_data'));
+
             $('.fs-rankings').html($.i18n.prop('_fs_rankings') + " ");
             $('.fs-country-region').html($.i18n.prop('_fs_country_region')+ " ");
 
@@ -131,6 +133,14 @@ if (!window.FAOSTATHome) {
             $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_downloadZip'));
             $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_database'));
             $('#FAOSTAT-ZIP-Download').append($.i18n.prop('_withoneclick'));
+
+
+            $("#fs-home-sy").html($.i18n.prop('_fs_sy'));
+            $("#fs-home-sy-2013").prepend($.i18n.prop('_fs_sy'));
+            $("#fs-home-sy-description").html($.i18n.prop('_fs_sy_description'));
+            $("#partners").html($.i18n.prop('_partners'));
+            $("#fs-featured-links").html($.i18n.prop('_featured_links'));
+            $("#fs-contacts").html($.i18n.prop('_contacts'));
         },
 
         _showBulkDownload: function() {

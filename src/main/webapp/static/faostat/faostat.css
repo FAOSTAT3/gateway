@@ -1902,14 +1902,13 @@ div.analysis-selectors:nth-child(6){
 }
 
 .variable-number{
-    width: 20px; height: 16px;
+    width: 16px; height: 16px;
     left: 5px; top: -2px;
     position: relative;
     background-color: #399BCC;
     color: #FFFFFF;
     text-align: center;
     display: inline-block;
-    padding-top: 4px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -2440,7 +2439,7 @@ div.obj-box-download:nth-child(even) {
     background-image: url(faostat-images/icons/circlePlus.png);
     width: 20px;
     height: 20px;
-    margin: 5px;
+    /*margin: 5px;*/
 }
 
 .icon-compare1 {
@@ -2572,7 +2571,7 @@ div.obj-box-download:nth-child(even) {
 }
 
 .btn.dwld {
-    height: 19px;
+    height: 26px;
     padding: 4px 7px 0 5px;
     margin-left: 10px;
 }
@@ -2580,6 +2579,7 @@ div.obj-box-download:nth-child(even) {
 .btn .fa {
     font-size: 16px;
     color: #666666;
+    margin-right: 5px;
 }
 
 .btn .btnText{
@@ -3166,7 +3166,7 @@ a:visited {
     font-weight: 700;
     padding: 8px 25px 1px 25px!important;
     text-transform: uppercase;
-    height: 21px;
+    height: 31px;
     float: none !important;
 }
 
@@ -3203,6 +3203,8 @@ a:visited {
 }
 .table-switch-radio .jqx-radiobutton-default {
     margin-top: 3px;
+    height: 13px !important;
+    width: 13px !important;
 }
 
 .fa-stack{
@@ -3240,7 +3242,7 @@ a:visited {
 
 .btn-big {
     padding: 8px 20px 1px 20px !important;
-    height: 22px;
+    height: 31px;
     margin-left: 15px;
     background-color: #399BCC;
     border-color: #2471AA;
@@ -3346,7 +3348,7 @@ a:visited {
     background-color: #399BCC;
     border-color: #2471AA;
     color: #FFFFFF;
-    height: 22px;
+    height: 32px;
     margin-left: 15px;
     padding: 8px 20px 1px !important;
     font-size: 12px;

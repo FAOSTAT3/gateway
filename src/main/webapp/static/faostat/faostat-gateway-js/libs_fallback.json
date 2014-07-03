@@ -62,7 +62,25 @@
 
     ],
     "download" : [
-        "http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxpanel.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtree.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxexpander.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxbuttons.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxlistbox.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdropdownlist.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcheckbox.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcombobox.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxmenu.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxradiobutton.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxnumberinput.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxmenu.js",
+
+
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/mwheelIntent.js",
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/jquery.jscrollpane.min.js",
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/jquery.jscrollpane.css",
@@ -70,7 +88,6 @@
         "/faostat-download-js/js/chromatable/jquery.chromatable.js",
         "/faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack.js",
         "/faostat-download-js/css/myPivot.css",
-
 
         "/faostat-download-js/pivotAgg/pivot.css",
         "/faostat-download-js/pivotAgg/pivot.js",
