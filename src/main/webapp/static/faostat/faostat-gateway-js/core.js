@@ -96,7 +96,6 @@ if (!window.CORE) {
                     CORE.CONFIG_MES.subSectionCode = domainCode;
                     CORE.CONFIG_MES.lang = lang;
                     CORE.loadModuleLibs(module, function() {
-                        console.log(CORE.CONFIG_MES );
                         MES.init( CORE.CONFIG_MES )
                     });
                     break;
@@ -185,9 +184,9 @@ if (!window.CORE) {
 
                 yepnope({
                     load: data[module],
-                    callback: function(e) {
-                        console.log(e);
-                    },
+//                    callback: function(e) {
+//                        console.log(e);
+//                    },
                     complete: function() {
                         initFunction()
                     }

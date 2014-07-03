@@ -10,8 +10,6 @@ if (!window.UIUtils) {
 
         initializeDDMenu: function(menuID, dropdownID, dropdownToNotShowID) {
             $('#' + menuID).on('click touchstart', function () {
-                console.log("uahsduh");
-                console.log(dropdownID);
                 //$('#' + dropdownID).slideToggle();
                 $('#' + dropdownID).toggle();
 
@@ -19,7 +17,6 @@ if (!window.UIUtils) {
                     //$('#' + dropdownToNotShowID).slideUp();
                     $('#' + dropdownToNotShowID).hide();
                 }
-
             });
         }
     };
