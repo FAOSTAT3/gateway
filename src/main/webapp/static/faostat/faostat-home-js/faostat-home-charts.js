@@ -7,6 +7,11 @@ var FS_HOME_CHART = (function() {
     function initChart1(id) {
         var title = $.i18n.prop('_' + id + 'Title');
         var subtitle = $.i18n.prop('_' + id + 'Subtitle');
+        $("#" + id + 'Title').prepend(title)
+        $("#" + id + 'Subtitle').html(subtitle)
+        console.log(title);
+        console.log(subtitle);
+        console.log("id: " + id );
         var serie = $.i18n.prop('_' + id + 'Serie');
 
         $('#' + id).highcharts({

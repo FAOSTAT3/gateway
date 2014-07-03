@@ -11,6 +11,7 @@
 @import 'home-domains';
 
 
+
 .centralHolder {
   background-color: white;
   min-height: 150px;
@@ -85,9 +86,10 @@
     margin: 0 8px;
     max-width: 155px;
     min-width: 20px;
-    overflow: hidden;
+    /*overflow: hidden; Rimettere se dovesse dare problemi*/
     padding: 8px 0 4px 0;
     text-overflow: ellipsis;
+    position: relative;
       &:hover{
         border-color: $medium-blue;
         transition: border-color 0.218s ease 0s;
@@ -252,6 +254,13 @@
 /* HOME CHARTS */
 .fs-home-charts {
   height: 250px;
+}
+
+.fs-chart-title{
+  font: $fs-chart-title;
+  em {
+    margin-left: 10px;
+  }
 }
 
 .fs-calendar-icon{

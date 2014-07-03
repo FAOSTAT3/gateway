@@ -293,7 +293,7 @@ modules **/
     font-size:12px;
     font-weight: bold;
     color: #399BCC;
-    width: 150px;
+    width: 135px;
     padding: 6px 15px 6px 35px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -1172,7 +1172,7 @@ rispetto a questo div */
     background: #399bcc; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
     background:
-        url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM5OWJjYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk1JSIgc3RvcC1jb2xvcj0iIzY3YjJkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM5OWJjYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk1JSIgc3RvcC1jb2xvcj0iIzY3YjJkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
     background: -moz-linear-gradient(left, #399bcc 0%, #67b2d8 95%); /*
 FF3.6+ */
     background: -webkit-gradient(linear, left top, right top,
@@ -1184,7 +1184,7 @@ Chrome10+,Safari5.1+ */
     background: -ms-linear-gradient(left, #399bcc 0%,#67b2d8 95%); /* IE10+ */
     background: linear-gradient(to right, #399bcc 0%,#67b2d8 95%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(
-        startColorstr='#399bcc', endColorstr='#67b2d8',GradientType=1 ); /* IE6-8 */
+            startColorstr='#399bcc', endColorstr='#67b2d8',GradientType=1 ); /* IE6-8 */
     *background-color: #3a9bcc !important;
     text-align: center !important;
     color: #FFFFFF !important;
@@ -1834,7 +1834,7 @@ table.calculated_table td {
 .analysis-title{
     color: #399BCC;
     font: 300 16px 'Roboto Condensed',sans-serif !important
-    margin-bottom: 10px;
+margin-bottom: 10px;
     position: relative;
     top: 1px;
 }
@@ -2922,7 +2922,7 @@ div.obj-box-download:nth-child(even) {
     color: #2471AA;
     font-weight: bold;
     font: 300 16px 'Roboto Condensed',sans-serif !important
-    cursor: pointer;
+cursor: pointer;
     position: relative;
 }
 
@@ -2956,31 +2956,28 @@ div.obj-box-download:nth-child(even) {
 
 .menu-dropdown {
     position: absolute;
-    z-index: 10;
+    z-index: 1000000000000000000;
 }
 
 .browse-dropdown {
-    left: 143px;
+    left: 0px;
+    top:23px;
     width: 330px;
 }
 
 .download-dropdown {
-    left: 286px;
+    left: 0px;
     width: 330px;
 }
 
 #menu-dropdown-browse {
     display: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: #FFFFFF;
-    border-color: #D8D8D8;
-    border-image: none;
-    border-radius: 5px 5px 5px 5px;
-    border-style: solid;
-    border-width: 1px 1px 2px;
+    background-color: rgba(255,255,255, 0.93);
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -ms-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
     margin: 10px 0 20px;
     padding: 10px;
     width: auto;
@@ -2988,16 +2985,12 @@ div.obj-box-download:nth-child(even) {
 
 #menu-dropdown-download {
     display: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    background-color: #FFFFFF;
-    border-color: #D8D8D8;
-    border-image: none;
-    border-radius: 5px 5px 5px 5px;
-    border-style: solid;
-    border-width: 1px 1px 2px;
+    background-color: rgba(255,255,255, 0.93);
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -ms-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
     margin: 10px 0 20px;
     padding: 10px;
     width: auto;
@@ -3011,9 +3004,9 @@ div.obj-box-download:nth-child(even) {
     border-radius: 2px;
     -moz-border-radius: 2px;
     padding: 0 0 5px 0;
-    -webkit-box-shadow: 0 10px 6px -6px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0 10px 6px -6px rgba(0,0,0,0.4);
-    box-shadow: 0 10px 6px -6px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -3029,13 +3022,13 @@ div.obj-box-download:nth-child(even) {
 
 .dropdown-element{
     background-repeat:no-repeat;
-    height: 20px;
+    height: 30px;
     background-position:5px 4px;
     padding: 8px 4px 0px 30px;
     cursor: pointer;
     border-bottom: 1px solid #E6E6E6;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 300;
+    color: #666666;
 
 }
 
@@ -3043,20 +3036,22 @@ div.obj-box-download:nth-child(even) {
     color: #399BCC;
 }
 
-/*.ico-pr {background-image:url(faostat-images/icons/prod-ico.png);}*/
-/*.ico-tr {background-image:url(faostat-images/icons/trad-ico.png);}*/
-/*.ico-fs {background-image:url(faostat-images/icons/foodsup-ico.png);}*/
-/*.ico-ae {background-image:url(faostat-images/icons/agri-ico.png);}*/
-/*.ico-fb {background-image:url(faostat-images/icons/fbs-ico.png);}*/
-/*.ico-pi {background-image:url(faostat-images/icons/price-ico.png);}*/
-/*.ico-re {background-image:url(faostat-images/icons/reso-ico.png);}*/
-/*.ico-em {background-image:url(faostat-images/icons/ghg-ico.png);}*/
-/*.ico-el {background-image:url(faostat-images/icons/ghg-ico.png);}*/
-/*.ico-in {background-image:url(faostat-images/icons/inv-ico.png);}*/
-/*.ico-fo {background-image:url(faostat-images/icons/for-ico.png);}*/
-/*.ico-asti {background-image:url(faostat-images/icons/ico-asti.png);}*/
-/*.ico-po {background-image:url(faostat-images/icons/ico-po.png);}*/
-/*.ico-cb {background-image:url(faostat-images/icons/ico-cb.png);}*/
+.dropdown-element.ico-pr {background-image:url(faostat-images/icons/prod-ico.png);}
+.dropdown-element.ico-tr {background-image:url(faostat-images/icons/trad-ico.png);}
+/*.dropdown-element.ico-fs {background-image:url(faostat-images/icons/foodsup-ico.png);}*/
+.dropdown-element.ico-ae {background-image:url(faostat-images/icons/agri-ico.png);}
+.dropdown-element.ico-fb {background-image:url(faostat-images/icons/fbs-ico.png);}
+.dropdown-element.ico-pi {background-image:url(faostat-images/icons/price-ico.png);}
+.dropdown-element.ico-re {background-image:url(faostat-images/icons/reso-ico.png);}
+.dropdown-element.ico-em {background-image:url(faostat-images/icons/ghg-ico.png);}
+.dropdown-element.ico-el {background-image:url(faostat-images/icons/ghg-ico.png);}
+.dropdown-element.ico-in {background-image:url(faostat-images/icons/inv-ico.png);}
+.dropdown-element.ico-fo {background-image:url(faostat-images/icons/for-ico.png);}
+.dropdown-element.ico-asti {background-image:url(faostat-images/icons/ico-asti.png);}
+.dropdown-element.ico-po {background-image:url(faostat-images/icons/ico-po.png);}
+.dropdown-element.ico-cb {background-image:url(faostat-images/icons/ico-cb.png);}
+.dropdown-element.ico-fsecurity {background-image:url(faostat-images/icons/ico-foodsec.png);}
+.dropdown-element.ico-emergencyresponse {background-image:url(faostat-images/icons/ico-emerg.png);}
 
 
 #container {min-height: 100%;}
@@ -3225,9 +3220,9 @@ a:visited {
 }
 
 #output_buttons .download-selection-buttons{
-   padding-top: 0;
-   position: relative;
-   top: -4px;
+    padding-top: 0;
+    position: relative;
+    top: -4px;
 }
 
 .pivot-btn .fa-stack{
@@ -3296,7 +3291,7 @@ a:visited {
 }
 
 .metadata-links {
-     display: inline-block;
+    display: inline-block;
     background-color: #FFFFFF;
     color: #399BCC !important;
     padding: 3px;
@@ -3387,8 +3382,7 @@ a:visited {
 #testinline {
     width: 780px;
     left: 192px;
-   /* overflow: auto !important;*/
-    float:right;
+    overflow: auto !important;
 }
 
 #hor-minimalist-b{
@@ -3409,15 +3403,14 @@ a:visited {
 
 
 #btnFS .fa {
-   font-size: 11px !important;
-   margin-right: 6px;
+    font-size: 11px !important;
+    margin-right: 6px;
 }
 
 a#btnFS{
-     color: #666666 !important;
-     font-size: 11px !important;
-     z-index: 1000;
-     margin-right: 12px;
+    color: #666666 !important;
+    font-size: 11px !important;
+    z-index: 1000;
 }
 
 

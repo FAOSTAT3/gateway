@@ -10,10 +10,14 @@ if (!window.UIUtils) {
 
         initializeDDMenu: function(menuID, dropdownID, dropdownToNotShowID) {
             $('#' + menuID).on('click touchstart', function () {
-                $('#' + dropdownID).slideToggle();
+                console.log("uahsduh");
+                console.log(dropdownID);
+                //$('#' + dropdownID).slideToggle();
+                $('#' + dropdownID).toggle();
 
                 if ( $("#"+ dropdownToNotShowID +":visible") ) {
-                    $('#' + dropdownToNotShowID).slideUp();
+                    //$('#' + dropdownToNotShowID).slideUp();
+                    $('#' + dropdownToNotShowID).hide();
                 }
 
             });

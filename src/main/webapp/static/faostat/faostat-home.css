@@ -613,9 +613,10 @@ input {
     margin: 0 8px;
     max-width: 155px;
     min-width: 20px;
-    overflow: hidden;
+    /*overflow: hidden; Rimettere se dovesse dare problemi*/
     padding: 8px 0 4px 0;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    position: relative; }
     .fs-menu span:hover {
       border-color: #40769e;
       transition: border-color 0.218s ease 0s; }
@@ -823,6 +824,11 @@ input {
 /* HOME CHARTS */
 .fs-home-charts {
   height: 250px; }
+
+.fs-chart-title {
+  font: normal normal 400 14px/normal "Roboto Condensed", sans-serif !important; }
+  .fs-chart-title em {
+    margin-left: 10px; }
 
 .fs-calendar-icon {
   background-color: #40769e;

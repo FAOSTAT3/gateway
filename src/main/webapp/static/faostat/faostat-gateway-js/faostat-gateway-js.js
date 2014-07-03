@@ -54,15 +54,14 @@ if (!window.FAOSTATGateway) {
             $('.fs-statistics-division').html($.i18n.prop('_statistics_division'));
 
             $('#home').html($.i18n.prop('_home'));
-            $('#browse').html($.i18n.prop('_browse'));
-            $('#download').html($.i18n.prop('_download'));
+            $('#browse').append($.i18n.prop('_browse'));
+            $('#download').append($.i18n.prop('_download'));
             $('#compare').html($.i18n.prop('_compare'));
             $('#search').html($.i18n.prop('_search'));
             $('#analysis').html($.i18n.prop('_analysis'));
             $('#mes').html($.i18n.prop('_mes'));
 
             $("#searchFStext").attr('placeholder', $.i18n.prop('_searchText'));
-
 
             $("#fs-menu-header").sticky({topSpacing:0});
         },

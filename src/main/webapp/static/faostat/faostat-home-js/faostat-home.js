@@ -56,16 +56,6 @@ if (!window.FAOSTATHome) {
             $('#partners').html($.i18n.prop('_partners'));
             $('#faoLinks').html($.i18n.prop('_faoLinks'));
 
-            $('#chart1Title').html($.i18n.prop('_chart1Title'));
-            $('#chart1SubTitle').html($.i18n.prop('_chart1SubTitle'));
-            $('#chart1Serie').html($.i18n.prop('_chart1Serie'));
-            $('#chart2Title').html($.i18n.prop('_chart2Title'));
-            $('#chart2SubTitle').html($.i18n.prop('_chart2SubTitle'));
-            $('#chart2Serie').html($.i18n.prop('_chart2Serie'));
-            $('#chart3Title').html($.i18n.prop('_chart3Title'));
-            $('#chart3SubTitle').html($.i18n.prop('_chart3SubTitle'));
-            $('#chart3Serie').html($.i18n.prop('_chart3Serie'));
-
             /** tooltips **/
             $('#ifpri').attr("title", "International Food Policy Research Institute (IFPRI)");
             $("#ifpri").powerTip({placement: 's'});
