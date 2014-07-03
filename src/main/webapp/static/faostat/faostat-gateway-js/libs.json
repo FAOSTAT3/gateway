@@ -24,11 +24,14 @@
             "/faostat-analysis-js/js/wds-client.js",
             "/faostat-analysis-js/js/google-analytics-manager.js",
             "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
-            "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js"
-        ],
-        "css" : [
+            "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js",
             "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
-            "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css"
+            "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css",
+            "/faostat-compare-js/js/jshashtable.js",
+            "/analysis/js/f3-chart.js",
+            "/analysis/js/ghg-overview.js",
+            "/analysis/js/ghg-country-profile.js",
+            "/analysis/js/f3-ghg-table.js"
         ]
     },
     "mes" : {

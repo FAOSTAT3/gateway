@@ -1,7 +1,6 @@
 /** SEARCH **/
 
 .search-box-holder{
-    width: 635px;
     margin: 15px auto 0;
     text-align: center;
 
@@ -117,7 +116,7 @@
 .single-result-title {
     color: #2471AA;
     font-weight: bold;
-    font: 19px 'Open Sans Condensed', sans-serif;
+    font: 300 16px 'Roboto Condensed',sans-serif !important;
     position: relative;
     display: inline;
 }
@@ -200,7 +199,7 @@
 .search-filter-title {
     color: #2471AA;
     font-weight: bold;
-    font: 19px 'Open Sans Condensed', sans-serif;
+    font: 300 16px 'Roboto Condensed',sans-serif !important;
     cursor: pointer;
     margin-top: 9px;
 }

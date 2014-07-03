@@ -54,10 +54,10 @@ class FAOSTATGatewayRESTService {
         HashMap<String, String> configMap = readConfigFile();
         String main = replaceHtml(configMap, 'faostat-'+ section +'-js', lang);
 
+        main = main.replace('$_MODULE', "'" +  section +"'")
         main = main.replace('$_GROUP_CODE', (group == "*" ? "null" : group));
         main = main.replace('$_DOMAIN_CODE', (domain == "*" ? "null" : domain));
         main = main.replace('$_LANG', lang);
-
         // Return the page
         return main
     }
@@ -77,6 +77,7 @@ class FAOSTATGatewayRESTService {
         HashMap<String, String> configMap = readConfigFile();
         String main = replaceHtml(configMap, 'faostat-search-js', lang);
 
+        main = main.replace('$_MODULE', "'search'")
         main = main.replace('$_WORD', (word == "*" ? "" : word));
 
         // Return the page
@@ -97,6 +98,7 @@ class FAOSTATGatewayRESTService {
         HashMap<String, String> configMap = readConfigFile();
         String main = replaceHtml(configMap, 'faostat-home-js', lang);
 
+        main = main.replace('$_MODULE', "'home'")
         main = main.replace('$_BASE_URL', configMap.get("base_url"))
 
         // Return the page

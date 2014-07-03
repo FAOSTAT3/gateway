@@ -1,139 +1,273 @@
-<div class="siteContainer">
+<div class="fs_row fs-home-hints">
+    <div class="fs_column_12">
+        FIND YOUR STATISTICAL DATA BY EXPLORING THE OVER 50 FAOSTAT DATA DOMAINS. <em
+            class="fs-text-standard-blue">CLICK ON THE DOMAIN GROUPS BELOW :</em>
 
-    <div id="MENU" class="menu"></div>
-
-    <div id="HOME_SPLASH" class="HOME_SPLASH_E">
-        <img id='SPLASH' usemap="#imagemap">
-        <map name="imagemap">
-            <area id="Q" class="imagemap-area" shape="rect" coords="285,25,350,90"   onClick="CORE.loadModule('download', 'Q/*')">
-            <area class="imagemap-area" shape="rect" coords="435,25,500,90"   onClick="CORE.loadModule('download', 'T/*')">
-            <area class="imagemap-area" shape="rect" coords="585,34,645,90"   onClick="CORE.loadModule('download', 'C/*')">
-            <area class="imagemap-area" shape="rect" coords="735,34,795,90"   onClick="CORE.loadModule('download', 'E/*')">
-            <area class="imagemap-area" shape="rect" coords="880,34,945,90"   onClick="CORE.loadModule('download', 'FB/*')">
-            <area class="imagemap-area" shape="rect" coords="285,145,350,210" onClick="CORE.loadModule('download', 'P/*')">
-            <area class="imagemap-area" shape="rect" coords="435,145,500,210" onClick="CORE.loadModule('download', 'R/*')">
-            <area class="imagemap-area" shape="rect" coords="585,145,645,210" onClick="CORE.loadModule('download', 'G1/*')">
-            <area class="imagemap-area" shape="rect" coords="735,145,795,210" onClick="CORE.loadModule('download', 'I/*')">
-            <area class="imagemap-area" shape="rect" coords="880,145,945,210" onClick="CORE.loadModule('download', 'F/*')">
-        </map>
-    </div>
-
-</div>
-
-<div class="left-sidebar-home">
-
-    <div class="FAOSTAT-ZIP-Download-container" id="FAOSTAT-ZIP-Download">
-        <p class="FAOSTAT-ZIP-light-text" id='faostat-download-zip-download'></p>
-        <p class="FAOSTAT-ZIP-light-text" id='faostat-download-zip-database'></p>
-        <p class="FAOSTAT-ZIP-light-text-small" id='faostat-download-zip-click'></p>
-        <p class="FAOSTAT-ZIP-light-text-small-date" id='faostat-download-zip-date'></p>
-    </div>
-
-    <hr class="standard-hr">
-
-    <div> <p class="home-chart-title" id='chart1Title'></p>
-        <p class="home-chart-subtitle" id='chart1SubTitle'></p>
-    </div>
-
-    <div id='chart_1' style='width: 224px; height: 150px; margin-left: -1px; ' ></div>
-
-    <hr class="standard-hr">
-
-    <div> <p class="home-chart-title" id='chart2Title'></p>
-        <p class="home-chart-subtitle" id='chart2SubTitle'></p>
-    </div>
-
-    <div id='chart_2' style='width: 224px; height: 230px;  '></div>
-
-    <hr class="standard-hr">
-
-    <div> <p class="home-chart-title" id='chart3Title'></p>
-        <p class="home-chart-subtitle" id='chart3SubTitle'></p>
-    </div>
-
-    <div id='chart_3' style='width: 210px; height: 220px; '></div>
-
-</div>
-
-
-<div class="right-content-home">
-    <div class="browse-views-holder">
-
-        <!-- NEWS -->
-        <div class='home-news' style='top:0'>
-            <div class="obj-box obj-box-news">
-                <div class="obj-box-title" id='whatsNewText'></div>
-                <hr class="standard-hr">
-                <div id='whatsNew-content'></div>
-            </div>
-
-            <div class="obj-box obj-box-news">
-                <div class="obj-box-title"id='comingUpText'></div>
-                <hr class="standard-hr">
-                <div id='comingUp-content'></div>
-            </div>
-        </div>
-
-        <div class='clear'></div>
-
-        <!-- Release Calendar / Database updates -->
-        <div class="obj-box obj-box-update">
-            <div style="float: left;">
-                <div class="obj-box-title" id='databaseUpdatesText'></div>
-            </div>
-            <div id='release-calendar' style="float: right;">
-                <img id='release-calendar-img' width="40" height="36"/>
-                <div  class="obj-box-title release-calendar-text" id='releaseCalendarText'></div>
-            </div>
-            <div class='clear'></div>
-            <hr class="standard-hr">
-            <div id="database-updates" class='database-updates'></div>
-        </div>
-
-        <div class='clear'></div>
-
-        <!-- Partners -->
-        <div class="obj-box obj-box-partners">
-            <div class="obj-box-title" id='partners'></div>
-            <hr class="standard-hr">
-            <div class="obj-box-partners-link" id='ifpri'> <a href="http://www.ifpri.org/" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/ifpri.gif" alt="ilo" />  </a> </div>
-            <div class="obj-box-partners-link" id='ilo'> <a href="http://www.ilo.org/global/lang--en/index.htm" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/ilo.gif" alt="ilo" /> </a> </div>
-            <div class="obj-box-partners-link" id='oecd'> <a href="http://www.oecd.org/" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/oecd.gif" alt="oecd" /> </a> </div>
-            <div class="obj-box-partners-link" id='unfccc'> <a href="http://unfccc.int/2860.php" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/climate.gif" alt="climate" /> </a> </div>
-            <div class="obj-box-partners-link" id='unstats'> <a href="http://unstats.un.org/unsd/default.htm" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/statistics.gif" alt="statistic" /> </a> </div>
-            <div class="obj-box-partners-link" id='usda'> <a href="http://www.usda.gov/wps/portal/usda/usdahome" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/usda.gif"alt="usda" /> </a> </div>
-            <div class="obj-box-partners-link" id='worldbank'> <a href="http://www.worldbank.org/" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/worldbank.gif"alt="worldbank" /> </a> </div>
-            <div class="obj-box-partners-link" id='wto'> <a href="http://www.wto.org/" target="_blank"> <img src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-images/partners/wto.gif" alt="wto" /> </a> </div>
-        </div>
-
-
-        <div class='clear'></div>
-
-        <!-- Links -->
-        <div class="obj-box obj-box-partners">
-
-            <div class="obj-box-title" id='faoLinks'></div>
-            <hr class="standard-hr">
-            <div id='partner-content'></div>
-        </div>
+        <div class="fs-help"></div>
     </div>
 </div>
+<div class="fs_row">
+    <div class="fs_column_3">
+
+        <div class="fs-domain-prod">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-pr"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'Q/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'Q/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-pric">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-pi"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'P/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'P/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-emiag">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-em"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'G1/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'G1/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-asti">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-asti"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'AS/AA');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'AS/*');"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fs_column_3">
+
+        <div class="fs-domain-trade">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-tr"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'T/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'T/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-inves">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-in"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'I/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'I/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-emilu">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-el"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'G2/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'G2/*');"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="fs-domain-foodsup">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-emergencyresponse">emergencyresponse</div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'X/FA');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'X/*');"></span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="fs_column_3">
+
+        <div class="fs-domain-commbal">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-fb"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'FB/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'FB/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-reso">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-re"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'R/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'R/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-agriind">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-ae"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'E/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'E/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <!--div appended as last-child to avoid last-child-line problem -->
+        <div></div>
+
+    </div>
+    <div class="fs_column_3">
+
+        <div class="fs-domain-foodsec">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-fsecurity"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'D/FS');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'D/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-popu">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-pop"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'O/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'O/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-fores">
+            <div class="fs-domain-ico"></div>
+            <div class="fs-domain-text">
+                <div class="fs-domain-title ico-fo"></div>
+                <div class="fs-domain-btns">
+                    <span class="fs-browse-text" onclick="CORE.loadModule('browse', 'F/*');"></span>
+                    <span class="fs-download-text" onclick="CORE.loadModule('download', 'F/*');"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fs-domain-lastbtn">
+            <span class="fs-rankings fs-arrow" onclick="CORE.loadModule('browse', 'rankings/commodities_by_regions')"></span><br>
+            <span class="fs-country-region fs-arrow" onclick="CORE.loadModule('browse', 'area/*')"></span>
+        </div>
+    </div>
+</div>
+
+<div class="fs_row fs-hp-content">
+    <div class="fs-left-content-bg"></div>
+    <div class="fs_column_8">
+
+        <div class="obj-box">
+            <div class="obj-box-title" id="chart-title1">Number of undernourished declining <em id="chart-subtitle1" class="obj-box-chart-subtitle"> Milions of people</em></div>
+            <div id="chart1" class="fs-home-charts"></div>
+        </div>
+
+        <div class="obj-box">
+            <div class="obj-box-title" id="partners">Partners</div>
+            <div class="fs-partners-container">
+                <div class="fs-partner-grid" id="ifpri"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-ifpri.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-ilo.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-oecd.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-climatechange.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-unstats.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-usda.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-worldbank.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-wto.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-eurostat.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-itto.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-unece.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-wco.png"></div>
+                <div class="fs-partner-grid"><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/partners/part-wfp.png"></div>
+            </div>
+        </div>
+
+        <div class="fs_row_nested">
+            <div class="fs_column_split">
+                <div class="obj-box obj-box-bottom">
+                    <div class="obj-box-title" id="databaseUpdatesText"></div>
+                    <div id="database-updates" class="fs-updates-content">
+                        <i class='fa fa-refresh fa-spin fa-5x'></i>
+                    </div>
+                    <div class="obj-box-bottom-btn">
+                        <div onclick="window.open('http://faostat3.fao.org/home/faostatReleaseCalendar.html','window');" class="obj-box-bottom-btn-content">
+                            <div class="fs-calendar-icon"></div><div id="fs-release-calendar" class="obj-box-bottom-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fs_column_split">
+                <div class="obj-box obj-box-bottom">
+                    <div class="obj-box-title" id="">Fao Statistical Year book</div>
+                    <div class="fs-yearbook-content">
+                        <p><img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/statisticalYearbook.png" width="81px" height="163px" alt="fao statistical yearbook"/>
+                            Issued annually, FAO's Statistical Yearbook is an authoritative compendium of data on the major trends shaping global food and agriculture today. For each thematic area, brief analyses of the main trends are paired with graphical data visualizations as well as tables with key indicators.</p>
+                    </div>
+                    <div class="obj-box-bottom-btn">
+                        <div class="obj-box-bottom-btn-content">
+                            <div class="fs-download-icon"></div><div class="obj-box-bottom-text">FAO Statistical Yearbook 2013</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="obj-box">
+                    <div class="obj-box-title">FAO Links</div>
+                    <div id="fs-links-content" class="fs-links-content">
+                        <i class='fa fa-refresh fa-spin fa-5x'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fs_column_3">
+        <h3>Featured Links</h3>
+        <div class="fs-btn-key"><span id="fs-coming-soon"></span></div>
+        <div class="fs-btn-database"><span id="FAOSTAT-ZIP-Download"></span></div>
+        <div class="fs-btn-countryProfile"><span id="fs-country-profiles"></span></div>
+        <h3 id='whatsNewText'></h3>
+        <div id='whatsNew-content'>
+            <i class='fa fa-refresh fa-spin fa-5x'></i>
+        </div>
+        <h3 id='comingUpText'></h3>
+        <div id='comingUp-content'>
+            <i class='fa fa-refresh fa-spin fa-5x'></i>
+        </div>
+        <h3 id="fs-contacts">Contacts</h3>
+        <h4 class="fs-statistics-division"></h4>
+        <p id="fs-essdd"><br> Viale delle Terme di Caracalla <br> 00153 Rome, Italy <br><br> <a href='mailto:FAO-statistics@fao.org '> FAO-statistics@fao.org </a></p>
+    </div>
+</div>
+
 
 <script>
-    FAOSTATHomeCharts.createCharts(CORE.lang);
-    FAOSTATDatabaseUpdate.getDatabaseUpdates(CORE.datasource, CORE.lang);
-
-    /** load of the image TODO: make it dynamic**/
-    document.getElementById("SPLASH").src = "http://"+ CORE.baseURL +"/faostat-gateway/static/faostat/faostat-images/welcome_"+ CORE.lang +".gif";
-    document.getElementById("release-calendar-img").src = "http://"+ CORE.baseURL +"/faostat-gateway/static/faostat/faostat-images/icons/calendar-ico.png";
-
-    $("#release-calendar").click(function(){
-        window.open("http://faostat3.fao.org/home/faostatReleaseCalendar.html", "_blank")
-    });
-
     FAOSTATHome.loadUI(CORE.lang);
-
-    document.getElementById('faostat-download-zip-download').innerHTML = $.i18n.prop('_downloadZip');
-    document.getElementById('faostat-download-zip-database').innerHTML = $.i18n.prop('_database');
-    document.getElementById('faostat-download-zip-click').innerHTML = $.i18n.prop('_withoneclick');
 </script>
