@@ -186,12 +186,12 @@ input {
   top: -10px; }
 
 /* DOMAIN ICONS */
-.fs-domain, .fs-domain-prod, .fs-domain-emiag, .fs-domain-pric, .fs-domain-popu, .fs-domain-trade, .fs-domain-emilu, .fs-domain-reso, .fs-domain-fores, .fs-domain-foodsec, .fs-domain-foodsup, .fs-domain-inves, .fs-domain-asti, .fs-domain-fbs, .fs-domain-commbal, .fs-domain-agriind {
+.fs-domain, .fs-domain-prod, .fs-domain-emiag, .fs-domain-pric, .fs-domain-popu, .fs-domain-trade, .fs-domain-emilu, .fs-domain-reso, .fs-domain-fores, .fs-domain-foodsec, .fs-domain-foodsup, .fs-domain-inves, .fs-domain-asti, .fs-domain-fbs, .fs-domain-commbal, .fs-domain-agriind, .fs-domain-emerg {
   height: 70px;
   padding: 15px 0;
   cursor: pointer;
   border-bottom: 1px solid #e6e6e6; }
-  .fs-domain .fs-domain-ico, .fs-domain-prod .fs-domain-ico, .fs-domain-emiag .fs-domain-ico, .fs-domain-pric .fs-domain-ico, .fs-domain-popu .fs-domain-ico, .fs-domain-trade .fs-domain-ico, .fs-domain-emilu .fs-domain-ico, .fs-domain-reso .fs-domain-ico, .fs-domain-fores .fs-domain-ico, .fs-domain-foodsec .fs-domain-ico, .fs-domain-foodsup .fs-domain-ico, .fs-domain-inves .fs-domain-ico, .fs-domain-asti .fs-domain-ico, .fs-domain-fbs .fs-domain-ico, .fs-domain-commbal .fs-domain-ico, .fs-domain-agriind .fs-domain-ico {
+  .fs-domain .fs-domain-ico, .fs-domain-prod .fs-domain-ico, .fs-domain-emiag .fs-domain-ico, .fs-domain-pric .fs-domain-ico, .fs-domain-popu .fs-domain-ico, .fs-domain-trade .fs-domain-ico, .fs-domain-emilu .fs-domain-ico, .fs-domain-reso .fs-domain-ico, .fs-domain-fores .fs-domain-ico, .fs-domain-foodsec .fs-domain-ico, .fs-domain-foodsup .fs-domain-ico, .fs-domain-inves .fs-domain-ico, .fs-domain-asti .fs-domain-ico, .fs-domain-fbs .fs-domain-ico, .fs-domain-commbal .fs-domain-ico, .fs-domain-agriind .fs-domain-ico, .fs-domain-emerg .fs-domain-ico {
     float: left;
     border: 1px solid #379bce;
     padding: 1px 0 1px 0;
@@ -201,7 +201,7 @@ input {
     -moz-border-radius: 38px;
     -ms-border-radius: 38px;
     border-radius: 38px; }
-    .fs-domain .fs-domain-ico:before, .fs-domain-prod .fs-domain-ico:before, .fs-domain-emiag .fs-domain-ico:before, .fs-domain-pric .fs-domain-ico:before, .fs-domain-popu .fs-domain-ico:before, .fs-domain-trade .fs-domain-ico:before, .fs-domain-emilu .fs-domain-ico:before, .fs-domain-reso .fs-domain-ico:before, .fs-domain-fores .fs-domain-ico:before, .fs-domain-foodsec .fs-domain-ico:before, .fs-domain-foodsup .fs-domain-ico:before, .fs-domain-inves .fs-domain-ico:before, .fs-domain-asti .fs-domain-ico:before, .fs-domain-fbs .fs-domain-ico:before, .fs-domain-commbal .fs-domain-ico:before, .fs-domain-agriind .fs-domain-ico:before {
+    .fs-domain .fs-domain-ico:before, .fs-domain-prod .fs-domain-ico:before, .fs-domain-emiag .fs-domain-ico:before, .fs-domain-pric .fs-domain-ico:before, .fs-domain-popu .fs-domain-ico:before, .fs-domain-trade .fs-domain-ico:before, .fs-domain-emilu .fs-domain-ico:before, .fs-domain-reso .fs-domain-ico:before, .fs-domain-fores .fs-domain-ico:before, .fs-domain-foodsec .fs-domain-ico:before, .fs-domain-foodsup .fs-domain-ico:before, .fs-domain-inves .fs-domain-ico:before, .fs-domain-asti .fs-domain-ico:before, .fs-domain-fbs .fs-domain-ico:before, .fs-domain-commbal .fs-domain-ico:before, .fs-domain-agriind .fs-domain-ico:before, .fs-domain-emerg .fs-domain-ico:before {
       content: '';
       display: block;
       margin: 0 auto;
@@ -210,12 +210,12 @@ input {
       width: 35px;
       height: 35px;
       background-position: 0px -70px; }
-  .fs-domain .fs-domain-text, .fs-domain-prod .fs-domain-text, .fs-domain-emiag .fs-domain-text, .fs-domain-pric .fs-domain-text, .fs-domain-popu .fs-domain-text, .fs-domain-trade .fs-domain-text, .fs-domain-emilu .fs-domain-text, .fs-domain-reso .fs-domain-text, .fs-domain-fores .fs-domain-text, .fs-domain-foodsec .fs-domain-text, .fs-domain-foodsup .fs-domain-text, .fs-domain-inves .fs-domain-text, .fs-domain-asti .fs-domain-text, .fs-domain-fbs .fs-domain-text, .fs-domain-commbal .fs-domain-text, .fs-domain-agriind .fs-domain-text {
+  .fs-domain .fs-domain-text, .fs-domain-prod .fs-domain-text, .fs-domain-emiag .fs-domain-text, .fs-domain-pric .fs-domain-text, .fs-domain-popu .fs-domain-text, .fs-domain-trade .fs-domain-text, .fs-domain-emilu .fs-domain-text, .fs-domain-reso .fs-domain-text, .fs-domain-fores .fs-domain-text, .fs-domain-foodsec .fs-domain-text, .fs-domain-foodsup .fs-domain-text, .fs-domain-inves .fs-domain-text, .fs-domain-asti .fs-domain-text, .fs-domain-fbs .fs-domain-text, .fs-domain-commbal .fs-domain-text, .fs-domain-agriind .fs-domain-text, .fs-domain-emerg .fs-domain-text {
     margin-left: 10px;
     height: 38px;
     float: left;
     padding: 5px 0; }
-    .fs-domain .fs-domain-text .fs-domain-title, .fs-domain-prod .fs-domain-text .fs-domain-title, .fs-domain-emiag .fs-domain-text .fs-domain-title, .fs-domain-pric .fs-domain-text .fs-domain-title, .fs-domain-popu .fs-domain-text .fs-domain-title, .fs-domain-trade .fs-domain-text .fs-domain-title, .fs-domain-emilu .fs-domain-text .fs-domain-title, .fs-domain-reso .fs-domain-text .fs-domain-title, .fs-domain-fores .fs-domain-text .fs-domain-title, .fs-domain-foodsec .fs-domain-text .fs-domain-title, .fs-domain-foodsup .fs-domain-text .fs-domain-title, .fs-domain-inves .fs-domain-text .fs-domain-title, .fs-domain-asti .fs-domain-text .fs-domain-title, .fs-domain-fbs .fs-domain-text .fs-domain-title, .fs-domain-commbal .fs-domain-text .fs-domain-title, .fs-domain-agriind .fs-domain-text .fs-domain-title {
+    .fs-domain .fs-domain-text .fs-domain-title, .fs-domain-prod .fs-domain-text .fs-domain-title, .fs-domain-emiag .fs-domain-text .fs-domain-title, .fs-domain-pric .fs-domain-text .fs-domain-title, .fs-domain-popu .fs-domain-text .fs-domain-title, .fs-domain-trade .fs-domain-text .fs-domain-title, .fs-domain-emilu .fs-domain-text .fs-domain-title, .fs-domain-reso .fs-domain-text .fs-domain-title, .fs-domain-fores .fs-domain-text .fs-domain-title, .fs-domain-foodsec .fs-domain-text .fs-domain-title, .fs-domain-foodsup .fs-domain-text .fs-domain-title, .fs-domain-inves .fs-domain-text .fs-domain-title, .fs-domain-asti .fs-domain-text .fs-domain-title, .fs-domain-fbs .fs-domain-text .fs-domain-title, .fs-domain-commbal .fs-domain-text .fs-domain-title, .fs-domain-agriind .fs-domain-text .fs-domain-title, .fs-domain-emerg .fs-domain-text .fs-domain-title {
       max-width: 175px;
       min-width: 125px;
       font: normal normal 300 14px/14px "Roboto Condensed", sans-serif !important;
@@ -229,22 +229,22 @@ input {
       top: 6px;
       /* remove if there is no animation */
       transition: top 0.1s ease 0s; }
-    .fs-domain .fs-domain-text span, .fs-domain-prod .fs-domain-text span, .fs-domain-emiag .fs-domain-text span, .fs-domain-pric .fs-domain-text span, .fs-domain-popu .fs-domain-text span, .fs-domain-trade .fs-domain-text span, .fs-domain-emilu .fs-domain-text span, .fs-domain-reso .fs-domain-text span, .fs-domain-fores .fs-domain-text span, .fs-domain-foodsec .fs-domain-text span, .fs-domain-foodsup .fs-domain-text span, .fs-domain-inves .fs-domain-text span, .fs-domain-asti .fs-domain-text span, .fs-domain-fbs .fs-domain-text span, .fs-domain-commbal .fs-domain-text span, .fs-domain-agriind .fs-domain-text span {
+    .fs-domain .fs-domain-text span, .fs-domain-prod .fs-domain-text span, .fs-domain-emiag .fs-domain-text span, .fs-domain-pric .fs-domain-text span, .fs-domain-popu .fs-domain-text span, .fs-domain-trade .fs-domain-text span, .fs-domain-emilu .fs-domain-text span, .fs-domain-reso .fs-domain-text span, .fs-domain-fores .fs-domain-text span, .fs-domain-foodsec .fs-domain-text span, .fs-domain-foodsup .fs-domain-text span, .fs-domain-inves .fs-domain-text span, .fs-domain-asti .fs-domain-text span, .fs-domain-fbs .fs-domain-text span, .fs-domain-commbal .fs-domain-text span, .fs-domain-agriind .fs-domain-text span, .fs-domain-emerg .fs-domain-text span {
       margin-right: 20px;
       position: relative;
       /* remove if there is no animation */
-      top: -6px;
+      top: -8px;
       /* remove if there is no animation */
       transition: top 0.1s ease 0s; }
-  .fs-domain:hover, .fs-domain-prod:hover, .fs-domain-emiag:hover, .fs-domain-pric:hover, .fs-domain-popu:hover, .fs-domain-trade:hover, .fs-domain-emilu:hover, .fs-domain-reso:hover, .fs-domain-fores:hover, .fs-domain-foodsec:hover, .fs-domain-foodsup:hover, .fs-domain-inves:hover, .fs-domain-asti:hover, .fs-domain-fbs:hover, .fs-domain-commbal:hover, .fs-domain-agriind:hover {
+  .fs-domain:hover, .fs-domain-prod:hover, .fs-domain-emiag:hover, .fs-domain-pric:hover, .fs-domain-popu:hover, .fs-domain-trade:hover, .fs-domain-emilu:hover, .fs-domain-reso:hover, .fs-domain-fores:hover, .fs-domain-foodsec:hover, .fs-domain-foodsup:hover, .fs-domain-inves:hover, .fs-domain-asti:hover, .fs-domain-fbs:hover, .fs-domain-commbal:hover, .fs-domain-agriind:hover, .fs-domain-emerg:hover {
     /* remove if there is no animation */ }
-    .fs-domain:hover .fs-domain-text .fs-domain-title, .fs-domain-prod:hover .fs-domain-text .fs-domain-title, .fs-domain-emiag:hover .fs-domain-text .fs-domain-title, .fs-domain-pric:hover .fs-domain-text .fs-domain-title, .fs-domain-popu:hover .fs-domain-text .fs-domain-title, .fs-domain-trade:hover .fs-domain-text .fs-domain-title, .fs-domain-emilu:hover .fs-domain-text .fs-domain-title, .fs-domain-reso:hover .fs-domain-text .fs-domain-title, .fs-domain-fores:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsec:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsup:hover .fs-domain-text .fs-domain-title, .fs-domain-inves:hover .fs-domain-text .fs-domain-title, .fs-domain-asti:hover .fs-domain-text .fs-domain-title, .fs-domain-fbs:hover .fs-domain-text .fs-domain-title, .fs-domain-commbal:hover .fs-domain-text .fs-domain-title, .fs-domain-agriind:hover .fs-domain-text .fs-domain-title {
+    .fs-domain:hover .fs-domain-text .fs-domain-title, .fs-domain-prod:hover .fs-domain-text .fs-domain-title, .fs-domain-emiag:hover .fs-domain-text .fs-domain-title, .fs-domain-pric:hover .fs-domain-text .fs-domain-title, .fs-domain-popu:hover .fs-domain-text .fs-domain-title, .fs-domain-trade:hover .fs-domain-text .fs-domain-title, .fs-domain-emilu:hover .fs-domain-text .fs-domain-title, .fs-domain-reso:hover .fs-domain-text .fs-domain-title, .fs-domain-fores:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsec:hover .fs-domain-text .fs-domain-title, .fs-domain-foodsup:hover .fs-domain-text .fs-domain-title, .fs-domain-inves:hover .fs-domain-text .fs-domain-title, .fs-domain-asti:hover .fs-domain-text .fs-domain-title, .fs-domain-fbs:hover .fs-domain-text .fs-domain-title, .fs-domain-commbal:hover .fs-domain-text .fs-domain-title, .fs-domain-agriind:hover .fs-domain-text .fs-domain-title, .fs-domain-emerg:hover .fs-domain-text .fs-domain-title {
       top: 0px;
       transition: top 0.218s ease 0s; }
-    .fs-domain:hover .fs-domain-text span, .fs-domain-prod:hover .fs-domain-text span, .fs-domain-emiag:hover .fs-domain-text span, .fs-domain-pric:hover .fs-domain-text span, .fs-domain-popu:hover .fs-domain-text span, .fs-domain-trade:hover .fs-domain-text span, .fs-domain-emilu:hover .fs-domain-text span, .fs-domain-reso:hover .fs-domain-text span, .fs-domain-fores:hover .fs-domain-text span, .fs-domain-foodsec:hover .fs-domain-text span, .fs-domain-foodsup:hover .fs-domain-text span, .fs-domain-inves:hover .fs-domain-text span, .fs-domain-asti:hover .fs-domain-text span, .fs-domain-fbs:hover .fs-domain-text span, .fs-domain-commbal:hover .fs-domain-text span, .fs-domain-agriind:hover .fs-domain-text span {
+    .fs-domain:hover .fs-domain-text span, .fs-domain-prod:hover .fs-domain-text span, .fs-domain-emiag:hover .fs-domain-text span, .fs-domain-pric:hover .fs-domain-text span, .fs-domain-popu:hover .fs-domain-text span, .fs-domain-trade:hover .fs-domain-text span, .fs-domain-emilu:hover .fs-domain-text span, .fs-domain-reso:hover .fs-domain-text span, .fs-domain-fores:hover .fs-domain-text span, .fs-domain-foodsec:hover .fs-domain-text span, .fs-domain-foodsup:hover .fs-domain-text span, .fs-domain-inves:hover .fs-domain-text span, .fs-domain-asti:hover .fs-domain-text span, .fs-domain-fbs:hover .fs-domain-text span, .fs-domain-commbal:hover .fs-domain-text span, .fs-domain-agriind:hover .fs-domain-text span, .fs-domain-emerg:hover .fs-domain-text span {
       top: 2px;
       transition: top 0.218s ease 0s; }
-  .fs-domain:last-child, .fs-domain-prod:last-child, .fs-domain-emiag:last-child, .fs-domain-pric:last-child, .fs-domain-popu:last-child, .fs-domain-trade:last-child, .fs-domain-emilu:last-child, .fs-domain-reso:last-child, .fs-domain-fores:last-child, .fs-domain-foodsec:last-child, .fs-domain-foodsup:last-child, .fs-domain-inves:last-child, .fs-domain-asti:last-child, .fs-domain-fbs:last-child, .fs-domain-commbal:last-child, .fs-domain-agriind:last-child {
+  .fs-domain:last-child, .fs-domain-prod:last-child, .fs-domain-emiag:last-child, .fs-domain-pric:last-child, .fs-domain-popu:last-child, .fs-domain-trade:last-child, .fs-domain-emilu:last-child, .fs-domain-reso:last-child, .fs-domain-fores:last-child, .fs-domain-foodsec:last-child, .fs-domain-foodsup:last-child, .fs-domain-inves:last-child, .fs-domain-asti:last-child, .fs-domain-fbs:last-child, .fs-domain-commbal:last-child, .fs-domain-agriind:last-child, .fs-domain-emerg:last-child {
     border-bottom: 1px solid transparent; }
 
 /* ----------------------------------------- */
@@ -536,6 +536,25 @@ input {
     height: 35px;
     background-position: 0px -105px; }
 
+.fs-domain-emerg .fs-domain-ico {
+  border: 1px solid #379bce;
+  padding: 1px 0 1px 0;
+  width: 38px;
+  height: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  -ms-border-radius: 38px;
+  border-radius: 38px; }
+  .fs-domain-emerg .fs-domain-ico:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-image: url("images/sprite_35px_faostat.png");
+    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    background-position: -140px -140px; }
+
 .fs-domain-lastbtn {
   height: 70px;
   padding: 25px 0 15px 0; }
@@ -620,7 +639,7 @@ input {
     .fs-menu span:hover {
       border-color: #40769e;
       transition: border-color 0.218s ease 0s; }
-  .fs-menu .fs-menu-selected {
+  .fs-menu span.fs-menu-selected {
     color: #174c74;
     font: normal normal 900 12px/normal "Roboto", sans-serif;
     border-bottom: 4px solid #40769e;

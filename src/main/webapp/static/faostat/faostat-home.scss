@@ -96,7 +96,7 @@
       }
   }
   /** Apply to menu element if selected */
-  .fs-menu-selected {
+  span.fs-menu-selected{
     color: $dark-blue;
     font: $fs-text-menu-selected;
     border-bottom: 4px solid $medium-blue;

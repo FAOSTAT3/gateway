@@ -2956,7 +2956,7 @@ cursor: pointer;
 
 .menu-dropdown {
     position: absolute;
-    z-index: 1000000000000000000;
+    z-index: 10000000;
 }
 
 .browse-dropdown {

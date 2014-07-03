@@ -27,7 +27,7 @@
     span {
       margin-right: 20px;
       position: relative; /* remove if there is no animation */
-      top: -6px; /* remove if there is no animation */
+      top: -8px; /* remove if there is no animation */
       transition: top 0.1s ease 0s;
     }
   }
@@ -158,6 +158,13 @@
   @extend .fs-domain;
   .fs-domain-ico{
     @include fs-domain-ico (1, 4);
+  }
+}
+
+.fs-domain-emerg {
+  @extend .fs-domain;
+  .fs-domain-ico{
+    @include fs-domain-ico(5, 5);
   }
 }
 
