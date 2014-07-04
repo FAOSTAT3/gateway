@@ -15,7 +15,6 @@
         "/faostat-browse-js/js/UIBuilderTabSelector.js",
         "/faostat-browse-js/js/Export.js",
         "/faostat-browse-js/js/FAOSTATBrowseUtils.js"
-
     ],
     "analysis" : [
         "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
@@ -30,7 +29,6 @@
     "mes" : [
         "/mes/js/google-analytics-manager.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js"
-
     ],
     "download" : [
         "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
@@ -59,24 +57,14 @@
         "/faostat-download-js/pivotAgg/configuration.js",
 
         "/faostat-download-js/FBSN.js",
-        
-        
+
         "/faostat-download-js/js/F3DWLD.js",
         "/faostat-download-js/js/F3DWLDNotes.js",
         "/faostat-download-js/js/I18N.js",
         "/faostat-download-js/js/cpi.js",
         "/faostat-download-js/js/collector.js",
-        "/faostat-download-js/js/faostat-download-options.js",
-        "/faostat-download-js/js/faostat-download-selectors-advanced.js",
-        "/faostat-download-js/js/faostat-download-selectors-classic.js",
-        "/faostat-download-js/js/faostat-download-selectors.js",
         "/faostat-download-js/js/faostat-download-tree.js",
-        "/faostat-download-js/js/faostat-download-wizard.js",
-        "/faostat-download-js/js/google-analytics-manager.js",
-        "/faostat-download-js/js/index.js",
-        "/faostat-download-js/js/JQUERY-FIELD.js",
-        "/faostat-download-js/js/wizard-navigator.js",
-        "/faostat-download-js/FBSN.js"
+        "/faostat-download-js/js/google-analytics-manager.js"
     ],
     "search" : [
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
