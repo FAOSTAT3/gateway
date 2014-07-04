@@ -56,30 +56,7 @@ if (!window.FAOSTATHome) {
             $('#partners').html($.i18n.prop('_partners'));
             $('#faoLinks').html($.i18n.prop('_faoLinks'));
 
-            /** tooltips **/
-            $('#ifpri').attr("title", "International Food Policy Research Institute (IFPRI)");
-            $("#ifpri").powerTip({placement: 's'});
 
-            $('#ilo').attr("title","International Labour Organization (ILO)");
-            $("#ilo").powerTip({placement: 's'});
-
-            $('#oecd').attr("title","Organisation for Economic Co-operation and Development (OECD)");
-            $("#oecd").powerTip({placement: 's'});
-
-            $('#unfccc').attr("title","United Nations Framework Convention on Climate Change (UNFCC)");
-            $("#unfccc").powerTip({placement: 's'});
-
-            $('#unstats').attr("title","United Nations Statistics Division (UNSTATS)");
-            $("#unstats").powerTip({placement: 's'});
-
-            $('#usda').attr("title","United States Department of Agriculture (USDA)");
-            $("#usda").powerTip({placement: 's'});
-
-            $('worldbank').attr("title","World Bank" );
-            $("#worldbank").powerTip({placement: 's'});
-
-            $('#wto').attr("title", "World Trade Organization (WTO)");
-            $("#wto").powerTip({placement: 's'});
 
             /** labels **/
 //            $('.ico-pr').html($.i18n.prop('_production'));
@@ -129,6 +106,49 @@ if (!window.FAOSTATHome) {
             $("#partners").html($.i18n.prop('_partners'));
             $("#fs-featured-links").html($.i18n.prop('_featured_links'));
             $("#fs-contacts").html($.i18n.prop('_contacts'));
+
+
+            /** tooltips **/
+            var placement = "s"
+            $('#ifpri').attr("title", "International Food Policy Research Institute (IFPRI)");
+            $("#ifpri").powerTip({placement: placement});
+
+            $('#ilo').attr("title","International Labour Organization (ILO)");
+            $("#ilo").powerTip({placement: placement});
+
+            $('#unfccc').attr("title","United Nations Framework Convention on Climate Change (UNFCC)");
+            $("#unfccc").powerTip({placement: placement});
+
+            $('#oecd').attr("title","Organisation for Economic Co-operation and Development (OECD)");
+            $("#oecd").powerTip({placement: placement});
+
+            $('#unstats').attr("title","United Nations Statistics Division (UNSTATS)");
+            $("#unstats").powerTip({placement: placement});
+
+            $('#usda').attr("title","United States Department of Agriculture (USDA)");
+            $("#usda").powerTip({placement: placement});
+
+            $('#worldbank').attr("title","World Bank" );
+            $("#worldbank").powerTip({placement: placement});
+
+            $('#wto').attr("title", "World Trade Organization (WTO)");
+            $("#wto").powerTip({placement: placement});
+
+            $('#eurostat').attr("title", "EUROSTAT");
+            $("#eurostat").powerTip({placement: placement});
+
+            $('#itto').attr("title", "International Tropical Timber Organization");
+            $("#itto").powerTip({placement: placement});
+
+            $('#unece').attr("title", "United Nations Economic Commission for Europe (UNECE)");
+            $("#unece").powerTip({placement: placement});
+
+            $('#wco').attr("title", "World Customs Organization (WCO)");
+            $("#wco").powerTip({placement: placement});
+
+            $('#wfp').attr("title", "World Food Programme (WFP)");
+            $("#wfp").powerTip({placement: placement});
+
         },
 
         _showBulkDownload: function() {
