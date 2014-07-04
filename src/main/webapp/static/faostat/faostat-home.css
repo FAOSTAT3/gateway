@@ -903,6 +903,8 @@ input {
 .fs-updates-content span {
   display: block;
   margin-bottom: 10px; }
+  .fs-updates-content span:hover {
+    text-decoration: underline; }
 .fs-updates-content h5 {
   margin-top: 20px; }
 
@@ -958,7 +960,7 @@ input {
     top: 5px;
     left: 0; }
   .fs-links-content a:hover {
-    text-decoration: none; }
+    text-decoration: underline; }
     .fs-links-content a:hover:before {
       transform: rotate(-45deg);
       transition: transform 0.218s ease 0s; }
