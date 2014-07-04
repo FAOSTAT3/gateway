@@ -31,8 +31,6 @@
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js"
     ],
     "download" : [
-        "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
-        "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcheckbox.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxmenu.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxradiobutton.js",
@@ -40,6 +38,8 @@
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxmenu.js",
+        "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
+        "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
 
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/mwheelIntent.js",
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/jquery.jscrollpane.min.js",
