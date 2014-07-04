@@ -1,5 +1,6 @@
 {
     "browse" : [
+        "http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar.js",
@@ -27,6 +28,7 @@
 
     ],
     "analysis" : [
+        "http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar.js",
@@ -42,10 +44,10 @@
         "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css",
         "/faostat-analysis-js/js/faostat-analysis-collector.js",
         "/faostat-analysis-js/js/wds-client.js",
-        "/faostat-analysis-js/js/google-analytics-manager.js",
-        "/faostat-compare-js/js/jshashtable.js"
+        "/faostat-analysis-js/js/google-analytics-manager.js"
     ],
     "mes" : [
+        "http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar.js",
@@ -115,6 +117,7 @@
         "/faostat-download-js/FBSN.js"
     ],
     "search" : [
+        "http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar.js",
@@ -133,6 +136,7 @@
 
     ],
     "compare" : [
+        "http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css",
         "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
         "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",

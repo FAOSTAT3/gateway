@@ -64,6 +64,9 @@
         &:hover {
           text-decoration: underline;
         }
+        &.fs-lan-selected {
+          text-decoration: underline;
+        }
     }
 }
 

@@ -84,6 +84,10 @@ if (!window.FAOSTATGateway) {
             $('.ico-po').html($.i18n.prop('_population'));
             $('.ico-cb').html($.i18n.prop('_commoditybalances'));
             $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
+
+
+            $('#lang' + CORE.lang).addClass("fs-lan-selected");
+
         },
 
 

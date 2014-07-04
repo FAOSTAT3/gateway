@@ -113,9 +113,6 @@ if (!window.FAOSTATHome) {
             $('#fs-coming-soon').html($.i18n.prop('_fs_coming_soon'));
 
             $('#fs-country-profiles').html($.i18n.prop('_fs_country_profiles'));
-            $('#fs-country-profiles').click(function() {
-               alert("add country profile")
-            });
 
             $('#fs-essdd').prepend($.i18n.prop('_essdd'));
 

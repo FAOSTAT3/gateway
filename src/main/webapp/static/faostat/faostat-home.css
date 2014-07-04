@@ -610,6 +610,8 @@ input {
     cursor: pointer; }
     .fs-languages span:hover {
       text-decoration: underline; }
+    .fs-languages span.fs-lan-selected {
+      text-decoration: underline; }
 
 .fs-menu-holder {
   padding: 0 20px 0 10px;
