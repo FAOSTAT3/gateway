@@ -330,10 +330,8 @@ if (!window.CORE) {
         },
 
         contentDIVMinHeight: function() {
-            var height = $(window).height() - (
-                $("#headBg").outerHeight() +
-                    $("#faostatMenu").outerHeight() +
-                    + 85); // this is the footer height that is not calculated dynamically
+            var additional_height = 180
+            var height = $(window).height() -  ($("#fs-head").outerHeight() + $("#fs-menu-header-sticky-wrapper").outerHeight() + additional_height); // this is the footer height that is not calculated dynamically
             $("#container").css("min-height",height+"px");
         }
 
