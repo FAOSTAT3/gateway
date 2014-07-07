@@ -65,7 +65,7 @@
         "/faostat-download-js/js/collector.js",
         "/faostat-download-js/js/faostat-download-tree.js",
         "/faostat-download-js/js/google-analytics-manager.js"
-    ],
+    ],   
     "search" : [
         "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
         "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
