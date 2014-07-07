@@ -85,9 +85,9 @@ if (!window.FAOSTATGateway) {
             $('.ico-cb').html($.i18n.prop('_commoditybalances'));
             $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
 
-
             $('#lang' + CORE.lang).addClass("fs-lan-selected");
 
+            $('#fs-feedbacksystem-text').html($.i18n.prop('_feedbacksystem_text'));
         },
 
 

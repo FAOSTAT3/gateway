@@ -107,6 +107,8 @@ if (!window.FAOSTATHome) {
             $("#fs-featured-links").html($.i18n.prop('_featured_links'));
             $("#fs-contacts").html($.i18n.prop('_contacts'));
 
+            $("#fs-highlights").html($.i18n.prop('_highlights'));
+
 
             /** tooltips **/
             var placement = "s"
@@ -148,6 +150,8 @@ if (!window.FAOSTATHome) {
 
             $('#wfp').attr("title", "World Food Programme (WFP)");
             $("#wfp").powerTip({placement: placement});
+
+
 
         },
 
