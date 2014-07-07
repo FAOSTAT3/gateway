@@ -67,15 +67,14 @@
         "/faostat-download-js/js/google-analytics-manager.js"
     ],
     "search" : [
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
-        "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
-        "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js",
         "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
+        "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
+        "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js",
         "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css",
         "/faostat-search-js/js/faostat-search-export.js",
         "/faostat-search-js/js/faostat-search-google-analytics-manager.js",
         "/faostat-search-js/js/faostat-search-single-result.js"
-
     ],
     "compare" : [
         "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
