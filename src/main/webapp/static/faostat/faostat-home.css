@@ -114,7 +114,8 @@ a {
   text-decoration: none; }
 
 * {
-  box-sizing: border-box !important; }
+  box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important; }
 
 em {
   font-style: normal; }
