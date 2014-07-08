@@ -3382,7 +3382,8 @@ a:visited {
 #testinline {
     width: 780px;
     left: 192px;
-    overflow: auto !important;
+    float:right;
+   /* overflow: auto !important;*/
 }
 
 #hor-minimalist-b{
