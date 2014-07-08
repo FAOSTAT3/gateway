@@ -256,7 +256,17 @@
     <form style='display: none;' id='growthRateExcelForm' name='growthRateExcelForm' method='POST' action='http://faostat3.fao.org/wds/rest/exporter/excel' target='_blank'>
         <div><input type='text' value='data' name='data' id='data'/></div>
     </form>
+<form id="formExcel" method="post" action="http://faostat3.fao.org/faostat.olap.ws/rest/ExcelCreator">
 
+    <input id="excelData" type="hidden" value="" name="data"></input>
+    <input type="hidden" value="xls" name="type"></input>
+
+</form>
+<form id="csvDataForm" action="/faostat-download-js/pivotAgg/json.jsp" method="POST">
+
+    <input id="csvData" type="hidden" name="data" value="Country,Element,Item,"2012",unit,flag,"2011",unit,flag,"2010…,"Hg/Ha","Fc","9714,29","Hg/Ha","Fc","5923,08","Hg/Ha","Fc" "></input>
+
+</form>
     <!--<form id='G1FORM' name='G1FORM' method='POST' action='http://ldvapp07.fao.org:8030/wds/rest/exporter/htmltable'-->
           <!--target='_blank' style='display: none;'>-->
         <!--<input type='text' name='data' value='' id='G1_DATA'/>-->
