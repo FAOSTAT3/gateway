@@ -68,7 +68,6 @@
     <script type='text/javascript' src='http://$_BASE_URL/faostat-browse-js/js/faostat-browse.js'></script>
 
     <!-- FAOSTAT Analysis -->
-    <!--<script type='text/javascript' src='http://$_BASE_URL/faostat-analysis-js/js/faostat-analysis.js'></script>-->
     <script type='text/javascript' src='http://$_BASE_URL/analysis/js/f3-analysis.js'></script>
 
     <!-- FAOSTAT Methods & Standards -->
@@ -121,6 +120,43 @@
 
 </head>
 <body onload="FAOSTATGateway.loadUI($_MODULE);">
+
+<div class="fs-warning-wrapper">
+    <div class="fs-warning">
+        <div class="standard-title">Please Note</div>
+        <div class="fs-warning-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut felis a
+            orci egestas facilisis. Aliquam fermentum, tellus eu ullamcorper ultricies, libero nisl posuere sapien,
+            in ultricies metus ipsum vel ipsum. Nunc facilisis adipiscing ligula, at tincidunt ligula interdum in.
+            Praesent suscipit sodales dui at congue:
+        </div>
+        <div class="fs-download-hint">
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+            </ul>
+        </div>
+        <div class="fs-warning-btn">
+            <a onclick="" class="btn btn-big" id="dwl-preview-btn">
+                <i class="fa fa-table "></i>
+                <div class="btnText" id="buttonSelectAll_usp_GetElementList-text"> CONTINUE WITH TABLE</div>
+            </a>
+        </div>
+        <a href="javascript:;" class="fancybox-item fancybox-close" title="Close"></a>
+</div>
+
+</div>
 
 <div class="fs_main_holder">
 
@@ -266,7 +302,12 @@
           <!--target='_blank' style='display: none;'>-->
         <!--<input type='text' name='data' value='' id='G2_DATA'/>-->
     <!--</form>-->
+
+
+
 </div>
+
+
 
 </body>
 
