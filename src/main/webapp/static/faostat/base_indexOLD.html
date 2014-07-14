@@ -68,6 +68,7 @@
     <script type='text/javascript' src='http://$_BASE_URL/faostat-browse-js/js/faostat-browse.js'></script>
 
     <!-- FAOSTAT Analysis -->
+    <!--<script type='text/javascript' src='http://$_BASE_URL/faostat-analysis-js/js/faostat-analysis.js'></script>-->
     <script type='text/javascript' src='http://$_BASE_URL/analysis/js/f3-analysis.js'></script>
 
     <!-- FAOSTAT Methods & Standards -->
@@ -120,33 +121,6 @@
 
 </head>
 <body onload="FAOSTATGateway.loadUI($_MODULE);">
-
-<div class="fs-warning-wrapper">
-    <div class="fs-warning">
-        <div class="standard-title" id="fs-warning-message-title">
-            Please Note
-        </div>
-        <div class="fs-warning-message" id="fs-warning-message">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut felis a
-            orci egestas facilisis. Aliquam fermentum, tellus eu ullamcorper ultricies, libero nisl posuere sapien,
-            in ultricies metus ipsum vel ipsum. Nunc facilisis adipiscing ligula, at tincidunt ligula interdum in.
-            Praesent suscipit sodales dui at congue:
-        </div>
-        <div class="fs-download-hint">
-            <ul id="fs-warning-bulk-list">
-
-            </ul>
-        </div>
-        <div class="fs-warning-btn">
-            <a onclick="F3DWLD.continue_with_table();" class="btn btn-big" id="dwl-preview-btn">
-                <i class="fa fa-table "></i>
-                <div class="btnText" id="buttonSelectAll_usp_GetElementList-text"> CONTINUE WITH TABLE</div>
-            </a>
-        </div>
-        <a id="close-fs-warning" class="fancybox-item fancybox-close" title="Close"></a>
-</div>
-
-</div>
 
 <div class="fs_main_holder">
 
@@ -271,24 +245,6 @@
         <div><input type='text' value='' name='subtitle_WQ' id='subtitle_WQ'/></div>
     </form>
 
-    <form style='display: none;'
-          onsubmit='F3DWLD.onSubmit();'
-          id='csvFormWithQuotes' name='csvFormWithQuotes'
-          method='POST'
-          action='http://faostat3.fao.org/wds/rest/exporter/streamcsv'
-          target='_new'>
-        <div><input type='text' value='faostat' name='cssFilename_WQ' id='cssFilename_WQ_csv'/></div>
-        <div><input type='text' value='' name='datasource_WQ_csv' id='datasource_WQ_csv'/></div>
-        <div><input type='text' value='2' name='decimalNumbers_WQ_csv' id='decimalNumbers_WQ_csv'/></div>
-        <div><input type='text' value='.' name='decimalSeparator_WQ_csv' id='decimalSeparator_WQ_csv'/></div>
-        <div><input type='text' value=',' name='thousandSeparator_WQ_csv' id='thousandSeparator_WQ_csv'/></div>
-        <div><input type='text' value='6' name='valueIndex_WQ_csv' id='valueIndex_WQ_csv'/></div>
-        <div><input type='text' value='' name='json_WQ_csv' id='json_WQ_csv'/></div>
-        <div><input type='text' value='' name='quote_WQ_csv' id='quote_WQ_csv'/></div>
-        <div><input type='text' value='' name='title_WQ_csv' id='title_WQ_csv'/></div>
-        <div><input type='text' value='' name='subtitle_WQ_csv' id='subtitle_WQ_csv'/></div>
-    </form>
-
     <form style='display: none;' id='excelForProcedures' name='excelForProcedures' method='POST' action='http://faostat3.fao.org/wds/rest/procedures/excel' target='_new'>
         <div><input type='text' value='payload_excel' name='payload_excel' id='payload_excel'/></div>
     </form>
@@ -307,13 +263,9 @@
 
 </form>
 <form id="csvDataForm" action="/faostat-download-js/pivotAgg/json.jsp" method="POST">
- <input id="csvData" type="hidden" name="data" value=""></input>
-</form>
-    
-    <form id="exportCSVOLAP" action="/faostat-download-js/pivotAgg/exportCSVOLAP.jsp" method="POST" target="_export">
- <input id="CSVOLAPsql" type="hidden" name="sql" value=""></input>
-  <input id="CSVOLAPjson" type="hidden" name="json" value=""></input>
-   <input id="CSVOLAPoption" type="hidden" name="option" value=""></input>
+
+    <input id="csvData" type="hidden" name="data" value="Country,Element,Item,"2012",unit,flag,"2011",unit,flag,"2010…,"Hg/Ha","Fc","9714,29","Hg/Ha","Fc","5923,08","Hg/Ha","Fc" "></input>
+
 </form>
     <!--<form id='G1FORM' name='G1FORM' method='POST' action='http://ldvapp07.fao.org:8030/wds/rest/exporter/htmltable'-->
           <!--target='_blank' style='display: none;'>-->
@@ -324,12 +276,7 @@
           <!--target='_blank' style='display: none;'>-->
         <!--<input type='text' name='data' value='' id='G2_DATA'/>-->
     <!--</form>-->
-
-
-
 </div>
-
-
 
 </body>
 
