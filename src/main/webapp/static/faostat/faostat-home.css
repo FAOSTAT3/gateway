@@ -978,14 +978,15 @@ input {
   left: 0;
   z-index: 2147483647; }
   .fs-warning-wrapper .fs-warning {
-    position: absolute;
+    position: fixed;
     -webkit-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
     width: 500px;
     margin-left: -250px;
+    margin-top: -150px;
     left: 50%;
-    top: 120px;
+    top: 50%;
     background-color: white;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -1006,11 +1007,9 @@ input {
         .fs-warning-wrapper .fs-warning .fs-download-hint ul li {
           list-style: none !important;
           padding: 4px; }
-    .fs-warning-wrapper .fs-warning .fs-warning-btn {
-      padding: 0 100px 0 100px; }
-      .fs-warning-wrapper .fs-warning .fs-warning-btn #dwl-preview-btn {
-        top: 0;
-        width: 200px;
-        margin-left: -100px;
-        left: 50%;
-        margin-bottom: 10px; }
+    .fs-warning-wrapper .fs-warning .fs-warning-btn #dwl-preview-btn {
+      top: 0;
+      width: 200px;
+      margin-left: -100px;
+      left: 50%;
+      margin-bottom: 10px; }

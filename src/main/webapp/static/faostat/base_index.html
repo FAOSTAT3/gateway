@@ -138,7 +138,7 @@
             </ul>
         </div>
         <div class="fs-warning-btn">
-            <a onclick="F3DWLD.continue_with_table();" class="btn btn-big" id="continue_with_table">
+            <a onclick="F3DWLD.continue_with_table();" class="btn btn-big" id="dwl-preview-btn">
                 <i class="fa fa-table "></i>
                 <div class="btnText" id="buttonSelectAll_usp_GetElementList-text"> CONTINUE WITH TABLE</div>
             </a>
@@ -269,6 +269,24 @@
         <div><input type='text' value='' name='quote_WQ' id='quote_WQ'/></div>
         <div><input type='text' value='' name='title_WQ' id='title_WQ'/></div>
         <div><input type='text' value='' name='subtitle_WQ' id='subtitle_WQ'/></div>
+    </form>
+
+    <form style='display: none;'
+          onsubmit='F3DWLD.onSubmit();'
+          id='csvFormWithQuotes' name='csvFormWithQuotes'
+          method='POST'
+          action='http://localhost:8080/wds/rest/exporter/streamcsv'
+          target='_new'>
+        <div><input type='text' value='faostat' name='cssFilename_WQ' id='cssFilename_WQ_csv'/></div>
+        <div><input type='text' value='' name='datasource_WQ' id='datasource_WQ_csv'/></div>
+        <div><input type='text' value='2' name='decimalNumbers_WQ' id='decimalNumbers_WQ_csv'/></div>
+        <div><input type='text' value='.' name='decimalSeparator_WQ' id='decimalSeparator_WQ_csv'/></div>
+        <div><input type='text' value=',' name='thousandSeparator_WQ' id='thousandSeparator_WQ_csv'/></div>
+        <div><input type='text' value='6' name='valueIndex_WQ' id='valueIndex_WQ_csv'/></div>
+        <div><input type='text' value='' name='json_WQ' id='json_WQ_csv'/></div>
+        <div><input type='text' value='' name='quote_WQ' id='quote_WQ_csv'/></div>
+        <div><input type='text' value='' name='title_WQ' id='title_WQ_csv'/></div>
+        <div><input type='text' value='' name='subtitle_WQ' id='subtitle_WQ_csv'/></div>
     </form>
 
     <form style='display: none;' id='excelForProcedures' name='excelForProcedures' method='POST' action='http://faostat3.fao.org/wds/rest/procedures/excel' target='_new'>
