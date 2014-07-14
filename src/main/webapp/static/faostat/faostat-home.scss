@@ -1,4 +1,4 @@
-/** FAOSTAT HOME **/
+/** FAOSTAT HOME**/
 
 @import 'sprites';
 @import 'mixin';
@@ -367,6 +367,62 @@
     }
   }
 }
+
+/** FAOSTAT WARNING **/
+.fs-warning-wrapper{
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: $transp-black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  .fs-warning {
+    position: fixed;
+    @include box-shadow(0px, 4px, 3px, $shadow-color, false);
+    width: 500px;
+    margin-left: -250px;
+    margin-top: -150px;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    @include border-radius(3px);
+    .standard-title{
+      text-align: center;
+      margin-top: 10px;
+    }
+    .fs-warning-message {
+      padding: $half-padding;
+    }
+    .fs-download-hint{
+      max-height: 160px;
+      overflow-y: scroll;
+      padding: 0 10px 0 10px;
+      ul{
+        list-style: none !important;
+        padding: $half-padding;
+        li {
+          list-style: none !important;
+          padding: 4px;
+        }
+      }
+    }
+    .fs-warning-btn{
+
+      #dwl-preview-btn{
+        top: 0;
+        width: 200px;
+        margin-left: -100px;
+        left: 50%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+
+
 
 
 

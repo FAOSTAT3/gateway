@@ -11,6 +11,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #666666;
     font-size: 11px !important;
+    position: relative;
 }
 
 p {
@@ -3144,16 +3145,46 @@ a:visited {
 
 #bulk-downloads-menu {
     overflow: visible;
-    top:-16px !important;
+    top:-21px !important;
     right: 0px;
     width: 224px !important;
+}
+
+#reporting-tables-menu.jqx-widget-header {
+    background: none repeat scroll 0 0 rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    margin-top: 7px;
+}
+
+#reporting-tables-menu {
+    overflow: visible;
+    top:-21px !important;
+    right: 0px;
+    width: 224px !important;
+    left: 300px;
 }
 
 #arrowbulk-root{
     display: none !important;
 }
 
+#arrowreporting-tables-root{
+    display: none !important;
+}
+
 #bulk-root {
+    background-color: #399BCC;
+    border-color: #2471AA;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 25px 1px 25px!important;
+    text-transform: uppercase;
+    height: 31px;
+    float: none !important;
+}
+
+#reporting-tables-root {
     background-color: #399BCC;
     border-color: #2471AA;
     color: #FFFFFF;
@@ -3170,6 +3201,10 @@ a:visited {
 }
 
 #bulk-root:hover {
+    background-color: #2471AA;
+}
+
+#reporting-tables-root:hover {
     background-color: #2471AA;
 }
 
@@ -3713,3 +3748,5 @@ a#btnFS{
 .single-result-table-box {
     margin-top: 10px;
 }
+
+
