@@ -2492,6 +2492,12 @@ div.obj-box-download:nth-child(even) {
     margin:0px !important;
 }
 
+#table_1 td,#table_2 td {
+    padding: 8px 8px 8px 8px !important;
+    margin:0px !important;
+    border-bottom: 1px solid #90AEC3;
+}
+
 .dataTable thead th {
     background-color: #90AEC3 !important;
     border-image: none !important;
