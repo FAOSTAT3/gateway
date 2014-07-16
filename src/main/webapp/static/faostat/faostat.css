@@ -3162,14 +3162,15 @@ a:visited {
     background: none repeat scroll 0 0 rgba(255,255,255,0);
     border-color: rgba(255,255,255,0);
     margin-top: 7px;
+
 }
 
 #reporting-tables-menu {
     overflow: visible;
-    top:-21px !important;
-    right: 0px;
+    top:-4px !important;
+    left: 526px;
     width: 224px !important;
-    left: 300px;
+    position: relative;
 }
 
 #arrowbulk-root{
