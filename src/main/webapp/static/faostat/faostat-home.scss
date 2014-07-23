@@ -243,17 +243,17 @@
 
 /* HOMEPAGE CONTENT */
 .fs-btn-database {
-  @include fs-rect-button (3, 1, $medium-blue)
+  @include fs-rect-button (3, 1, $medium-blue, $medium-blue-hover);
 }
 
 .fs-btn-countryProfile {
-  @include fs-rect-button (4, 1, $main-blue)
+  @include fs-rect-button (4, 1, $main-blue, $blue-hover);
 }
 
 .fs-btn-key {
-  @include fs-rect-button (6, 1, $main-blue)
+  @include fs-rect-button (6, 1, $gray, $gray);
+  pointer-events: none; /* Disable button until KEY INDICATORS are ready */
 }
-
 
 /* HOME CHARTS */
 .fs-home-charts {

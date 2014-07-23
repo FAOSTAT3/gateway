@@ -30,6 +30,17 @@
   }
 }
 
+@mixin gradient ($colorA, $colorB) {
+  background: $colorA; /* Old browsers */
+  background: -moz-linear-gradient(top,  $colorA 0%, $colorB 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$colorA), color-stop(100%,$colorB)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $colorA 0%,$colorB 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $colorA 0%,$colorB 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $colorA 0%,$colorB 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $colorA 0%,$colorB 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorA', endColorstr='$colorB',GradientType=0 ); /* IE6-9 */
+}
+
 @mixin fs-sprite($url, $width, $height , $x, $y) {
   background-image: url($url);
   background-repeat: no-repeat;
@@ -69,8 +80,8 @@
   }
 }
 
-@mixin fs-rect-button ($x, $y, $color) {
-  background-color: $color;
+@mixin fs-rect-button ($x, $y, $colorA, $colorB) {
+  background-color: $colorA;
   min-height: 75px;
   width: 100%;
   padding: 10px 10px 10px 75px;
@@ -94,5 +105,8 @@
     em {
       font: $fs-rect-btn-text-small;
     }
+  }
+  &:hover {
+    @include gradient ($colorA, $colorB);
   }
 }
