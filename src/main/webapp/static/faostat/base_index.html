@@ -232,6 +232,10 @@
                 <img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/logo-footer.png" alt="faostat-for a world without hunger" class="fs-logo-footer">
                 <span class="fs-footer-link">
                     <a target="_blank" href="http://www.fao.org/corp/copyright/$_ISO2_LANG/">&#169; FAO 2014</a>
+                    <br>
+                    <a id='country_warning' style='cursor: pointer;' onclick='CORE.show_country_alert();'>
+                        Country/Territorial Notes
+                    </a>
                 </span>
             </div>
         </div>
@@ -247,7 +251,7 @@
 
 
     <form style='display: none;' id='excelForm' name='excelForm' method='POST'
-          action='http://faostat3.fao.org/wds/rest/table/excel' target='_blank'>
+          action='http://localhost:8080/wds/rest/table/excel' target='_blank'>
         <div><input type='text' value='faostat' name='cssFilename' id='cssFilename'/></div>
         <div><input type='text' value='' name='datasource' id='datasource'/></div>
         <div><input type='text' value='2' name='decimalNumbers' id='decimalNumbers'/></div>
@@ -258,7 +262,7 @@
     </form>
 
     <form style='display: none;' onsubmit='F3DWLD.onSubmit();' id='excelFormWithQuotes' name='excelFormWithQuotes'
-          method='POST' action='http://faostat3.fao.org/wds/rest/exporter/streamexcel' target='_new'>
+          method='POST' action='http://localhost:8080/wds/rest/exporter/streamexcel' target='_new'>
         <div><input type='text' value='faostat' name='cssFilename_WQ' id='cssFilename_WQ'/></div>
         <div><input type='text' value='' name='datasource_WQ' id='datasource_WQ'/></div>
         <div><input type='text' value='2' name='decimalNumbers_WQ' id='decimalNumbers_WQ'/></div>
@@ -275,7 +279,7 @@
           onsubmit='F3DWLD.onSubmit();'
           id='csvFormWithQuotes' name='csvFormWithQuotes'
           method='POST'
-          action='http://faostat3.fao.org/wds/rest/exporter/streamcsv'
+          action='http://localhost:8080/wds/rest/exporter/streamcsv'
           target='_new'>
         <div><input type='text' value='faostat' name='cssFilename_WQ' id='cssFilename_WQ_csv'/></div>
         <div><input type='text' value='' name='datasource_WQ_csv' id='datasource_WQ_csv'/></div>
@@ -289,18 +293,18 @@
         <div><input type='text' value='' name='subtitle_WQ_csv' id='subtitle_WQ_csv'/></div>
     </form>
 
-    <form style='display: none;' id='excelForProcedures' name='excelForProcedures' method='POST' action='http://faostat3.fao.org/wds/rest/procedures/excel' target='_new'>
+    <form style='display: none;' id='excelForProcedures' name='excelForProcedures' method='POST' action='http://localhost:8080/wds/rest/procedures/excel' target='_new'>
         <div><input type='text' value='payload_excel' name='payload_excel' id='payload_excel'/></div>
     </form>
 
-    <form style='display: none;' id='csvForProcedures' name='csvForProcedures' method='POST' action='http://faostat3.fao.org/wds/rest/procedures/csv' target='_new'>
+    <form style='display: none;' id='csvForProcedures' name='csvForProcedures' method='POST' action='http://localhost:8080/wds/rest/procedures/csv' target='_new'>
         <div><input type='text' value='payload_csv' name='payload_csv' id='payload_csv'/></div>
     </form>
 
-    <form style='display: none;' id='growthRateExcelForm' name='growthRateExcelForm' method='POST' action='http://faostat3.fao.org/wds/rest/exporter/excel' target='_blank'>
+    <form style='display: none;' id='growthRateExcelForm' name='growthRateExcelForm' method='POST' action='http://localhost:8080/wds/rest/exporter/excel' target='_blank'>
         <div><input type='text' value='data' name='data' id='data'/></div>
     </form>
-<form id="formExcel" method="post" action="http://faostat3.fao.org/faostat.olap.ws/rest/ExcelCreator">
+<form id="formExcel" method="post" action="http://localhost:8080/faostat.olap.ws/rest/ExcelCreator">
 
     <input id="excelData" type="hidden" value="" name="data"></input>
     <input type="hidden" value="xls" name="type"></input>
