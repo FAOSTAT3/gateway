@@ -607,12 +607,13 @@ input {
 .fs-logo {
   width: 160px;
   height: 34px;
-  background-image: url("images/fs-logo.png");
+  background-image: url("images/fs-logo-new.png");
   background-size: 160px 34px;
   background-repeat: no-repeat; }
 
 .fs-united {
   background-color: #379bce;
+  width: 550px;
   height: 50px;
   float: left;
   padding: 14px 0 0 65px;
@@ -745,7 +746,8 @@ input {
 
 .fs-feedback {
   height: 50px;
-  background-color: #379bce; }
+  background-color: #379bce;
+  position: relative; }
   .fs-feedback .fs-feedback-system-button {
     cursor: pointer;
     float: right;
@@ -756,7 +758,7 @@ input {
       color: white;
       position: relative;
       top: 15px;
-      right: 10px; }
+      right: 60px; }
       .fs-feedback .fs-feedback-system-button span i {
         color: white;
         position: relative;
@@ -765,7 +767,9 @@ input {
     .fs-feedback .fs-feedback-system-button .fs-feedback-icon {
       width: 50px;
       height: 50px;
-      float: right;
+      position: absolute;
+      right: 0;
+      top: 0;
       padding: 7px;
       background-color: #40769e; }
       .fs-feedback .fs-feedback-system-button .fs-feedback-icon:before {

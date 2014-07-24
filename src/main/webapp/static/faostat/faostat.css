@@ -324,15 +324,7 @@ rispetto a questo div */
     min-height: 500px;
 }
 
-/* HEADER SELECTORS */
 
-#selectorsHead{
-    width: 805px;
-    background-color: #FFFFFF;
-    position: relative;
-    margin-left: -5px;
-    padding: 0 25px 0 5px;
-}
 
 /* JQWIDGET MODIFICATOR */
 
@@ -1076,7 +1068,7 @@ rispetto a questo div */
     margin: 0 0 0 0;
     background-color: #FFF;
     top: 0px;
-    height: 38px;
+    height: 28px;
     border: 1px solid;
     border-bottom-color: #CCCCCC;
     border-top-color: #ffffff;
@@ -1108,9 +1100,9 @@ rispetto a questo div */
     color: #2471AA;
     width: 590px;
     float: left;
-    padding: 6px 0 0 0;
+    padding: 0 0 0 0;
     margin: 0px;
-    font: 300 19px 'Roboto Condensed',sans-serif !important;
+    font: 300 16px 'Roboto Condensed',sans-serif !important;
 }
 
 .noteHead img {
@@ -2805,6 +2797,7 @@ div.obj-box-download:nth-child(even) {
 .right-content-browse{
     overflow:hidden; float:left; display:inline;
     width: 800px;
+    position: relative;
 }
 
 
@@ -3459,24 +3452,48 @@ a#btnFS{
     margin-right: 20px;
 }
 
-
+/* HEADER SELECTORS */
 
 .is-sticky #selectorsHead{
     background-color: #EFEFEF;
     -moz-box-shadow: 0 3px 5px -3px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow:0 3px 10px -3px rgba(0, 0, 0, 0.2);
     box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.2);
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    /*-webkit-transition: all 0.3s ease 0s;*/
+    /*-moz-transition: all 0.3s ease 0s;*/
+    /*-o-transition: all 0.3s ease 0s;*/
+    /*transition: all 0.3s ease 0s;*/
+    margin-left: -305px;
+    left: 50%;
+
 }
+
+#selectorsHead {
+    width: 805px;
+    background-color: #FFFFFF;
+    position: relative;
+    padding: 0 25px 0 5px;
+
+
+
+}
+
+
+
+
+
+#fs-menu-header-sticky-wrapper{
+    position: relative;
+}
+
 
 
 .is-sticky #fs-menu-header {
     background-color: white;
     /*padding: 0 20px 0 10px;*/
     width:1000px;
+    margin-left: -500px;
+    left: 50%;
 
     /*border: 1px solid #FFFFFF;*/
     /*-moz-box-shadow: 0 3px 5px -3px #000000;*/
@@ -3502,6 +3519,10 @@ a#btnFS{
     /*transition: all 0.3s ease 0s;*/
     z-index: 10000000;
 }
+
+
+
+
 
 
 /** SEARCH **/
