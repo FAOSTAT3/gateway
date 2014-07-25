@@ -10,7 +10,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : '168.202.28.210:8080',
+        baseURL : 'localhost:8080',
 
         groupCode : null,
 
@@ -238,21 +238,24 @@ if (!window.CORE) {
         },
 
         breakLabel: function (lbl) {
-            //var words = 3;
-            var chars = 23;
-            var c = 0;
-            var index = 0;
-            for (var i = 0 ; i < lbl.length ; i++) {
-                if (lbl.charAt(i) == ' ') {
-                    c++;
-                    index = i;
+            if (lbl == 'Indicators from Household Surveys (gender, area, socioeconomics)') {
+                return 'Indicators from<br> Household Surveys<br> (gender, area,<br> socioeconomics)';
+            } else {
+                var chars = 23;
+                var c = 0;
+                var index = 0;
+                for (var i = 0 ; i < lbl.length ; i++) {
+                    if (lbl.charAt(i) == ' ') {
+                        c++;
+                        index = i;
+                    }
+                    if (i >= chars) {
+                        // return lbl.substring(0, i) + '<br>' + lbl.substring(i);
+                        return lbl.substring(0, index) + '<br>' + lbl.substring(index);
+                    }
                 }
-                if (i >= chars) {
-                    // return lbl.substring(0, i) + '<br>' + lbl.substring(i);
-                    return lbl.substring(0, index) + '<br>' + lbl.substring(index);
-                }
+                return lbl;
             }
-            return lbl;
         },
 
         breakLabelList: function (lbl, charsLength) {
