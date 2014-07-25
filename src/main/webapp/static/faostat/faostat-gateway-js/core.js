@@ -238,7 +238,7 @@ if (!window.CORE) {
         },
 
         breakLabel: function (lbl) {
-            if (lbl == 'Indicators from Household Surveys (gender, area, socioeconomics)') {
+            if (lbl && lbl.length > 0 && lbl == 'Indicators from Household Surveys (gender, area, socioeconomics)') {
                 return 'Indicators from<br> Household Surveys<br> (gender, area,<br> socioeconomics)';
             } else {
                 var chars = 23;
