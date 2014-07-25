@@ -18,16 +18,9 @@
         "/faostat-browse-js/js/FAOSTATBrowseUtils.js"
     ],
     "analysis" : [
-        "http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxpanel.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtree.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxexpander.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxbuttons.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxlistbox.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcombobox.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.selection.js",
         "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
         "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js",
         "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
@@ -54,6 +47,9 @@
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/mwheelIntent.js",
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/jquery.jscrollpane.min.js",
         "http://fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/jquery.jscrollpane.css",
+
+        "http://fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.jquery.min.js",
+        "http://fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css",
 
         "/faostat-download-js/js/chromatable/jquery.chromatable.js",
         "/faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack.js",
@@ -103,6 +99,8 @@
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.columnsresize.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.sort.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.selection.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.export.js",
+        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.export.js",
         "/faostat-compare-js/js/CompareI18N.js",
         "/faostat-compare-js/js/CompareI18NInjector.js",
         "/faostat-compare-js/js/CompareUIBuilderSelectors.js",

@@ -125,7 +125,7 @@ input {
 
 /* TOOLTIP */
 #powerTip {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(64, 118, 158, 0.9);
   border-radius: 3px;
   color: white;
   cursor: default;
@@ -153,19 +153,19 @@ input {
   top: 50%; }
 
 #powerTip.n:before {
-  border-top: 10px solid rgba(0, 0, 0, 0.7);
+  border-top: 10px solid rgba(64, 118, 158, 0.9);
   bottom: -10px; }
 
 #powerTip.e:before {
-  border-right: 10px solid rgba(0, 0, 0, 0.7);
+  border-right: 10px solid rgba(64, 118, 158, 0.9);
   left: -10px; }
 
 #powerTip.s:before {
-  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  border-bottom: 10px solid rgba(64, 118, 158, 0.9);
   top: -10px; }
 
 #powerTip.w:before {
-  border-left: 10px solid rgba(0, 0, 0, 0.7);
+  border-left: 10px solid rgba(64, 118, 158, 0.9);
   right: -10px; }
 
 #powerTip.ne:before, #powerTip.se:before {
@@ -179,11 +179,11 @@ input {
   right: 10px; }
 
 #powerTip.ne:before, #powerTip.nw:before {
-  border-top: 10px solid rgba(0, 0, 0, 0.7);
+  border-top: 10px solid rgba(64, 118, 158, 0.9);
   bottom: -10px; }
 
 #powerTip.se:before, #powerTip.sw:before {
-  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  border-bottom: 10px solid rgba(64, 118, 158, 0.9);
   top: -10px; }
 
 /* DOMAIN ICONS */
@@ -194,6 +194,7 @@ input {
   border-bottom: 1px solid #e6e6e6; }
   .fs-domain .fs-domain-ico, .fs-domain-prod .fs-domain-ico, .fs-domain-emiag .fs-domain-ico, .fs-domain-pric .fs-domain-ico, .fs-domain-popu .fs-domain-ico, .fs-domain-trade .fs-domain-ico, .fs-domain-emilu .fs-domain-ico, .fs-domain-reso .fs-domain-ico, .fs-domain-fores .fs-domain-ico, .fs-domain-foodsec .fs-domain-ico, .fs-domain-foodsup .fs-domain-ico, .fs-domain-inves .fs-domain-ico, .fs-domain-asti .fs-domain-ico, .fs-domain-fbs .fs-domain-ico, .fs-domain-commbal .fs-domain-ico, .fs-domain-agriind .fs-domain-ico, .fs-domain-emerg .fs-domain-ico {
     float: left;
+    position: relative;
     border: 1px solid #379bce;
     padding: 1px 0 1px 0;
     width: 38px;
@@ -211,6 +212,23 @@ input {
       width: 35px;
       height: 35px;
       background-position: 0px -70px; }
+    .fs-domain .fs-domain-ico:after, .fs-domain-prod .fs-domain-ico:after, .fs-domain-emiag .fs-domain-ico:after, .fs-domain-pric .fs-domain-ico:after, .fs-domain-popu .fs-domain-ico:after, .fs-domain-trade .fs-domain-ico:after, .fs-domain-emilu .fs-domain-ico:after, .fs-domain-reso .fs-domain-ico:after, .fs-domain-fores .fs-domain-ico:after, .fs-domain-foodsec .fs-domain-ico:after, .fs-domain-foodsup .fs-domain-ico:after, .fs-domain-inves .fs-domain-ico:after, .fs-domain-asti .fs-domain-ico:after, .fs-domain-fbs .fs-domain-ico:after, .fs-domain-commbal .fs-domain-ico:after, .fs-domain-agriind .fs-domain-ico:after, .fs-domain-emerg .fs-domain-ico:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -22px;
+      margin-top: -22px;
+      background-color: transparent;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      border-radius: 100%;
+      border: 4px solid transparent;
+      transition: all 0.218s ease 0s; }
   .fs-domain .fs-domain-text, .fs-domain-prod .fs-domain-text, .fs-domain-emiag .fs-domain-text, .fs-domain-pric .fs-domain-text, .fs-domain-popu .fs-domain-text, .fs-domain-trade .fs-domain-text, .fs-domain-emilu .fs-domain-text, .fs-domain-reso .fs-domain-text, .fs-domain-fores .fs-domain-text, .fs-domain-foodsec .fs-domain-text, .fs-domain-foodsup .fs-domain-text, .fs-domain-inves .fs-domain-text, .fs-domain-asti .fs-domain-text, .fs-domain-fbs .fs-domain-text, .fs-domain-commbal .fs-domain-text, .fs-domain-agriind .fs-domain-text, .fs-domain-emerg .fs-domain-text {
     margin-left: 10px;
     height: 38px;
@@ -234,7 +252,7 @@ input {
       margin-right: 20px;
       position: relative;
       /* remove if there is no animation */
-      top: -8px;
+      top: -6px;
       /* remove if there is no animation */
       transition: top 0.1s ease 0s; }
   .fs-domain:hover, .fs-domain-prod:hover, .fs-domain-emiag:hover, .fs-domain-pric:hover, .fs-domain-popu:hover, .fs-domain-trade:hover, .fs-domain-emilu:hover, .fs-domain-reso:hover, .fs-domain-fores:hover, .fs-domain-foodsec:hover, .fs-domain-foodsup:hover, .fs-domain-inves:hover, .fs-domain-asti:hover, .fs-domain-fbs:hover, .fs-domain-commbal:hover, .fs-domain-agriind:hover, .fs-domain-emerg:hover {
@@ -245,6 +263,9 @@ input {
     .fs-domain:hover .fs-domain-text span, .fs-domain-prod:hover .fs-domain-text span, .fs-domain-emiag:hover .fs-domain-text span, .fs-domain-pric:hover .fs-domain-text span, .fs-domain-popu:hover .fs-domain-text span, .fs-domain-trade:hover .fs-domain-text span, .fs-domain-emilu:hover .fs-domain-text span, .fs-domain-reso:hover .fs-domain-text span, .fs-domain-fores:hover .fs-domain-text span, .fs-domain-foodsec:hover .fs-domain-text span, .fs-domain-foodsup:hover .fs-domain-text span, .fs-domain-inves:hover .fs-domain-text span, .fs-domain-asti:hover .fs-domain-text span, .fs-domain-fbs:hover .fs-domain-text span, .fs-domain-commbal:hover .fs-domain-text span, .fs-domain-agriind:hover .fs-domain-text span, .fs-domain-emerg:hover .fs-domain-text span {
       top: 2px;
       transition: top 0.218s ease 0s; }
+    .fs-domain:hover .fs-domain-ico:after, .fs-domain-prod:hover .fs-domain-ico:after, .fs-domain-emiag:hover .fs-domain-ico:after, .fs-domain-pric:hover .fs-domain-ico:after, .fs-domain-popu:hover .fs-domain-ico:after, .fs-domain-trade:hover .fs-domain-ico:after, .fs-domain-emilu:hover .fs-domain-ico:after, .fs-domain-reso:hover .fs-domain-ico:after, .fs-domain-fores:hover .fs-domain-ico:after, .fs-domain-foodsec:hover .fs-domain-ico:after, .fs-domain-foodsup:hover .fs-domain-ico:after, .fs-domain-inves:hover .fs-domain-ico:after, .fs-domain-asti:hover .fs-domain-ico:after, .fs-domain-fbs:hover .fs-domain-ico:after, .fs-domain-commbal:hover .fs-domain-ico:after, .fs-domain-agriind:hover .fs-domain-ico:after, .fs-domain-emerg:hover .fs-domain-ico:after {
+      border: 4px solid rgba(55, 155, 206, 0.3);
+      transition: all 0.218s ease 0s; }
   .fs-domain:last-child, .fs-domain-prod:last-child, .fs-domain-emiag:last-child, .fs-domain-pric:last-child, .fs-domain-popu:last-child, .fs-domain-trade:last-child, .fs-domain-emilu:last-child, .fs-domain-reso:last-child, .fs-domain-fores:last-child, .fs-domain-foodsec:last-child, .fs-domain-foodsup:last-child, .fs-domain-inves:last-child, .fs-domain-asti:last-child, .fs-domain-fbs:last-child, .fs-domain-commbal:last-child, .fs-domain-agriind:last-child, .fs-domain-emerg:last-child {
     border-bottom: 1px solid transparent; }
 
@@ -586,12 +607,13 @@ input {
 .fs-logo {
   width: 160px;
   height: 34px;
-  background-image: url("images/fs-logo.png");
+  background-image: url("images/fs-logo-new.png");
   background-size: 160px 34px;
   background-repeat: no-repeat; }
 
 .fs-united {
   background-color: #379bce;
+  width: 550px;
   height: 50px;
   float: left;
   padding: 14px 0 0 65px;
@@ -619,9 +641,9 @@ input {
   background-color: white;
   position: relative;
   height: 33px;
-  -webkit-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1); }
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); }
 
 .fs-menu {
   /** Apply to menu element if selected */ }
@@ -724,7 +746,8 @@ input {
 
 .fs-feedback {
   height: 50px;
-  background-color: #379bce; }
+  background-color: #379bce;
+  position: relative; }
   .fs-feedback .fs-feedback-system-button {
     cursor: pointer;
     float: right;
@@ -735,7 +758,7 @@ input {
       color: white;
       position: relative;
       top: 15px;
-      right: 10px; }
+      right: 60px; }
       .fs-feedback .fs-feedback-system-button span i {
         color: white;
         position: relative;
@@ -744,7 +767,9 @@ input {
     .fs-feedback .fs-feedback-system-button .fs-feedback-icon {
       width: 50px;
       height: 50px;
-      float: right;
+      position: absolute;
+      right: 0;
+      top: 0;
       padding: 7px;
       background-color: #40769e; }
       .fs-feedback .fs-feedback-system-button .fs-feedback-icon:before {
@@ -787,6 +812,23 @@ input {
     font: normal normal 400 14px/12px "Roboto Condensed", sans-serif !important; }
     .fs-btn-database span em {
       font: normal normal 400 10px/12px "Roboto Condensed", sans-serif !important; }
+  .fs-btn-database:hover {
+    background: #40769e;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #40769e), color-stop(100%, #598db2));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #40769e 0%, #598db2 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #40769e 0%, #598db2 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorA', endColorstr='$colorB',GradientType=0 );
+    /* IE6-9 */ }
 
 .fs-btn-countryProfile {
   background-color: #379bce;
@@ -815,15 +857,34 @@ input {
     font: normal normal 400 14px/12px "Roboto Condensed", sans-serif !important; }
     .fs-btn-countryProfile span em {
       font: normal normal 400 10px/12px "Roboto Condensed", sans-serif !important; }
+  .fs-btn-countryProfile:hover {
+    background: #379bce;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #379bce), color-stop(100%, #62b6e0));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #379bce 0%, #62b6e0 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #379bce 0%, #62b6e0 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorA', endColorstr='$colorB',GradientType=0 );
+    /* IE6-9 */ }
 
 .fs-btn-key {
-  background-color: #379bce;
+  background-color: #a3a3a3;
   min-height: 75px;
   width: 100%;
   padding: 10px 10px 10px 75px;
   position: relative;
   cursor: pointer;
-  margin: 20px 0 20px 0; }
+  margin: 20px 0 20px 0;
+  pointer-events: none;
+  /* Disable button until KEY INDICATORS are ready */ }
   .fs-btn-key:before {
     content: '';
     display: block;
@@ -843,6 +904,23 @@ input {
     font: normal normal 400 14px/12px "Roboto Condensed", sans-serif !important; }
     .fs-btn-key span em {
       font: normal normal 400 10px/12px "Roboto Condensed", sans-serif !important; }
+  .fs-btn-key:hover {
+    background: #a3a3a3;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a3a3a3), color-stop(100%, #a3a3a3));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #a3a3a3 0%, #a3a3a3 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #a3a3a3 0%, #a3a3a3 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$colorA', endColorstr='$colorB',GradientType=0 );
+    /* IE6-9 */ }
 
 /* HOME CHARTS */
 .fs-home-charts {
@@ -972,16 +1050,16 @@ input {
   display: none;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(64, 118, 158, 0.9);
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2147483647; }
   .fs-warning-wrapper .fs-warning {
     position: fixed;
-    -webkit-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
     width: 500px;
     margin-left: -250px;
     margin-top: -150px;

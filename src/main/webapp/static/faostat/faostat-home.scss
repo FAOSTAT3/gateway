@@ -26,7 +26,6 @@
   height: 50px;
 }
 
-
 .fs-logo-holder {
   width: 200px;
   height: 50px;
@@ -37,11 +36,12 @@
 }
 
 .fs-logo {
-  @include retina-image('images/fs-logo.png', 160px , 34px);
+  @include retina-image('images/fs-logo-new.png', 160px , 34px);
 }
 
 .fs-united {
   background-color: $main-blue;
+  width:550px;
   height: 50px;
   float: left;
   padding: 14px 0 0 65px;
@@ -75,7 +75,8 @@
   background-color: white;
   position: relative;
   height: 33px;
-  @include box-shadow(0px, 4px, 3px, $shadow-color, false);
+  //@include box-shadow(0px, 4px, 3px, $shadow-color, false);
+  @include box-shadow(0px, 0px, 1px, $shadow-color, false);
 }
 
 .fs-menu {
@@ -199,6 +200,7 @@
 .fs-feedback {
   height: 50px;
   background-color: $main-blue;
+  position: relative;
   .fs-feedback-system-button {
     cursor: pointer;
     float: right;
@@ -209,7 +211,7 @@
       color: white;
       position: relative;
       top: 15px;
-      right: 10px;
+      right: 60px;
       i{
         color: white;
         position: relative;
@@ -219,7 +221,9 @@
     }
     .fs-feedback-icon{
       @include fs-square(50px);
-      float: right;
+      position: absolute;
+      right: 0;
+      top: 0;
       padding: 7px;
       background-color: $medium-blue;
       &:before{
@@ -243,17 +247,17 @@
 
 /* HOMEPAGE CONTENT */
 .fs-btn-database {
-  @include fs-rect-button (3, 1, $medium-blue)
+  @include fs-rect-button (3, 1, $medium-blue, $medium-blue-hover);
 }
 
 .fs-btn-countryProfile {
-  @include fs-rect-button (4, 1, $main-blue)
+  @include fs-rect-button (4, 1, $main-blue, $blue-hover);
 }
 
 .fs-btn-key {
-  @include fs-rect-button (6, 1, $main-blue)
+  @include fs-rect-button (6, 1, $gray, $gray);
+  pointer-events: none; /* Disable button until KEY INDICATORS are ready */
 }
-
 
 /* HOME CHARTS */
 .fs-home-charts {

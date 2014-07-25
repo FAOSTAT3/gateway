@@ -87,6 +87,9 @@ if (!window.FAOSTATGateway) {
             $('#lang' + CORE.lang).addClass("fs-lan-selected");
 
             $('#fs-feedbacksystem-text').html($.i18n.prop('_feedbacksystem_text'));
+
+            $('#country_warning').html($.i18n.prop('_country_alert_title'));
+
         },
 
 

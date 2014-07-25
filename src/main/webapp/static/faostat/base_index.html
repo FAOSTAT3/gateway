@@ -14,6 +14,7 @@
 
     <!-- Highcharts -->
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/highcharts/4.0.1/js/highcharts.js'></script>
+    <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/highcharts/4.0.1/js/modules/exporting.js'></script>
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/FENIXChartsLibrary/0.4/FENIXChartsLibrary.js'></script>
 
     <!-- JQWidgets -->
@@ -68,11 +69,10 @@
     <script type='text/javascript' src='http://$_BASE_URL/faostat-browse-js/js/faostat-browse.js'></script>
 
     <!-- FAOSTAT Analysis -->
-    <script type='text/javascript' src='http://$_BASE_URL/analysis/js/f3-analysis.js'></script>
+    <script type='text/javascript' src='http://$_BASE_URL/faostat-analysis-js/js/faostat-analysis.js'></script>
 
     <!-- FAOSTAT Methods & Standards -->
     <script type='text/javascript' src='http://$_BASE_URL/mes/js/mes.js'></script>
-    <script type='text/javascript' src='http://$_BASE_URL/mes/js/google-analytics-manager.js'></script>
 
     <!-- FAOSTAT Search -->
     <script type="text/javascript" src="http://$_BASE_URL/faostat-search-js/js/faostat-search.js"></script>
@@ -144,7 +144,7 @@
             </a>
         </div>
         <a id="close-fs-warning" class="fancybox-item fancybox-close" title="Close"></a>
-</div>
+    </div>
 
 </div>
 
@@ -232,6 +232,10 @@
                 <img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/logo-footer.png" alt="faostat-for a world without hunger" class="fs-logo-footer">
                 <span class="fs-footer-link">
                     <a target="_blank" href="http://www.fao.org/corp/copyright/$_ISO2_LANG/">&#169; FAO 2014</a>
+                    <br>
+                    <a id='country_warning' style='cursor: pointer;' onclick='CORE.show_country_alert();'>
+                        Country/Territorial Notes
+                    </a>
                 </span>
             </div>
         </div>
@@ -300,29 +304,29 @@
     <form style='display: none;' id='growthRateExcelForm' name='growthRateExcelForm' method='POST' action='http://faostat3.fao.org/wds/rest/exporter/excel' target='_blank'>
         <div><input type='text' value='data' name='data' id='data'/></div>
     </form>
-<form id="formExcel" method="post" action="http://faostat3.fao.org/faostat.olap.ws/rest/ExcelCreator">
+    <form id="formExcel" method="post" action="http://faostat3.fao.org/faostat.olap.ws/rest/ExcelCreator">
 
-    <input id="excelData" type="hidden" value="" name="data"></input>
-    <input type="hidden" value="xls" name="type"></input>
+        <input id="excelData" type="hidden" value="" name="data"></input>
+        <input type="hidden" value="xls" name="type"></input>
 
-</form>
-<form id="csvDataForm" action="/faostat-download-js/pivotAgg/json.jsp" method="POST">
- <input id="csvData" type="hidden" name="data" value=""></input>
-</form>
-    
+    </form>
+    <form id="csvDataForm" action="/faostat-download-js/pivotAgg/json.jsp" method="POST">
+        <input id="csvData" type="hidden" name="data" value=""></input>
+    </form>
+
     <form id="exportCSVOLAP" action="/faostat-download-js/pivotAgg/exportCSVOLAP.jsp" method="POST" target="_export">
- <input id="CSVOLAPsql" type="hidden" name="sql" value=""></input>
-  <input id="CSVOLAPjson" type="hidden" name="json" value=""></input>
-   <input id="CSVOLAPoption" type="hidden" name="option" value=""></input>
-</form>
+        <input id="CSVOLAPsql" type="hidden" name="sql" value=""></input>
+        <input id="CSVOLAPjson" type="hidden" name="json" value=""></input>
+        <input id="CSVOLAPoption" type="hidden" name="option" value=""></input>
+    </form>
     <!--<form id='G1FORM' name='G1FORM' method='POST' action='http://ldvapp07.fao.org:8030/wds/rest/exporter/htmltable'-->
-          <!--target='_blank' style='display: none;'>-->
-        <!--<input type='text' name='data' value='' id='G1_DATA'/>-->
+    <!--target='_blank' style='display: none;'>-->
+    <!--<input type='text' name='data' value='' id='G1_DATA'/>-->
     <!--</form>-->
 
     <!--<form id='G2FORM' name='G2FORM' method='POST' action='http://ldvapp07.fao.org:8030/wds/rest/exporter/htmltable'-->
-          <!--target='_blank' style='display: none;'>-->
-        <!--<input type='text' name='data' value='' id='G2_DATA'/>-->
+    <!--target='_blank' style='display: none;'>-->
+    <!--<input type='text' name='data' value='' id='G2_DATA'/>-->
     <!--</form>-->
 
 
