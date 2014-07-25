@@ -253,7 +253,19 @@
         <h3 id="fs-featured-links"></h3>
         <div class="fs-btn-key"><span id="fs-coming-soon"></span></div>
         <div class="fs-btn-database"><span id="FAOSTAT-ZIP-Download"></span></div>
-        <div onclick="window.open('http://faostat.fao.org/site/666/default.aspx','window');" class="fs-btn-countryProfile"><span id="fs-country-profiles"></span></div>
+          <div  class="fs-btn-countryProfile fs-feedback fs-feedback-system-button  various myButton" id="btnCountry" data-fancybox-type="iframe" 
+           href="http://faostat.fao.org/CountryProfiles/Country_Profile/default.aspx" 
+           target="myFanzy"">
+          <span id="fs-country-profiles"></span>
+         </div> 
+        <script>
+            $('#btnCountry').fancybox({
+'width':1100,
+'height':1000,
+'type':'iframe',
+'autoScale':'false'
+});
+    </script>
         <h3 id='whatsNewText'></h3>
         <div id='whatsNew-content'>
             <i class='fa fa-refresh fa-spin fa-5x'></i>
@@ -264,7 +276,7 @@
         </div>
         <h3 id="fs-contacts"></h3>
         <h4 class="fs-statistics-division"></h4>
-        <p id="fs-essdd"><br> Viale delle Terme di Caracalla <br> 00153 Rome, Italy <br><br> <a href='mailto:FAO-statistics@fao.org '> FAO-statistics@fao.org </a></p>
+        <p id="fs-essdd"><br> Viale delle Terme di Caracalla <br> 00153 Rome, Italy <br><br> <a href='mailto:FAO-statistics@fao.org'> FAO-statistics@fao.org </a></p>
     </div>
 </div>
 
