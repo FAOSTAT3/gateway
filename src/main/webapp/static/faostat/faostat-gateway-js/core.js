@@ -10,7 +10,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : '168.202.28.214:8080',
+        baseURL : 'localhost:8080',
 
         groupCode : null,
 
