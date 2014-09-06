@@ -30,6 +30,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import org.apache.commons.collections.IteratorUtils;
@@ -51,10 +53,10 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.*;
 import org.apache.poi.hssf.usermodel.*;
 /*import org.apache.poi.xssf.usermodel.XSSFPivotTable;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-*/
+ import org.apache.poi.xssf.usermodel.XSSFRow;
+ import org.apache.poi.xssf.usermodel.XSSFSheet;
+ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+ */
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -87,8 +89,7 @@ public class ExportPOI {
     @Produces("application/vnd.ms-excel")
     public Response getHtml(
             @FormParam("myJson") String myJson, //  @PathParam("myJson") String myJson
-              @FormParam("myFlags") String myFlags 
-            ) throws IOException {
+            @FormParam("myFlags") String myFlags) throws IOException {
 
 
 
@@ -98,7 +99,7 @@ public class ExportPOI {
         HSSFSheet sheet = wb.createSheet("sheet1");
         //System.out.println("myJson");
         //System.out.println(myJson);
-      //  XSSFSheet sheet2 = wb.createSheet("sheet2");
+        //  XSSFSheet sheet2 = wb.createSheet("sheet2");
 
         /*BEGIN JACKSON*/
 
@@ -106,171 +107,148 @@ public class ExportPOI {
 
         JsonNode node = mapper.readTree(new String(myJson.getBytes(), Charset.forName("UTF-8")).replaceAll("\\?", ""));
 
-  ObjectMapper mapperFlag = new ObjectMapper();
+        ObjectMapper mapperFlag = new ObjectMapper();
 
         JsonNode nodeFlag = mapperFlag.readTree(new String(myFlags.getBytes(), Charset.forName("UTF-8")).replaceAll("\\?", ""));
-        /*NEWVERSION*/
-        /*
-        System.out.println(node.path("data"));
-        // Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
-        Iterator<JsonNode> nodeIterator = node.path("data").getElements();
+
 
         int i = 0;
+        String head[];
+        String header[];
+        String Oldhead[] = null;
+        int headLength = 0;
+        Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
+
+        Iterator<Entry<String, JsonNode>> headerIterator = node.get("header").getFields();
+
+
+
         while (nodeIterator.hasNext()) {
-            JsonNode entry = nodeIterator.next();
-            System.out.println("i : " + i);
-            //Map.Entry<String, JsonNode> entry = (Map.Entry<String, JsonNode>) nodeIterator.next();
-            XSSFRow row = sheet2.createRow(i);
+
             int j = 0;
-            System.out.println("ligne2 : " + entry.get(0) + " :" + entry.get(1));
-            Iterator<JsonNode> nodeIterator2 = entry.getElements();
-            while (nodeIterator2.hasNext()) {
-                JsonNode entry2 = nodeIterator2.next();
-                if (j == 8) {
-                    row.createCell((short) j).setCellValue(entry2.asDouble());
-                } else {
-                    row.createCell((short) j).setCellValue(entry2.asText());
+            Map.Entry<String, JsonNode> entry = (Map.Entry<String, JsonNode>) nodeIterator.next();
+
+
+            head = entry.getKey().split("\\|\\|");
+            headLength = head.length;
+            String patternStr = "<table class=\"innerCol\"><th>(.*)</th><th>(.*)</th></table>";
+            Pattern pattern = Pattern.compile(patternStr);
+            if (i == 0) {
+                //   Matcher matcherinit = pattern.matcher(head[0]);
+                HSSFRow row = sheet.createRow(0);
+                int iii = 0;
+                //boolean bCode=matcherinit.find();
+                for (int ii = 0; ii < headLength; ii++) {
+                    row.createCell((short) iii).setCellValue(" ");
+                    if (pattern.matcher(head[ii]).find()) {
+                        iii++;
+                        row.createCell((short) iii).setCellValue(" ");
+                    }
+
+                    iii++;
                 }
+
+                //iii++;  
+
+                for (final JsonNode objNode : node.get("header")) {
+                    String ret2 = objNode.asText().replaceAll("<span class=\"ordre\">.*</span>", "");
+                    Matcher matcher = pattern.matcher(ret2);
+                    if (matcher.find()) {
+                        ret2 = matcher.group(1);
+                    }
+                    row.createCell((short) iii).setCellValue(ret2);
+                    iii++;
+                    row.createCell((short) iii).setCellValue("unit");
+                    iii++;
+                    row.createCell((short) iii).setCellValue("flag");
+                    iii++;
+                }
+
+            }
+            HSSFRow row = sheet.createRow(i + 1);
+            boolean stop = true;
+            for (String k : head) {
+                String ret1 = k.replaceAll("<span class=\"ordre\">.*</span>", "");
+
+                Matcher matcher = pattern.matcher(ret1);
+
+                System.out.println(Oldhead);
+                
+                System.out.println(j);
+                 System.out.println(stop);
+                  System.out.println(i);
+                if (
+                        stop 
+                        && i > 0
+                        && Oldhead[j].replaceAll("<span class=\"ordre\">.*</span>", "").equals(ret1)) {
+                    sheet.addMergedRegion(new CellRangeAddress(i, i + 1, j, j));
+                    if (matcher.find()) {
+                        j++;
+                        sheet.addMergedRegion(new CellRangeAddress(i, i + 1, j, j));
+                    }
+
+                } else {
+
+
+                    if (matcher.find()) {
+                        row.createCell((short) j).setCellValue(matcher.group(1));
+                        j++;
+                        row.createCell((short) j).setCellValue(matcher.group(2));
+                    } else {
+                        row.createCell((short) j).setCellValue(ret1);
+                    }
+                    stop = false;
+                }
+
                 j++;
             }
-            // for (final JsonNode objNode : entry.getElements())
-             //{ System.out.println("J : "+j);
-             //row.createCell((short) j).setCellValue(objNode.asText()); 
-             //}
+
+            Oldhead = head;
+
+            for (final JsonNode objNode : node.get("header")) {
+
+                try {
+
+                    //  entry.getValue();
+                    row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(0).toString());
+                    j++;
+                    row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", ""));
+                    j++;
+                    row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(2).toString().replaceAll("&nbsp;", ""));
+                    j++;
+                } catch (Exception e) {
+                    row.createCell((short) j).setCellValue(" ");
+                    j++;
+                    row.createCell((short) j).setCellValue(" ");
+                    j++;
+                    row.createCell((short) j).setCellValue(" ");
+                    j++;
+                }
+            }
+
 
             i++;
         }
 
-        // setCellData(sheet);
 
-       
-        XSSFPivotTable pivotTable = sheet.createPivotTable(new AreaReference("sheet2!A1:O" + i), new CellReference("A1"));
+        HSSFRow row = sheet.createRow(i++);
 
-        pivotTable.addRowLabel(1);
-        pivotTable.addRowLabel(3);
-        pivotTable.addRowLabel(5);
-
-        //  pivotTable.addDataColumn(8, true);
-        //Sum up the second column
-        pivotTable.addColumnLabel(DataConsolidateFunction.SUM, 7);
-        pivotTable.addColumnLabel(DataConsolidateFunction.SUM, 8);
-        //Set the third column as filter
-        //  pivotTable.addColumnLabel(DataConsolidateFunction.AVERAGE, 2);
-        //Add filter on forth column
-        // pivotTable.addReportFilter(3);
-*/
-
-        
-         int i = 0;
-         String head[];
-         String header[];
-         String Oldhead[] = null;
-         int headLength = 0;
-         Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
-        /* List nodeList=IteratorUtils.toList(nodeIterator);
-         System.out.println("INANA");
-         //Collections.sort(nodeList);
-           System.out.println(nodeList);
-           for(Object a:nodeList )
-           {System.out.println(a);}*/
-         Iterator<Entry<String, JsonNode>> headerIterator = node.get("header").getFields();
-
-
-
-         while (nodeIterator.hasNext()) {
-             // System.out.println("lilith");
-         int j = 0;
-         Map.Entry<String, JsonNode> entry = (Map.Entry<String, JsonNode>) nodeIterator.next();
-
-
-         head = entry.getKey().split("\\|\\|");
-         headLength = head.length;
-       
-         if (i == 0) {
-         HSSFRow row = sheet.createRow(0);
-         int iii = 0;
-         for (int ii = 0; ii < headLength; ii++) {
-         row.createCell((short) ii).setCellValue(" ");
-         iii = ii;
-         }
-         iii++;
-         for (final JsonNode objNode : node.get("header")) {
-         row.createCell((short) iii).setCellValue(objNode.asText().replaceAll("<span class=\"ordre\">.*</span>", ""));
-         iii++;
-         row.createCell((short) iii).setCellValue("unit");
-         iii++;
-         row.createCell((short) iii).setCellValue("flag");
-         iii++;
-         }
-
-         }
-         HSSFRow row = sheet.createRow(i + 1);
-         boolean stop=true;
-         for (String k : head) {
-
-         if (stop && i > 0 && k.replaceAll("<span class=\"ordre\">.*</span>", "").equals(Oldhead[j].replaceAll("<span class=\"ordre\">.*</span>", ""))) 
-         { sheet.addMergedRegion(new CellRangeAddress(i, i + 1, j, j));
-                   
-         } else {
-         row.createCell((short) j).setCellValue(k.replaceAll("<span class=\"ordre\">.*</span>", ""));
-         stop=false;
-         }
-
-         j++;
-         }
-
-         Oldhead = head;
-          
-         for (final JsonNode objNode : node.get("header")) {
-           
-         try {
-
-         //  entry.getValue();
-         row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(0).toString());
-         j++;
-         row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", ""));
-         j++;
-         row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(2).toString().replaceAll("&nbsp;", ""));
-         j++;
-         } catch (Exception e) {
-         row.createCell((short) j).setCellValue(" ");
-         j++;
-         row.createCell((short) j).setCellValue(" ");
-         j++;
-         row.createCell((short) j).setCellValue(" ");
-         j++;
-         }
-         }
-
-
-         i++;
-         }
-         
-         
-            HSSFRow row = sheet.createRow(i++);
-           
-             for (final JsonNode objNode : nodeFlag.get("data")) {
-                   row = sheet.createRow(i++);
-          row.createCell((short) 0).setCellValue(objNode.get("title").asText());
-            row.createCell((short) 1).setCellValue(objNode.get("label").asText());
-             }
-              /*Iterator<Entry<String, JsonNode>> nodeFlagIterator = nodeFlag.get("data").getElements();
-                while (nodeFlagIterator.hasNext()) {
-                      Map.Entry<String, JsonNode> entryf = (Map.Entry<String, JsonNode>) nodeFlagIterator.next();
-                      System.out.println(entryf);
-               row = sheet.createRow(i++);
-          row.createCell((short) 0).setCellValue(myFlags);
-                }*/
-                row = sheet.createRow(i++);
-        
+        for (final JsonNode objNode : nodeFlag.get("data")) {
             row = sheet.createRow(i++);
-          row.createCell((short) 0).setCellValue("FAOSTAT");
+            row.createCell((short) 0).setCellValue(objNode.get("title").asText());
+            row.createCell((short) 1).setCellValue(objNode.get("label").asText());
+        }
 
-          SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MMM/dd");
-String monHeure = sdf.format(new Date());
- row.createCell((short) 1).setCellValue("Date :");
-row.createCell((short) 2).setCellValue(monHeure);
- 
+        row = sheet.createRow(i++);
+
+        row = sheet.createRow(i++);
+        row.createCell((short) 0).setCellValue("FAOSTAT");
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MMM/dd");
+        String monHeure = sdf.format(new Date());
+        row.createCell((short) 1).setCellValue("Date :");
+        row.createCell((short) 2).setCellValue(monHeure);
+
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         wb.write(baos);
 
@@ -279,48 +257,5 @@ row.createCell((short) 2).setCellValue(monHeure);
         response.header("Content-Disposition",
                 "attachment; filename=Export.xls");
         return response.build();
-    }
-
-    public static void setCellData(HSSFSheet sheet) {
-        Row row1 = sheet.createRow(0);
-        // Create a cell and put a value in it.
-        Cell cell11 = row1.createCell(0);
-        cell11.setCellValue("Names");
-        Cell cell12 = row1.createCell(1);
-        cell12.setCellValue("#");
-        Cell cell13 = row1.createCell(2);
-        cell13.setCellValue("%");
-        Cell cell14 = row1.createCell(3);
-        cell14.setCellValue("Human");
-
-        Row row2 = sheet.createRow(1);
-        Cell cell21 = row2.createCell(0);
-        cell21.setCellValue("Jane");
-        Cell cell22 = row2.createCell(1);
-        cell22.setCellValue(10);
-        Cell cell23 = row2.createCell(2);
-        cell23.setCellValue(100);
-        Cell cell24 = row2.createCell(3);
-        cell24.setCellValue("Yes");
-
-        Row row3 = sheet.createRow(2);
-        Cell cell31 = row3.createCell(0);
-        cell31.setCellValue("Tarzan");
-        Cell cell32 = row3.createCell(1);
-        cell32.setCellValue(5);
-        Cell cell33 = row3.createCell(2);
-        cell33.setCellValue(90);
-        Cell cell34 = row3.createCell(3);
-        cell34.setCellValue("Yes");
-
-        Row row4 = sheet.createRow(3);
-        Cell cell41 = row4.createCell(0);
-        cell41.setCellValue("Terk");
-        Cell cell42 = row4.createCell(1);
-        cell42.setCellValue(10);
-        Cell cell43 = row4.createCell(2);
-        cell43.setCellValue(90);
-        Cell cell44 = row4.createCell(3);
-        cell44.setCellValue("No");
     }
 }
