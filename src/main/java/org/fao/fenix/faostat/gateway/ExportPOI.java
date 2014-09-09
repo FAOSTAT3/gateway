@@ -30,6 +30,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import org.apache.commons.collections.IteratorUtils;
@@ -51,10 +53,10 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.*;
 import org.apache.poi.hssf.usermodel.*;
 /*import org.apache.poi.xssf.usermodel.XSSFPivotTable;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-*/
+ import org.apache.poi.xssf.usermodel.XSSFRow;
+ import org.apache.poi.xssf.usermodel.XSSFSheet;
+ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+ */
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -87,18 +89,27 @@ public class ExportPOI {
     @Produces("application/vnd.ms-excel")
     public Response getHtml(
             @FormParam("myJson") String myJson, //  @PathParam("myJson") String myJson
-              @FormParam("myFlags") String myFlags 
-            ) throws IOException {
+            @FormParam("myFlags") String myFlags) throws IOException {
 
 
 
         //String myJson2='{"<span class=\"ordre\">009</span>Armenia||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[463.515,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[476.283,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[499.264,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[519.341,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[544.396,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[546.36,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[564.178,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[592.082,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">009</span>Armenia||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[463.515,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[476.283,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[499.264,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[519.341,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[544.396,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[546.36,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[564.178,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[592.082,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">001</span>Afghanistan||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[4787.294,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[4053.238,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[4616.57,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[4740.636,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[4732.909,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[4806.951,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[4801.12,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[4594.889,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">001</span>Afghanistan||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[4787.294,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[4053.238,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[4616.57,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[4740.636,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[4732.909,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[4806.951,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[4801.12,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[4594.889,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">002</span>Albania||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[723.368,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[703.325,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[666.663,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[689.495,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[648.853,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[638.512,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[633.109,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[599.062,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">002</span>Albania||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[723.368,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[703.325,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[666.663,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[689.495,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[648.853,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[638.512,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[633.109,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[599.062,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">003</span>Algeria||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[3713.987,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[3711.115,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[3770.088,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[3778.617,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[3909.626,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[3977.336,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[4095.713,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[4185.47,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">003</span>Algeria||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[3713.987,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[3711.115,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[3770.088,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[3778.617,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[3909.626,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[3977.336,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[4095.713,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[4185.47,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">004</span>American Samoa||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[3.966,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[3.97,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">004</span>American Samoa||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[3.963,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[3.966,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[3.97,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">005</span>Andorra||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">005</span>Andorra||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[0,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">006</span>Angola||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[2732.512,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[2763.191,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[2767.319,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[2767.492,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[2510.385,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[2767.839,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[2798.197,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[2832.503,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">006</span>Angola||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[2732.512,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[2763.191,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[2767.319,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[2767.492,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[2510.385,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[2767.839,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[2798.197,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[2832.503,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">007</span>Antigua and Barbuda||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[20.233,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[20.81,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[21.107,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[21.448,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[21.877,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[21.889,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[21.889,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[22.017,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">007</span>Antigua and Barbuda||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[20.233,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[20.81,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[21.107,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[21.448,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[21.877,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[21.889,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[21.889,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[22.017,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">008</span>Argentina||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[40306.591,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[40368.596,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[39696.008,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[41395.903,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[41343.226,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[41086.223,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[41503.585,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[41615.7,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">008</span>Argentina||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[40306.591,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[40368.596,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[39696.008,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[41395.903,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[41343.226,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[41086.223,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[41503.585,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[41615.7,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">010</span>Australia||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[47195.422,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[46708.829,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[46520.2,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[44338.99,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[45462.688,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[45924.181,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[46111.645,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[45172.817,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">010</span>Australia||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[47195.422,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[46708.829,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[46520.2,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[44338.99,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[45462.688,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[45924.181,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[46111.645,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[45172.817,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">011</span>Austria||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[2238.633,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[2203.098,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[2169.807,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[2134.772,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[2100.988,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[2079.93,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[2074.845,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[2068.667,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">011</span>Austria||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[2238.633,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[2203.098,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[2169.807,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[2134.772,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[2100.988,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[2079.93,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[2074.845,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[2068.667,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">013</span>Bahamas||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[6.744,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[6.95,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[6.903,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[7.703,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">013</span>Bahamas||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[6.744,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[6.95,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[6.903,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[7.703,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[7.847,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">012</span>Azerbaijan||<span class=\"ordre\">1</span>Gross Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[2198.61,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[2299.159,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[2441.976,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[2576.24,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[2674.829,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[2747.886,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[2821.918,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[2883.904,"USD million","&nbsp;"],"label":"Sum of Value"}},"<span class=\"ordre\">012</span>Azerbaijan||<span class=\"ordre\">3</span>Net Capital Stock (constant 2005 prices)||<span class=\"ordre\">2</span>Livestock (Fixed Assets)":{"2000":{"sum":[2198.61,"USD million","&nbsp;"],"label":"Sum of Value"},"2001":{"sum":[2299.159,"USD million","&nbsp;"],"label":"Sum of Value"},"2002":{"sum":[2441.976,"USD million","&nbsp;"],"label":"Sum of Value"},"2003":{"sum":[2576.24,"USD million","&nbsp;"],"label":"Sum of Value"},"2004":{"sum":[2674.829,"USD million","&nbsp;"],"label":"Sum of Value"},"2005":{"sum":[2747.886,"USD million","&nbsp;"],"label":"Sum of Value"},"2006":{"sum":[2821.918,"USD million","&nbsp;"],"label":"Sum of Value"},"2007":{"sum":[2883.904,"USD million","&nbsp;"],"label":"Sum of Value"}}}';
 
+
+
+        String patternStr = "<span class=\"ordre\">.*</span><table class=\"innerCol\"><th>(.*)</th><th>(.*)</th></table>";
+        Pattern pattern = Pattern.compile(patternStr);
+
+
+
+
+
+
         HSSFWorkbook wb = new HSSFWorkbook();
         HSSFSheet sheet = wb.createSheet("sheet1");
-        //System.out.println("myJson");
-        //System.out.println(myJson);
-      //  XSSFSheet sheet2 = wb.createSheet("sheet2");
+        System.out.println("myJson");
+        System.out.println(myJson);
+        //  XSSFSheet sheet2 = wb.createSheet("sheet2");
 
         /*BEGIN JACKSON*/
 
@@ -106,171 +117,163 @@ public class ExportPOI {
 
         JsonNode node = mapper.readTree(new String(myJson.getBytes(), Charset.forName("UTF-8")).replaceAll("\\?", ""));
 
-  ObjectMapper mapperFlag = new ObjectMapper();
+        ObjectMapper mapperFlag = new ObjectMapper();
 
         JsonNode nodeFlag = mapperFlag.readTree(new String(myFlags.getBytes(), Charset.forName("UTF-8")).replaceAll("\\?", ""));
-        /*NEWVERSION*/
-        /*
-        System.out.println(node.path("data"));
-        // Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
-        Iterator<JsonNode> nodeIterator = node.path("data").getElements();
 
         int i = 0;
-        while (nodeIterator.hasNext()) {
-            JsonNode entry = nodeIterator.next();
-            System.out.println("i : " + i);
-            //Map.Entry<String, JsonNode> entry = (Map.Entry<String, JsonNode>) nodeIterator.next();
-            XSSFRow row = sheet2.createRow(i);
-            int j = 0;
-            System.out.println("ligne2 : " + entry.get(0) + " :" + entry.get(1));
-            Iterator<JsonNode> nodeIterator2 = entry.getElements();
-            while (nodeIterator2.hasNext()) {
-                JsonNode entry2 = nodeIterator2.next();
-                if (j == 8) {
-                    row.createCell((short) j).setCellValue(entry2.asDouble());
-                } else {
-                    row.createCell((short) j).setCellValue(entry2.asText());
-                }
-                j++;
-            }
-            // for (final JsonNode objNode : entry.getElements())
-             //{ System.out.println("J : "+j);
-             //row.createCell((short) j).setCellValue(objNode.asText()); 
-             //}
-
-            i++;
-        }
-
-        // setCellData(sheet);
-
-       
-        XSSFPivotTable pivotTable = sheet.createPivotTable(new AreaReference("sheet2!A1:O" + i), new CellReference("A1"));
-
-        pivotTable.addRowLabel(1);
-        pivotTable.addRowLabel(3);
-        pivotTable.addRowLabel(5);
-
-        //  pivotTable.addDataColumn(8, true);
-        //Sum up the second column
-        pivotTable.addColumnLabel(DataConsolidateFunction.SUM, 7);
-        pivotTable.addColumnLabel(DataConsolidateFunction.SUM, 8);
-        //Set the third column as filter
-        //  pivotTable.addColumnLabel(DataConsolidateFunction.AVERAGE, 2);
-        //Add filter on forth column
-        // pivotTable.addReportFilter(3);
-*/
-
-        
-         int i = 0;
-         String head[];
-         String header[];
-         String Oldhead[] = null;
-         int headLength = 0;
-         Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
+        String head[];
+        String header[];
+        String Oldhead[] = null;
+        int headLength = 0;
+        Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
         /* List nodeList=IteratorUtils.toList(nodeIterator);
          System.out.println("INANA");
          //Collections.sort(nodeList);
-           System.out.println(nodeList);
-           for(Object a:nodeList )
-           {System.out.println(a);}*/
-         Iterator<Entry<String, JsonNode>> headerIterator = node.get("header").getFields();
+         System.out.println(nodeList);
+         for(Object a:nodeList )
+         {System.out.println(a);}*/
+        Iterator<Entry<String, JsonNode>> headerIterator = node.get("header").getFields();
 
 
 
-         while (nodeIterator.hasNext()) {
-             // System.out.println("lilith");
-         int j = 0;
-         Map.Entry<String, JsonNode> entry = (Map.Entry<String, JsonNode>) nodeIterator.next();
-
-
-         head = entry.getKey().split("\\|\\|");
-         headLength = head.length;
-       
-         if (i == 0) {
-         HSSFRow row = sheet.createRow(0);
-         int iii = 0;
-         for (int ii = 0; ii < headLength; ii++) {
-         row.createCell((short) ii).setCellValue(" ");
-         iii = ii;
-         }
-         iii++;
-         for (final JsonNode objNode : node.get("header")) {
-         row.createCell((short) iii).setCellValue(objNode.asText().replaceAll("<span class=\"ordre\">.*</span>", ""));
-         iii++;
-         row.createCell((short) iii).setCellValue("unit");
-         iii++;
-         row.createCell((short) iii).setCellValue("flag");
-         iii++;
-         }
-
-         }
-         HSSFRow row = sheet.createRow(i + 1);
-         boolean stop=true;
-         for (String k : head) {
-
-         if (stop && i > 0 && k.replaceAll("<span class=\"ordre\">.*</span>", "").equals(Oldhead[j].replaceAll("<span class=\"ordre\">.*</span>", ""))) 
-         { sheet.addMergedRegion(new CellRangeAddress(i, i + 1, j, j));
-                   
-         } else {
-         row.createCell((short) j).setCellValue(k.replaceAll("<span class=\"ordre\">.*</span>", ""));
-         stop=false;
-         }
-
-         j++;
-         }
-
-         Oldhead = head;
+        while (nodeIterator.hasNext()) {
           
-         for (final JsonNode objNode : node.get("header")) {
-           
-         try {
-
-         //  entry.getValue();
-         row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(0).toString());
-         j++;
-         row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", ""));
-         j++;
-         row.createCell((short) j).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(2).toString().replaceAll("&nbsp;", ""));
-         j++;
-         } catch (Exception e) {
-         row.createCell((short) j).setCellValue(" ");
-         j++;
-         row.createCell((short) j).setCellValue(" ");
-         j++;
-         row.createCell((short) j).setCellValue(" ");
-         j++;
-         }
-         }
+            Map.Entry<String, JsonNode> entry = (Map.Entry<String, JsonNode>) nodeIterator.next();
 
 
-         i++;
-         }
-         
-         
-            HSSFRow row = sheet.createRow(i++);
-           
-             for (final JsonNode objNode : nodeFlag.get("data")) {
-                   row = sheet.createRow(i++);
-          row.createCell((short) 0).setCellValue(objNode.get("title").asText());
-            row.createCell((short) 1).setCellValue(objNode.get("label").asText());
-             }
-              /*Iterator<Entry<String, JsonNode>> nodeFlagIterator = nodeFlag.get("data").getElements();
-                while (nodeFlagIterator.hasNext()) {
-                      Map.Entry<String, JsonNode> entryf = (Map.Entry<String, JsonNode>) nodeFlagIterator.next();
-                      System.out.println(entryf);
-               row = sheet.createRow(i++);
-          row.createCell((short) 0).setCellValue(myFlags);
-                }*/
-                row = sheet.createRow(i++);
-        
+            head = entry.getKey().split("\\|\\|");
+            headLength = head.length;
+
+
+            if (i == 0) {
+                //   Matcher matcherinit = pattern.matcher(head[0]);
+                HSSFRow row = sheet.createRow(0);
+                int iii = 0;
+                //boolean bCode=matcherinit.find();
+                for (int ii = 0; ii < headLength; ii++) {
+                    row.createCell((short) iii).setCellValue(" ");
+                    if (pattern.matcher(head[ii]).find()) {
+                        iii++;
+                        row.createCell((short) iii).setCellValue(" ");
+                    }
+
+                    iii++;
+                }
+                for (final JsonNode objNode : node.get("header")) {
+
+
+
+                    String[] tpheadcell = objNode.asText().split("\\|\\|");
+                    String retHeadTmp = "";
+                    for (String k : tpheadcell) {
+                        Matcher matcher = pattern.matcher(k);
+                        if (matcher.matches()) {
+                            retHeadTmp += " " + matcher.group(1);
+                        } else {
+                            retHeadTmp += k.replaceAll("<span class=\"ordre\">.*</span>", "");
+                        }
+                    }
+                    row.createCell((short) iii).setCellValue(retHeadTmp);
+                    iii++;
+                    row.createCell((short) iii).setCellValue("unit");
+                    iii++;
+                    row.createCell((short) iii).setCellValue("flag");
+                    iii++;
+                }
+
+            }
+            HSSFRow row = sheet.createRow(i + 1);
+            boolean stop = true;
+              int j = 0;
+              int jj=0;
+            for (String k : head) {
+                String ret1 = k.replaceAll("<span class=\"ordre\">.*</span>", "");
+                Matcher matcher = pattern.matcher(k);
+         try{
+                    if (stop
+                            && i > 0
+                            && Oldhead[j].replaceAll("<span class=\"ordre\">.*</span>", "").equals(ret1)) {
+                        
+                               try {
+                        sheet.addMergedRegion(new CellRangeAddress(i, i + 1, jj, jj));
+                        if (matcher.find()) {
+                            jj++;
+                            sheet.addMergedRegion(new CellRangeAddress(i, i + 1, jj, jj));
+                        }
+                        } catch (Exception ex) {
+                     System.out.println(ex+" UN "+ j+" "+i);
+                    System.out.println(ex+" "+ k);
+                }
+                        
+                    } else {
+                        
+                        try{
+                        if (matcher.find()) {
+                            row.createCell((short) jj).setCellValue(matcher.group(1));
+                            jj++;
+                            row.createCell((short) jj).setCellValue(matcher.group(2));
+                        } else {
+                            row.createCell((short) jj).setCellValue(ret1);
+                        }
+                        stop = false;
+                        }
+                        catch(Exception ex){   System.out.println(ex+" DEUX "+ j+" "+i);}
+                    }
+
+}catch(Exception ex){System.out.println("ET O "+stop+" "+i+"  "+Oldhead.length+" "+j);}
+
+                j++;jj++;
+            }
+
+            Oldhead = head;
+
+            for (final JsonNode objNode : node.get("header")) {
+                try {
+                    //  entry.getValue();
+                    row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").get(0).toString()));
+                    jj++;
+                    row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
+                    jj++;
+                    row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(2).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
+                    jj++;
+                } catch (Exception e) {
+                    row.createCell((short) jj).setCellValue(" ");
+                    jj++;
+                    row.createCell((short) jj).setCellValue(" ");
+                    jj++;
+                    row.createCell((short) jj).setCellValue(" ");
+                    jj++;
+                }
+            }
+            i++;
+        }
+
+
+        HSSFRow row = sheet.createRow(i++);
+
+        for (final JsonNode objNode : nodeFlag.get("data")) {
             row = sheet.createRow(i++);
-          row.createCell((short) 0).setCellValue("FAOSTAT");
+            row.createCell((short) 0).setCellValue(objNode.get("title").asText());
+            row.createCell((short) 1).setCellValue(objNode.get("label").asText());
+        }
+        /*Iterator<Entry<String, JsonNode>> nodeFlagIterator = nodeFlag.get("data").getElements();
+         while (nodeFlagIterator.hasNext()) {
+         Map.Entry<String, JsonNode> entryf = (Map.Entry<String, JsonNode>) nodeFlagIterator.next();
+         System.out.println(entryf);
+         row = sheet.createRow(i++);
+         row.createCell((short) 0).setCellValue(myFlags);
+         }*/
+        row = sheet.createRow(i++);
 
-          SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MMM/dd");
-String monHeure = sdf.format(new Date());
- row.createCell((short) 1).setCellValue("Date :");
-row.createCell((short) 2).setCellValue(monHeure);
- 
+        row = sheet.createRow(i++);
+        row.createCell((short) 0).setCellValue("FAOSTAT");
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MMM/dd");
+        String monHeure = sdf.format(new Date());
+        row.createCell((short) 1).setCellValue("Date :");
+        row.createCell((short) 2).setCellValue(monHeure);
+
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         wb.write(baos);
 
@@ -279,48 +282,5 @@ row.createCell((short) 2).setCellValue(monHeure);
         response.header("Content-Disposition",
                 "attachment; filename=Export.xls");
         return response.build();
-    }
-
-    public static void setCellData(HSSFSheet sheet) {
-        Row row1 = sheet.createRow(0);
-        // Create a cell and put a value in it.
-        Cell cell11 = row1.createCell(0);
-        cell11.setCellValue("Names");
-        Cell cell12 = row1.createCell(1);
-        cell12.setCellValue("#");
-        Cell cell13 = row1.createCell(2);
-        cell13.setCellValue("%");
-        Cell cell14 = row1.createCell(3);
-        cell14.setCellValue("Human");
-
-        Row row2 = sheet.createRow(1);
-        Cell cell21 = row2.createCell(0);
-        cell21.setCellValue("Jane");
-        Cell cell22 = row2.createCell(1);
-        cell22.setCellValue(10);
-        Cell cell23 = row2.createCell(2);
-        cell23.setCellValue(100);
-        Cell cell24 = row2.createCell(3);
-        cell24.setCellValue("Yes");
-
-        Row row3 = sheet.createRow(2);
-        Cell cell31 = row3.createCell(0);
-        cell31.setCellValue("Tarzan");
-        Cell cell32 = row3.createCell(1);
-        cell32.setCellValue(5);
-        Cell cell33 = row3.createCell(2);
-        cell33.setCellValue(90);
-        Cell cell34 = row3.createCell(3);
-        cell34.setCellValue("Yes");
-
-        Row row4 = sheet.createRow(3);
-        Cell cell41 = row4.createCell(0);
-        cell41.setCellValue("Terk");
-        Cell cell42 = row4.createCell(1);
-        cell42.setCellValue(10);
-        Cell cell43 = row4.createCell(2);
-        cell43.setCellValue(90);
-        Cell cell44 = row4.createCell(3);
-        cell44.setCellValue("No");
     }
 }
