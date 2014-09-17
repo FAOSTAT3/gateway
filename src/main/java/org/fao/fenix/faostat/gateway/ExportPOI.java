@@ -89,7 +89,8 @@ public class ExportPOI {
     @Produces("application/vnd.ms-excel")
     public Response getHtml(
             @FormParam("myJson") String myJson, //  @PathParam("myJson") String myJson
-            @FormParam("myFlags") String myFlags) throws IOException {
+            @FormParam("myFlags") String myFlags
+            ) throws IOException {
 
 
 
@@ -107,8 +108,8 @@ public class ExportPOI {
 
         HSSFWorkbook wb = new HSSFWorkbook();
         HSSFSheet sheet = wb.createSheet("sheet1");
-        System.out.println("myJson");
-        System.out.println(myJson);
+  /*      System.out.println("myJson");
+        System.out.println(myJson);*/
         //  XSSFSheet sheet2 = wb.createSheet("sheet2");
 
         /*BEGIN JACKSON*/
@@ -133,8 +134,9 @@ public class ExportPOI {
          System.out.println(nodeList);
          for(Object a:nodeList )
          {System.out.println(a);}*/
-        Iterator<Entry<String, JsonNode>> headerIterator = node.get("header").getFields();
-
+      /*  Iterator<Entry<String, JsonNode>> headerIterator = node.get("header").getFields();
+         Iterator<Entry<String, JsonNode>> colsIterator = node.get("cols").getFields();
+*/
 
 
         while (nodeIterator.hasNext()) {
@@ -151,7 +153,7 @@ public class ExportPOI {
                 HSSFRow row = sheet.createRow(0);
                 int iii = 0;
                 //boolean bCode=matcherinit.find();
-                for (int ii = 0; ii < headLength; ii++) {
+                /*for (int ii = 0; ii < headLength; ii++) {
                     row.createCell((short) iii).setCellValue(" ");
                     if (pattern.matcher(head[ii]).find()) {
                         iii++;
@@ -159,7 +161,11 @@ public class ExportPOI {
                     }
 
                     iii++;
-                }
+                }*/
+                
+                  for (final JsonNode objNode : node.get("cols")) { row.createCell((short) iii).setCellValue(objNode.asText());iii++;}
+                
+                
                 for (final JsonNode objNode : node.get("header")) {
 
 
@@ -169,7 +175,7 @@ public class ExportPOI {
                     for (String k : tpheadcell) {
                         Matcher matcher = pattern.matcher(k);
                         if (matcher.matches()) {
-                            retHeadTmp += " " + matcher.group(1);
+                            retHeadTmp += " " + matcher.group(1)+"("+matcher.group(2)+")";
                         } else {
                             retHeadTmp += k.replaceAll("<span class=\"ordre\">.*</span>", "");
                         }
