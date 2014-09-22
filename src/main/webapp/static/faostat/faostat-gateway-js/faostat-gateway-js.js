@@ -8,6 +8,16 @@ if (!window.FAOSTATGateway) {
          */
         loadUI : function(module) {
 
+//            require(["http://" + CORE.baseURL + "/faostat-gateway/static/faostat/config/common.js"], function (common) {
+//                require(["jquery.i18n"], function () {
+//                    FAOSTATGateway._loadUI(module);
+//                });
+//            });
+
+            FAOSTATGateway._loadUI(module);
+        },
+
+        _loadUI: function(module) {
             // Select the module on the Menu
             $('#'  + module).addClass("fs-menu-selected");
 
@@ -33,6 +43,7 @@ if (!window.FAOSTATGateway) {
                 zIndex: 2147483647 // Z-Index for the overlay
             });
         },
+
 
         _loadListeners: function() {
             $("#searchFS").on("submit", function() {
@@ -93,6 +104,7 @@ if (!window.FAOSTATGateway) {
         },
 
 
+
         _inizializeDD: function() {
             /** enable menu **/
             UIUtils.initializeDDMenu('browse', 'menu-dropdown-browse', 'menu-dropdown-download');
@@ -116,7 +128,7 @@ if (!window.FAOSTATGateway) {
         },
 
         _loadFeedbackSystem: function(id) {
-            $("#" + id).fancybox();
+//            $("#" + id).fancybox();
         }
 
     };

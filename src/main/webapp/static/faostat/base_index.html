@@ -8,8 +8,11 @@
     <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
 
+    <!-- Require-js -->
+    <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js'></script>
+
     <!-- JQuery -->
-    <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/jquery/1.9.1/jquery-1.9.1.min.js'></script>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.10.1.min.js'></script>
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/jquery/1.0.9/jquery.i18n.properties-min.js'></script>
 
     <!-- Highcharts -->
@@ -95,7 +98,6 @@
 
     <!-- Yenope -->
     <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/yepnope/1.5.4/yepnope.min.js'></script>
-
 
     <!-- FAOSTAT CSS -->
     <link type="text/css" rel="stylesheet" href="http://$_BASE_URL/faostat-gateway/static/faostat/faostat.css" />
@@ -306,18 +308,18 @@
     </form>
     <form id="formExcel" method="post" action="http://faostat3.fao.org/faostat.olap.ws/rest/ExcelCreator">
 
-        <input id="excelData" type="hidden" value="" name="data"></input>
-        <input type="hidden" value="xls" name="type"></input>
+        <input id="excelData" type="hidden" value="" name="data"/>
+        <input type="hidden" value="xls" name="type"/>
 
     </form>
     <form id="csvDataForm" action="/faostat-download-js/pivotAgg/json.jsp" method="POST">
-        <input id="csvData" type="hidden" name="data" value=""></input>
+        <input id="csvData" type="hidden" name="data" value=""/>
     </form>
 
     <form id="exportCSVOLAP" action="/faostat-download-js/pivotAgg/exportCSVOLAP.jsp" method="POST" target="_export">
-        <input id="CSVOLAPsql" type="hidden" name="sql" value=""></input>
-        <input id="CSVOLAPjson" type="hidden" name="json" value=""></input>
-        <input id="CSVOLAPoption" type="hidden" name="option" value=""></input>
+        <input id="CSVOLAPsql" type="hidden" name="sql" value=""/>
+        <input id="CSVOLAPjson" type="hidden" name="json" value=""/>
+        <input id="CSVOLAPoption" type="hidden" name="option" value=""/>
     </form>
     <!--<form id='G1FORM' name='G1FORM' method='POST' action='http://ldvapp07.fao.org:8030/wds/rest/exporter/htmltable'-->
     <!--target='_blank' style='display: none;'>-->

@@ -10,7 +10,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : 'localhost:8080',
+        baseURL : '168.202.28.57:8080',
 
         groupCode : null,
 
@@ -77,21 +77,28 @@ if (!window.CORE) {
             // Call the init method of the module
             switch (module) {
                 case 'home': break;
-                case 'browse':      CORE.loadModuleLibs(module, function() { FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
+                case 'browse':      CORE.loadModuleLibs(module, function() {
+                    FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
+                    break;
                 case 'download':    CORE.loadModuleLibs(module, function() { FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
                 case 'compare':     CORE.loadModuleLibs(module, function() { FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
-                case 'analysis':    CORE.loadModuleLibs(module, function() {
-                    ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
-                    break;
 //                case 'analysis':    CORE.loadModuleLibs(module, function() {
-//                    F3_ANALYSIS.init(
-//                        {
-//                            default_view: groupCode,
-//                            lang : lang
-//                        }
-//                    )
-//                });
+//                    ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
 //                    break;
+//                case 'analysis':    CORE.loadModuleLibs(module, function() {
+//                    ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
+//                    break;
+//                case 'analysis':    CORE.loadModuleLibs(module, function() {
+//                        F3_ANALYSIS.init(
+//                            {
+//                                lang : lang
+//                            }
+//                        )
+//                    });
+//                    break;
+                case 'analysis':
+                    TILESMGR().init()
+                    break;
                 case 'mes':
                     CORE.CONFIG_MES.sectionCode = groupCode;
                     CORE.CONFIG_MES.subSectionCode = domainCode;
@@ -179,6 +186,7 @@ if (!window.CORE) {
          * Each module has its own libraries, the full list is in the <code>libs.json</code> file.
          */
         loadModuleLibs : function(module, initFunction) {
+            console.log("asduh")
             $.getJSON('http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-gateway-js/libs_fallback.json', function (data) {
                 data = (typeof data == 'string')? $.parseJSON(data) : data;
                 var toload = [];

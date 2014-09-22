@@ -18,16 +18,19 @@
         "/faostat-browse-js/js/FAOSTATBrowseUtils.js"
     ],
     "analysis" : [
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdata.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.js",
-        "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxgrid.selection.js",
-        "http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.js",
-        "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/jQRangeSlider-min.js",
-        "http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css",
-        "http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css",
-        "/faostat-analysis-js/js/faostat-analysis-collector.js",
-        "/faostat-analysis-js/js/wds-client.js",
-        "/faostat-analysis-js/js/google-analytics-manager.js"
+        "http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js",
+        "http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css",
+        "http://fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.jquery.min.js",
+        "http://fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css",
+        "http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js",
+        "/analysis/css/analysis.css",
+        "/analysis/js/jshashtable.js",
+        "/analysis/js/f3-chart.js",
+        "/analysis/js/ghg-overview.js",
+        "/analysis/js/ghg-country-profile.js",
+        "/analysis/js/f3-ghg-table.js",
+        "/analysis/js/ghg-editor.js",
+        "/analysis/js/f3-analysis.js"
     ],
     "mes" : [
         "/mes/js/google-analytics-manager.js",
