@@ -16,6 +16,15 @@ if (!window.FAOSTATHome) {
             FAOSTATHome._loadNews('comingUp-content', 'comingUp', lang);
             FAOSTATHome._loadLinks('fs-links-content', lang);
             FAOSTATHome._showBulkDownload();
+
+            <!-- Country Profiles -->
+            <!--$('#btnCountry').fancybox({-->
+            <!--'width':1100,-->
+            <!--'height':1000,-->
+            <!--'type':'iframe',-->
+            <!--'autoScale':'false'-->
+            <!--});-->
+
         },
 
         _loadNews: function(id, type, lang) {
@@ -49,33 +58,30 @@ if (!window.FAOSTATHome) {
            // CORE.getLangProperties(FAOSTATHome._loadLabels);
 
             /* labels */
+            $('.ico-pr').html($.i18n.prop('_production'));
+            $('.ico-tr').html($.i18n.prop('_trade'));
+            $('.ico-fs').html($.i18n.prop('_foodSupply'));
+            $('.ico-fsecurity').html($.i18n.prop('_foodsecurity'));
+            $('.ico-re').html($.i18n.prop('_resources'));
+            $('.ico-em').html($.i18n.prop('_ghg'));
+            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
+            $('.ico-in').html($.i18n.prop('_investment'));
+            $('.ico-fo').html($.i18n.prop('_forestry'));
+            $('.ico-pi').html($.i18n.prop('_prices'));
+            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
+            $('.ico-fb').html($.i18n.prop('_foodBalance'));
+            $('.ico-asti').html($.i18n.prop('_asti'));
+            $('.ico-pop').html($.i18n.prop('_population'));
+            $('.ico-po').html($.i18n.prop('_population'));
+            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
+            $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
+
             $('#whatsNewText').html($.i18n.prop('_whatsNew'));
             $('#databaseUpdatesText').html($.i18n.prop('_databaseUpdates'));
             $('#comingUpText').html($.i18n.prop('_comingUp'));
             $('#releaseCalendarText').html($.i18n.prop('_releaseCalendar'));
             $('#partners').html($.i18n.prop('_partners'));
             $('#faoLinks').html($.i18n.prop('_faoLinks'));
-
-
-
-            /** labels **/
-//            $('.ico-pr').html($.i18n.prop('_production'));
-//            $('.ico-tr').html($.i18n.prop('_trade'));
-//            $('.ico-fs').html($.i18n.prop('_foodSupply'));
-//            $('.ico-fsecurity').html($.i18n.prop('_foodsecurity'));
-//            $('.ico-re').html($.i18n.prop('_resources'));
-//            $('.ico-em').html($.i18n.prop('_ghg'));
-//            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
-//            $('.ico-in').html($.i18n.prop('_investment'));
-//            $('.ico-fo').html($.i18n.prop('_forestry'));
-//            $('.ico-pi').html($.i18n.prop('_prices'));
-//            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
-//            $('.ico-fb').html($.i18n.prop('_foodBalance'));
-//            $('.ico-asti').html($.i18n.prop('_asti'));
-//            $('.ico-pop').html($.i18n.prop('_population'));
-//            $('.ico-po').html($.i18n.prop('_population'));
-//            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
-//            $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
 
             $('.fs-browse-text').html($.i18n.prop('_fs_browse_text'));
             $('.fs-download-text').html($.i18n.prop('_fs_download_text'));

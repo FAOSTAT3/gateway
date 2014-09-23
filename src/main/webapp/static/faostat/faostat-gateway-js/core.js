@@ -2,7 +2,7 @@ if (!window.CORE) {
 
     window.CORE = {
 
-        datasource : "faostat",
+        datasource : "faostat2",
 
         timestamps : [],
 
@@ -10,7 +10,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : '168.202.28.57:8080',
+        baseURL : '168.202.28.214:8080',
 
         groupCode : null,
 
@@ -64,6 +64,11 @@ if (!window.CORE) {
          * @param lang          UI language, e.g. 'E'
          */
         initModule : function(module, groupCode, domainCode, lang) {
+
+            console.log(module);
+            console.log(groupCode);
+            console.log(domainCode);
+            console.log(lang);
             // method to calculate DIV min height
             CORE.contentDIVMinHeight();
 
@@ -76,12 +81,31 @@ if (!window.CORE) {
 
             // Call the init method of the module
             switch (module) {
-                case 'home': break;
-                case 'browse':      CORE.loadModuleLibs(module, function() {
-                    FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
+                case 'home':
+                    require(['home'], function () {
+                        require(['text!faostat-gateway/static/faostat/faostat-home-js/template.html'], function (template) {
+                            var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
+                            $("#container").empty()
+                            $("#container").html(html)
+                            FAOSTATHome.loadUI(CORE.lang);
+                        });
+                    });
                     break;
-                case 'download':    CORE.loadModuleLibs(module, function() { FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
-                case 'compare':     CORE.loadModuleLibs(module, function() { FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, CORE.lang) }); break;
+                case 'browse':
+                    require(['browse'], function () {
+                        FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                    });
+                    break;
+                case 'download':
+                    require(['download'], function () {
+                        FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                    });
+                    break;
+                case 'compare':
+                    require(['compare'], function () {
+                        FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                    });
+                    break;
 //                case 'analysis':    CORE.loadModuleLibs(module, function() {
 //                    ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
 //                    break;
@@ -164,13 +188,20 @@ if (!window.CORE) {
          * This function update the URL to allow the bookmark of the user's selection.
          */
         upgradeURL : function(module, group, domain, lang) {
+            console.log("upgradeURL");
             /** TODO: make is as load module **/
             if (CORE.testHTML5()) {
+                console.log("CORE.testHTML5()");
                 var state = '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang;
+                console.log(History.getState());
+                console.log(state);
+
                 if ( History.getState().data.state != state ) {
+                    console.log(state);
                     var t = new Date().getTime();
                     CORE.timestamps[t] = t;
                     History.pushState({timestamp: t, state : state}, state, state);
+                    console.log(state);
                 }
             }
         },
@@ -201,46 +232,6 @@ if (!window.CORE) {
                     }
                 });
             })
-
-//            if (!CORE.loadMapJS[module]) {
-//
-//                // Register the module
-//                CORE.loadMapJS[module] = true;
-//
-//                // Load module's libraries.
-//                $.getJSON('http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-gateway-js/libs.json', function (data) {
-//
-//                    if(typeof data == 'string')
-//                        data = $.parseJSON(data);
-//
-//                    if ( data[module] )  {
-//                        var moduleLibs = data[module];
-//
-//                        var requests = []
-//                        if ( moduleLibs.css ) {
-//                            for (var i = 0 ; i < moduleLibs.css.length ; i++) {
-//                                requests.push(moduleLibs.css[i]);
-//                            }
-//                        }
-//
-//                        if ( moduleLibs.js ) {
-//                            for (var i = 0 ; i < moduleLibs.js.length ; i++) {
-//                                requests.push(moduleLibs.js[i]);
-//                            }
-//                        }
-//                        //ImportDependencies.importAsync(requests, initFunction);
-//                        ImportDependencies.importSequentially(requests, initFunction );
-//
-//                    }
-//                    else{
-//                        initFunction();
-//                    }
-//
-//                })
-//
-//            } else {
-//                //console.log('JS libraries for module ' + module + ' won\'t be loaded again');
-//            }
         },
 
         breakLabel: function (lbl) {
@@ -316,6 +307,7 @@ if (!window.CORE) {
         },
 
         reloadModule: function(lang) {
+            console.log("reloadModule")
             CORE.lang = lang;
             var url = window.location.href;
             url = url.substring(0, url.length -2);
@@ -325,6 +317,7 @@ if (!window.CORE) {
 
         /** TODO: to be completed **/
         loadModule: function(module, options) {
+            console.log("loadModule")
 
             // TODO: move in in CORE.js
             var defaultURL =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module+'/'+ options + '/'+  CORE.lang;

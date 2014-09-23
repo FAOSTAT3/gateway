@@ -18,7 +18,7 @@ if (!window.FAOSTATDatabaseUpdate) {
                 "ORDER BY dateupdate DESC ";
             var data = {};
             data.datasource = FAOSTATDatabaseUpdate.db,
-                data.thousandSeparator = ',';
+            data.thousandSeparator = ',';
             data.decimalSeparator = '.';
             data.decimalNumbers = this.decimalValues;
             data.json = JSON.stringify(q);

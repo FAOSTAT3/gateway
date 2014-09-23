@@ -6,18 +6,50 @@ if (!window.FAOSTATGateway) {
         /**
          * This map is used to avoid modules libraries to be loaded more than once.
          */
-        loadUI : function(module) {
+        loadUI : function(module, groupCode, domainCode, lang) {
 
-//            require(["http://" + CORE.baseURL + "/faostat-gateway/static/faostat/config/common.js"], function (common) {
-//                require(["jquery.i18n"], function () {
-//                    FAOSTATGateway._loadUI(module);
-//                });
-//            });
+            require(["http://" + CORE.baseURL + "/faostat-gateway/static/faostat/common/common.js"], function () {
+                require(["FAOSTAT3"], function () {
 
-            FAOSTATGateway._loadUI(module);
+                    console.log("FAOSTAT3")
+
+                    // load history js
+//                    (function(window,undefined){
+//                        if ( CORE.testHTML5() ) {
+//                            console.log("here");
+//                            // Establish Variables
+//                            var History = window.History; // Note: We are using a capital H instead of a lower h
+//                            var State = History.getState();
+//
+//                            // Bind to State Change
+//                            History.Adapter.bind(window, 'statechange ', function () { // Note: We are using statechange instead of popstate
+//                                // Log the State
+//                                var State = History.getState(); // Note: We are using History.getState() instead of event.state
+//                                if (State.data.timestamp in CORE.timestamps) {
+//                                    // Deleting the unique timestamp associated with the state
+//                                    delete CORE.timestamps[State.data.timestamp];
+//                                }
+//                                else {
+//                                    // Manage Back/Forward button here
+//                                    CORE.reloadModule(CORE.lang)
+//                                }
+//                            });
+//                        }
+//                    })(window);
+
+                    // load moduels
+                    CORE.initModule(module, groupCode, domainCode, lang);
+                    FAOSTATGateway._loadUI(module);
+                });
+            });
+
         },
 
         _loadUI: function(module) {
+
+            // loading module
+            //CORE.initModule(module);
+
             // Select the module on the Menu
             $('#'  + module).addClass("fs-menu-selected");
 
@@ -77,23 +109,23 @@ if (!window.FAOSTATGateway) {
 
 
             /** labels **/
-            $('.ico-pr').html($.i18n.prop('_production'));
-            $('.ico-tr').html($.i18n.prop('_trade'));
-            $('.ico-fs').html($.i18n.prop('_foodSupply'));
-            $('.ico-fsecurity').html($.i18n.prop('_foodsecurity'));
-            $('.ico-re').html($.i18n.prop('_resources'));
-            $('.ico-em').html($.i18n.prop('_ghg'));
-            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
-            $('.ico-in').html($.i18n.prop('_investment'));
-            $('.ico-fo').html($.i18n.prop('_forestry'));
-            $('.ico-pi').html($.i18n.prop('_prices'));
-            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
-            $('.ico-fb').html($.i18n.prop('_foodBalance'));
-            $('.ico-asti').html($.i18n.prop('_asti'));
-            $('.ico-pop').html($.i18n.prop('_population'));
-            $('.ico-po').html($.i18n.prop('_population'));
-            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
-            $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
+//            $('.ico-pr').html($.i18n.prop('_production'));
+//            $('.ico-tr').html($.i18n.prop('_trade'));
+//            $('.ico-fs').html($.i18n.prop('_foodSupply'));
+//            $('.ico-fsecurity').html($.i18n.prop('_foodsecurity'));
+//            $('.ico-re').html($.i18n.prop('_resources'));
+//            $('.ico-em').html($.i18n.prop('_ghg'));
+//            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
+//            $('.ico-in').html($.i18n.prop('_investment'));
+//            $('.ico-fo').html($.i18n.prop('_forestry'));
+//            $('.ico-pi').html($.i18n.prop('_prices'));
+//            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
+//            $('.ico-fb').html($.i18n.prop('_foodBalance'));
+//            $('.ico-asti').html($.i18n.prop('_asti'));
+//            $('.ico-pop').html($.i18n.prop('_population'));
+//            $('.ico-po').html($.i18n.prop('_population'));
+//            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
+//            $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
 
             $('#lang' + CORE.lang).addClass("fs-lan-selected");
 
@@ -109,22 +141,6 @@ if (!window.FAOSTATGateway) {
             /** enable menu **/
             UIUtils.initializeDDMenu('browse', 'menu-dropdown-browse', 'menu-dropdown-download');
             UIUtils.initializeDDMenu('download', 'menu-dropdown-download', 'menu-dropdown-browse');
-
-//            $(document).mouseup(function (e) {
-//                var containerBrowse = $("#browse");
-//                var containerBrowseMenu = $("#menu-dropdown-browse");
-//                var containerDownload = $("#download");
-//                var containerDownloadMenu = $("#menu-dropdown-download");
-//                if (!containerBrowse.is(e.target) && containerBrowse.has(e.target).length === 0) {
-//                    containerBrowse.hide();
-//                }
-//                if (!containerBrowseMenu.is(e.target) && containerBrowseMenu.has(e.target).length === 0) {
-//                    containerBrowseMenu()
-//                }
-//                if (!container2.is(e.target) && container2.has(e.target).length === 0) {
-//                    container2.hide();
-//                }
-//            });
         },
 
         _loadFeedbackSystem: function(id) {

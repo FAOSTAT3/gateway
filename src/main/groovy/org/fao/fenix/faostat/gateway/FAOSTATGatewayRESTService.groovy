@@ -106,7 +106,7 @@ class FAOSTATGatewayRESTService {
     }
 
     String replaceHtml(configMap, section, lang) {
-        def base_index_url = ConfigServlet.PATH + "static/faostat/base_index.html"
+        def base_index_url = ConfigServlet.PATH + "static/faostat/index.html"
         // Load main HTML content
         def content = null;
         def main =  new File(base_index_url).text;
@@ -122,17 +122,21 @@ class FAOSTATGatewayRESTService {
         main = main.replace('$_SECTION_NAME', "home")
 
         // Load the module
-        def sectionURL = ConfigServlet.PATH + "static/faostat/"+ section +"/index_gateway.html"
+        //def sectionURL = ConfigServlet.PATH + "static/faostat/"+ section +"/index_gateway.html"
 
         // Fetch its content
-        content = new File(sectionURL).text;
+        //content = new File(sectionURL).text;
 
         // Replace wildcards with parameters from the REST
-        content = content.replace('$_LANG', lang)
-        content = content.replace('$_BASE_URL', configMap.get("base_url"))
+//        content = content.replace('$_LANG', lang)
+//        content = content.replace('$_BASE_URL', configMap.get("base_url"))
+
+
 
         // Inject the module into the main HTML
-        main = main.replace('$_CONTENT', content);
+//        main = main.replace('$_LANG', lang)
+//        main = main.replace('$_BASE_URL', configMap.get("base_url"))
+//        main = main.replace('$_CONTENT', main);
         return main;
     }
 
