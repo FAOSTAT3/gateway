@@ -10,7 +10,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : '168.202.28.214:8080',
+        baseURL : '168.202.28.57:8080',
 
         groupCode : null,
 
@@ -82,7 +82,7 @@ if (!window.CORE) {
             // Call the init method of the module
             switch (module) {
                 case 'home':
-                    require(['home'], function () {
+                    require(['HOME'], function () {
                         require(['text!faostat-gateway/static/faostat/faostat-home-js/template.html'], function (template) {
                             var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
                             $("#container").empty()
@@ -92,7 +92,7 @@ if (!window.CORE) {
                     });
                     break;
                 case 'browse':
-                    require(['browse'], function () {
+                    require(['BROWSE'], function () {
                         FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang);
                     });
                     break;
@@ -121,7 +121,9 @@ if (!window.CORE) {
 //                    });
 //                    break;
                 case 'analysis':
-                    TILESMGR().init()
+                    require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
+                        TILESMGR.init({}, null);
+                    });
                     break;
                 case 'mes':
                     CORE.CONFIG_MES.sectionCode = groupCode;
