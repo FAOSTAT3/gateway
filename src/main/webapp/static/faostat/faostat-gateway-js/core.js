@@ -10,7 +10,7 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
-        baseURL : '168.202.28.57:8080',
+        baseURL : '168.202.28.214:8080',
 
         groupCode : null,
 
@@ -21,13 +21,13 @@ if (!window.CORE) {
         lang : null,
 
         CONFIG_MES: {
-            prefix                  : 'http://localhost:8080/mes/',
+            prefix                  : 'http://168.202.28.214:8080/mes/',
             datasource              : 'faostat2',
-            html_structure          : 'http://faostat3.fao.org/mes/structure.html',
+            html_structure          : 'http://168.202.28.214:8080/mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
             rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
-            I18N_URL                : 'http://localhost:8080/faostat-gateway/static/faostat/I18N/'
+            I18N_URL                : 'http://168.202.28.214:8080/faostat-gateway/static/faostat/I18N/'
 
         },
 
@@ -102,7 +102,7 @@ if (!window.CORE) {
                     });
                     break;
                 case 'compare':
-                    require(['compare'], function () {
+                    require(['COMPARE'], function () {
                         FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, CORE.lang);
                     });
                     break;
@@ -129,9 +129,12 @@ if (!window.CORE) {
                     CORE.CONFIG_MES.sectionCode = groupCode;
                     CORE.CONFIG_MES.subSectionCode = domainCode;
                     CORE.CONFIG_MES.lang = lang;
-                    CORE.loadModuleLibs(module, function() {
-                        MES.init( CORE.CONFIG_MES )
+                    require(['MES'], function () {
+                        MES.init(CORE.CONFIG_MES )
                     });
+                    break;
+                case 'search':
+                    CORE.initModuleSearch(module, groupCode, lang)
                     break;
             }
 
@@ -152,7 +155,11 @@ if (!window.CORE) {
 
             // Call the init method of the module
             switch (module) {
-                case 'search':  CORE.loadModuleLibs(module, function() { FAOSTATSearch.init(CORE.word, CORE.lang)});
+                case 'search':
+                    require(['SEARCH'], function (TILESMGR) {
+                        FAOSTATSearch.init(CORE.word, CORE.lang);
+                    });
+                    break;
             }
         },
 
