@@ -1,14 +1,16 @@
+
+var repository = '//fenixapps.fao.org/repository/js/';
+
 require.config({
 
-    baseUrl: 'http://168.202.28.214:8080',
-
+    baseUrl: '//168.202.28.214:8080',
     paths: {
-        'jquery'               : '//fenixapps.fao.org/repository/js/jquery/1.10.2/jquery-1.10.2.min',
-        'jquery.i18n'          : '//fenixapps.fao.org/repository/js/jquery/1.0.9/jquery.i18n.properties-min',
-        'jquery.powertip.min'  : '//fenixapps.fao.org/repository/js/jquery.power.tip/1.1.0/jquery.powertip.min',
-        'jquery.sticky'        : '//fenixapps.fao.org/repository/js/stickyjs/1.0/jquery.sticky',
-        'jquery.history'       : '//fenixapps.fao.org/repository/js/history.js/1.8b2/html4+html5/jquery.history',
-        'jquery.scrollUp.min'  : '//fenixapps.fao.org/repository/js/scrollup/2.3.3/js/jquery.scrollUp.min',
+        'jquery'               : repository + 'jquery/1.10.2/jquery-1.10.2.min',
+        'jquery.i18n'          : repository + 'jquery/1.0.9/jquery.i18n.properties-min',
+        'jquery.powertip.min'  : repository + 'jquery.power.tip/1.1.0/jquery.powertip.min',
+        'jquery.sticky'        : repository + 'stickyjs/1.0/jquery.sticky',
+        'jquery.history'       : repository + 'history.js/1.8b2/html4+html5/jquery.history',
+        'jquery.scrollUp.min'  : repository + 'scrollup/2.3.3/js/jquery.scrollUp.min',
 
          // TODO: move it from faostat-download
         'jquery.chromatable'    : 'faostat-download-js/js/chromatable/jquery.chromatable',
@@ -16,33 +18,33 @@ require.config({
         'jquery.fancybox'       : 'faostat-download-js/js/chromatable/jquery.fancybox',
 
 
-        'bootstrap': '//fenixapps.fao.org/repository/js/bootstrap/3.2/js/bootstrap.min',
-        'chosen': '//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.jquery.min',
-        'highcharts': '//fenixapps.fao.org/repository/js/highcharts/4.0.4/js/highcharts',
-        'highcharts_exporting' : '//fenixapps.fao.org/repository/js/highcharts/4.0.4/js/modules/exporting',
+        'bootstrap': repository + 'bootstrap/3.2/js/bootstrap.min',
+        'chosen': repository + 'chosen/1.0.0/chosen.jquery.min',
+        'highcharts': repository + 'highcharts/4.0.4/js/highcharts',
+        'highcharts_exporting' : repository + 'highcharts/4.0.4/js/modules/exporting',
 
         'mustache': '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache',
 
         'text': 'faostat-gateway/static/faostat/common/libs/text',
 
         // jqwidgets
-        'jqxcore'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore',
-        'jqxtabs'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs',
-        'jqxscrollbar'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxscrollbar',
-        'jqxpanel'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxpanel',
-        'jqxtree'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtree',
-        'jqxexpander'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxexpander',
-        'jqxbuttons'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxbuttons',
-        'jqxlistbox'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxlistbox',
-        'jqxdropdownlist'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxdropdownlist',
-        'jqxcombobox'  : 'http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcombobox',
+        'jqxcore'  : repository + 'jqwidgets/2.8.3/jqxcore',
+        'jqxtabs'  : repository + 'jqwidgets/2.8.3/jqxtabs',
+        'jqxscrollbar'  : repository + 'jqwidgets/2.8.3/jqxscrollbar',
+        'jqxpanel'  : repository + 'jqwidgets/2.8.3/jqxpanel',
+        'jqxtree'  : repository + 'jqwidgets/2.8.3/jqxtree',
+        'jqxexpander'  : repository + 'jqwidgets/2.8.3/jqxexpander',
+        'jqxbuttons'  : repository + 'jqwidgets/2.8.3/jqxbuttons',
+        'jqxlistbox'  : repository + 'jqwidgets/2.8.3/jqxlistbox',
+        'jqxdropdownlist'  : repository + 'jqwidgets/2.8.3/jqxdropdownlist',
+        'jqxcombobox'  : repository + 'jqwidgets/2.8.3/jqxcombobox',
 
         // Gateway
         'FAOSTAT3': 'faostat-gateway/static/faostat/faostat-gateway-js/core',
         'faostat-gateway-js' : 'faostat-gateway/static/faostat/faostat-gateway-js/faostat-gateway-js',
         'faostat-gateway-UIUtils' : 'faostat-gateway/static/faostat/faostat-gateway-js/UIUtils',
         'faostat-gateway-ga' : 'faostat-gateway/static/faostat/faostat-gateway-js/faostat-ga',
-         'FENIXChartsLibrary' : '//fenixapps.fao.org/repository/js/FENIXChartsLibrary/0.4/FENIXChartsLibrary',
+         'FENIXChartsLibrary' : repository + 'FENIXChartsLibrary/0.4/FENIXChartsLibrary',
 
         // Home
         'home'                          : 'faostat-gateway/static/faostat/faostat-home-js/faostat-home',
