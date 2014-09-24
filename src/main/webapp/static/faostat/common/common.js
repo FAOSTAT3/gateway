@@ -57,6 +57,9 @@ require.config({
         'jqxgrid.export'    : repository + 'jqwidgets/2.8.3/jqxgrid.export',
         'jqxdata.export'    : repository + 'jqwidgets/2.8.3/jqxdata.export',
 
+        // jshashtable
+        'jshashtable'       : 'faostat-gateway/static/faostat/common/libs/jshashtable',
+
 
         // Gateway
         'FAOSTAT3': 'faostat-gateway/static/faostat/faostat-gateway-js/core',
@@ -73,7 +76,7 @@ require.config({
         // Browse
         'BROWSE'                          : 'faostat-browse-js/js/faostat-browse',
         // TODO: that's a shared library
-        'BROWSE_jshashtable'              : "faostat-browse-js/js/jshashtable",
+        'BROWSE_jshashtable'                : "faostat-browse-js/js/jshashtable",
         'BROWSE_google-analytics-manager'   :"faostat-browse-js/js/google-analytics-manager",
         'BROWSE_faostat-browse-tree'        :"faostat-browse-js/js/faostat-browse-tree",
         'BROWSE_UIBuilder'                  :"faostat-browse-js/js/UIBuilder",
