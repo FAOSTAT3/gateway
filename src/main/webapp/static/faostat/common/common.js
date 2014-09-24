@@ -21,9 +21,6 @@ require.config({
         // jQRangeSlider
         'jquery.rangeslider' : repository + 'jquery.rangeslider/5.1.1/jQRangeSlider-min',
 
-
-
-
         'bootstrap': repository + 'bootstrap/3.2/js/bootstrap.min',
         'chosen': repository + 'chosen/1.0.0/chosen.jquery.min',
         'highcharts': repository + 'highcharts/4.0.4/js/highcharts',
@@ -31,6 +28,7 @@ require.config({
 
         'mustache': '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache',
 
+        // commmons requirejs libraries
         'text': 'faostat-gateway/static/faostat/common/libs/text',
         'i18n': 'faostat-gateway/static/faostat/common/libs/i18n',
 
