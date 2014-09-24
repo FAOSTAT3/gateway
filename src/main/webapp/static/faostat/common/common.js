@@ -22,6 +22,8 @@ require.config({
         'jquery.rangeslider' : repository + 'jquery.rangeslider/5.1.1/jQRangeSlider-min',
 
 
+
+
         'bootstrap': repository + 'bootstrap/3.2/js/bootstrap.min',
         'chosen': repository + 'chosen/1.0.0/chosen.jquery.min',
         'highcharts': repository + 'highcharts/4.0.4/js/highcharts',
@@ -30,6 +32,7 @@ require.config({
         'mustache': '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache',
 
         'text': 'faostat-gateway/static/faostat/common/libs/text',
+        'i18n': 'faostat-gateway/static/faostat/common/libs/i18n',
 
         // jqwidgets
         'jqxcore'           : repository + 'jqwidgets/2.8.3/jqxcore',
@@ -119,9 +122,9 @@ require.config({
         'ANALYSIS_TILE_MANAGER' : 'analysis/js/tiles-manager/tiles-manager',
         'ANALYSIS_F3_CHART'     : 'analysis/js/libs/commons/f3-chart',
         'ANALYSIS_GHG_QA_QC'    : 'analysis/js/ghg-qa-qc/ghg-qa-qc',
-        'ANALYSIS_GHG_OVERVIEW' : 'analysis/js//ghg-overview/ghg-overview'
-
-
+        'ANALYSIS_GHG_OVERVIEW' : 'analysis/js/ghg-overview/ghg-overview',
+        'F3_CHART'              : 'analysis/js/commons/f3-chart',
+        'F3_GHG_TABLE'          : 'analysis/js/commons/f3-ghg-table'
     },
 
     shim: {
