@@ -5,43 +5,51 @@
 
 <head>
     <title>FAOSTAT</title>
-    <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel='icon' type='image/png' href='//fenixapps.fao.org/repository/favicon/faostat.png'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,900,700|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Require-js -->
-    <script type='text/javascript' src='http://fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js'></script>
+    <script type='text/javascript' src='//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js'></script>
+
+    <!-- Fancybox -->
+    <link type="text/css" rel="stylesheet" href="/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+    <link type="text/css" rel="stylesheet" href="/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+    <link type="text/css" rel="stylesheet" href="/faostat-download-js/js/fanzybox/source/jquery.fancybox.css?v=2.1.4" />
+    <link type="text/css" rel="stylesheet" href="/faostat-download-js/css/myPivot.css" />
+    <link type="text/css" rel="stylesheet" href="/faostat-download-js/pivotAgg/pivot.css" />
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/jquery.jscrollpane.css" />
 
     <!-- Bootstrap -->
     <!--<link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" />-->
 
     <!-- Jquery-UI (SEARCH) -->
-    <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css" />
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/css/jquery-ui/1.9.2/smoothness/jquery-ui.custom_faostat.css" />
 
     <!-- jquery.rangeslider (SEARCH) -->
-    <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
 
     <!-- chosen -->
-    <link href='http://fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'>
+    <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'>
 
     <!-- JQWidgets -->
-    <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css"/>
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css"/>
 
     <!-- Core JS -->
-    <script type="text/javascript" src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>
-    <script type="text/javascript" src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/core.js"></script>
-    <script type="text/javascript" src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/UIUtils.js"></script>
+    <script type="text/javascript" src="//$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>
+    <script type="text/javascript" src="//$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/core.js"></script>
+    <script type="text/javascript" src="//$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/UIUtils.js"></script>
     <!--<script type="text/javascript" src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/faostat-ga.js"></script>-->
 
     <!-- Scroll Up -->
-    <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/scrollup/2.3.3/css/themes/pill.css" />
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/scrollup/2.3.3/css/themes/pill.css" />
 
     <!-- Analysis -->
     <!--<link type="text/css" rel="stylesheet" href="http://$_BASE_URL/analysis/css/analysis.css" />-->
 
     <!-- FAOSTAT CSS -->
-    <link type="text/css" rel="stylesheet" href="http://$_BASE_URL/faostat-gateway/static/faostat/faostat.css" />
-    <link type="text/css" rel="stylesheet" href="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-home.css" />
-    <link href="http://fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="//$_BASE_URL/faostat-gateway/static/faostat/faostat.css" />
+    <link type="text/css" rel="stylesheet" href="//$_BASE_URL/faostat-gateway/static/faostat/faostat-home.css" />
+    <link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Google Analytics -->
     <script type="text/javascript">
@@ -151,7 +159,6 @@
         </div>
 
         <div class="centralHolder">
-            <!--<div>$_CONTENT</div>-->
             <div id='container'></div>
         </div>
 
@@ -173,12 +180,11 @@
 
         <div class="fs-feedback">
             <div id="faostat-feedback-system" class="fs-feedback-system-button" class="various myButton"
-                 data-fancybox-type="iframe" href="http://fenixapps.fao.org/feedbacksystem/" target="myFanzy">
+                 data-fancybox-type="iframe" href="//fenixapps.fao.org/feedbacksystem/" target="myFanzy">
                 <span id="fs-feedbacksystem-text"></span>
                 <div class="fs-feedback-icon"></div>
             </div>
         </div>
-
 
         <form style='display: none;' id='excelForm' name='excelForm' method='POST'
               action='http://faostat3.fao.org/wds/rest/table/excel' target='_blank'>

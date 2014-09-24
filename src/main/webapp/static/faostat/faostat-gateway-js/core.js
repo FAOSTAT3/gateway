@@ -32,48 +32,15 @@ if (!window.CORE) {
         },
 
         /**
-         * This map is used to avoid modules libraries to be loaded more than once.
-         */
-        loadMapJS : {
-            'home' : false,
-            'browse' : false,
-            'download' : false,
-            'compare' : false,
-            'search' : false,
-            'analysis' : false,
-            'mes' : false
-        },
-
-        /**
-         * This map is used to avoid modules CSS to be loaded more than once.
-         */
-        loadMapCSS : {
-            'home' : false,
-            'browse' : false,
-            'download' : false,
-            'compare' : false,
-            'search' : false,
-            'analysis' : false,
-            'mes' : false
-        },
-
-        /**
          * @param module        home, browse, download, compare, search, analysis, mes
          * @param groupCode     FAOSTAT group code, e.g. 'Q'
          * @param groupName     FAOSTAT domain code, e.g. 'QC'
          * @param lang          UI language, e.g. 'E'
          */
         initModule : function(module, groupCode, domainCode, lang) {
-
-            console.log(module);
-            console.log(groupCode);
-            console.log(domainCode);
-            console.log(lang);
             // method to calculate DIV min height
             CORE.contentDIVMinHeight();
-
             $("#searchFS").show();
-
             // Store parameters
             CORE.groupCode = groupCode;
             CORE.domainCode = domainCode;
@@ -97,8 +64,14 @@ if (!window.CORE) {
                     });
                     break;
                 case 'download':
-                    require(['download'], function () {
-                        FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                    require(['DOWNLOAD'], function () {
+                        require(['text!faostat-gateway/static/faostat/faostat-download-js/template.html'], function (template) {
+                            console.log(template);
+                            var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
+                            $("#container").empty()
+                            $("#container").html(html)
+                            FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                        });
                     });
                     break;
                 case 'compare':
@@ -197,50 +170,19 @@ if (!window.CORE) {
          * This function update the URL to allow the bookmark of the user's selection.
          */
         upgradeURL : function(module, group, domain, lang) {
-            console.log("upgradeURL");
             /** TODO: make is as load module **/
             if (CORE.testHTML5()) {
-                console.log("CORE.testHTML5()");
                 var state = '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang;
-                console.log(History.getState());
-                console.log(state);
-
                 if ( History.getState().data.state != state ) {
-                    console.log(state);
                     var t = new Date().getTime();
                     CORE.timestamps[t] = t;
                     History.pushState({timestamp: t, state : state}, state, state);
-                    console.log(state);
                 }
             }
         },
 
         stickSelectorsHeader : function() {
             $("#selectorsHead").sticky({topSpacing:0});
-        },
-
-
-        /**
-         * @param module    The name of the module
-         *
-         * Each module has its own libraries, the full list is in the <code>libs.json</code> file.
-         */
-        loadModuleLibs : function(module, initFunction) {
-            console.log("asduh")
-            $.getJSON('http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-gateway-js/libs_fallback.json', function (data) {
-                data = (typeof data == 'string')? $.parseJSON(data) : data;
-                var toload = [];
-
-                yepnope({
-                    load: data[module],
-//                    callback: function(e) {
-//                        console.log(e);
-//                    },
-                    complete: function() {
-                        initFunction()
-                    }
-                });
-            })
         },
 
         breakLabel: function (lbl) {
@@ -316,7 +258,6 @@ if (!window.CORE) {
         },
 
         reloadModule: function(lang) {
-            console.log("reloadModule")
             CORE.lang = lang;
             var url = window.location.href;
             url = url.substring(0, url.length -2);
@@ -326,13 +267,10 @@ if (!window.CORE) {
 
         /** TODO: to be completed **/
         loadModule: function(module, options) {
-            console.log("loadModule")
-
             // TODO: move in in CORE.js
             var defaultURL =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module+'/'+ options + '/'+  CORE.lang;
             var homeURL    =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module + '/'+ CORE.lang;
             var searchURL  =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module +'/'+ options + '/'+ CORE.lang
-
             switch (module) {
                 case 'search':
                     window.location.href = searchURL;   break;
@@ -352,7 +290,5 @@ if (!window.CORE) {
         show_country_alert: function() {
             alert($.i18n.prop('_country_alert'));
         }
-
     };
-
 }

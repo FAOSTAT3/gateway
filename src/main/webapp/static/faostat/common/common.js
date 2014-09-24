@@ -13,13 +13,20 @@ require.config({
         'jquery.scrollUp.min'  : repository + 'scrollup/2.3.3/js/jquery.scrollUp.min',
         'jquery-ui'            : repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
 
-         // TODO: move it from faostat-download
+        // TODO: move it to the fenix-repository
         'jquery.chromatable'    : 'faostat-download-js/js/chromatable/jquery.chromatable',
-        'jquery.mousewheel'     : 'faostat-download-js/js/chromatable/jquery.mousewheel-3.0.6.pack',
-        'jquery.fancybox'       : 'faostat-download-js/js/chromatable/jquery.fancybox',
+        'jquery.mousewheel'     : 'faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack',
+        'jquery.fancybox'       : 'faostat-download-js/js/fanzybox/source/jquery.fancybox',
+        'jquery.fancybox-buttons'     : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons',
+        'jquery.fancybox-thumbs'       : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs',
+        'jquery.fancybox-media'       : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-media',
+
+        'jquery.jscrollpane'    : repository + 'jquery.scrollpane/1.0/jquery.jscrollpane.min',
 
         // jQRangeSlider
-        'jquery.rangeslider' : repository + 'jquery.rangeslider/5.1.1/jQRangeSlider-min',
+        'jquery.rangeslider'    : repository + 'jquery.rangeslider/5.1.1/jQRangeSlider-min',
+
+        'mwheelIntent'          : repository + 'jquery.scrollpane/1.0/mwheelIntent',
 
         'bootstrap': repository + 'bootstrap/3.2/js/bootstrap.min',
         'chosen': repository + 'chosen/1.0.0/chosen.jquery.min',
@@ -60,7 +67,6 @@ require.config({
         // jshashtable
         'jshashtable'       : 'faostat-gateway/static/faostat/common/libs/jshashtable',
 
-
         // Gateway
         'FAOSTAT3': 'faostat-gateway/static/faostat/faostat-gateway-js/core',
         'FAOSTAT3_gateway_ga': 'faostat-gateway/static/faostat/faostat-gateway-js/faostat-ga',
@@ -72,11 +78,10 @@ require.config({
         'HOME_faostat-home-charts'           : 'faostat-gateway/static/faostat/faostat-home-js/faostat-home-charts',
         'HOME_faostat-home-database-updates' : 'faostat-gateway/static/faostat/faostat-home-js/database-updates',
 
-
         // Browse
         'BROWSE'                          : 'faostat-browse-js/js/faostat-browse',
         // TODO: that's a shared library
-        'BROWSE_jshashtable'                : "faostat-browse-js/js/jshashtable",
+        'BROWSE_jshashtable'                :"faostat-browse-js/js/jshashtable",
         'BROWSE_google-analytics-manager'   :"faostat-browse-js/js/google-analytics-manager",
         'BROWSE_faostat-browse-tree'        :"faostat-browse-js/js/faostat-browse-tree",
         'BROWSE_UIBuilder'                  :"faostat-browse-js/js/UIBuilder",
@@ -114,6 +119,22 @@ require.config({
         'SEARCH_faostat-search-google-analytics-manager'    : "faostat-search-js/js/faostat-search-google-analytics-manager",
         'SEARCH_faostat-search-single-result'               : "faostat-search-js/js/faostat-search-single-result",
 
+        // Download
+        'DOWNLOAD'                                          : 'faostat-download-js/js/faostat-download',
+        'DOWNLOAD_pivot'                                    : "faostat-download-js/pivotAgg/pivot",
+        'DOWNLOAD_countriesAgg'    : "faostat-download-js/pivotAgg/countriesAgg",
+        'DOWNLOAD_configuration'               : "faostat-download-js/pivotAgg/configuration",
+        'DOWNLOAD_FBSN'               : "faostat-download-js/FBSN",
+        'DOWNLOAD_F3DWLD'               : "faostat-download-js/js/F3DWLD",
+        'DOWNLOAD_F3DWLDNotes'               : "faostat-download-js/js/F3DWLDNotes",
+        'DOWNLOAD_I18N'               : "faostat-download-js/js/I18N",
+        'DOWNLOAD_cpi'               : "faostat-download-js/js/cpi",
+        'DOWNLOAD_collector'               : "faostat-download-js/js/collector",
+        'DOWNLOAD_faostat-download-tree'               : "faostat-download-js/js/faostat-download-tree",
+        'DOWNLOAD_google-analytics-manager'               : "faostat-download-js/js/google-analytics-manager",
+
+
+
         // Methods and Standards
         'MES' : 'mes/js/mes',
         'MES_google-analytics-manager' : 'mes/js/google-analytics-manager',
@@ -144,6 +165,13 @@ require.config({
         'jquery.history': { deps :['jquery'] },
         'jquery.rangeslider': { deps :['jquery', 'jquery-ui']},
         'jquery-ui': { deps :['jquery'] },
+        'jquery.chromatable': { deps :['jquery'] },
+        'jquery.mousewheel': { deps :['jquery'] },
+        'jquery.fancybox': { deps :['jquery'] },
+        'jquery.fancybox-buttons': { deps :['jquery.fancybox'] },
+        'jquery.fancybox-thumbs': { deps :['jquery.fancybox'] },
+        'jquery.fancybox-media': { deps :['jquery.fancybox'] },
+        'jquery.jscrollpane': { deps :['jquery'] },
 
         'highcharts': { deps :['jquery'] },
         'highcharts_exporting': { deps :['highcharts'] },
@@ -179,7 +207,15 @@ require.config({
             'jquery.powertip.min',
             'jquery.history',
             'jquery.scrollUp.min',
-            'jquery.sticky'
+            'jquery.sticky',
+
+            // TODO: check if they are used by fancybox or they are just needed in the Download section
+            'jquery.chromatable',
+            'jquery.mousewheel',
+            'jquery.fancybox',
+            'jquery.fancybox-buttons',
+            'jquery.fancybox-thumbs',
+            'jquery.fancybox-media'
         ]},
 
         'HOME': { deps :[
@@ -252,8 +288,41 @@ require.config({
             'SEARCH_faostat-search-single-result'
         ]},
 
-        'download': { deps :[
+        'DOWNLOAD': { deps :[
+            'FAOSTAT3',
+            'jquery-ui',
+            'jquery.jscrollpane',
 
+            // jqwidgets
+            'jqxcore',
+            'jqxtabs',
+            'jqxscrollbar',
+            'jqxpanel',
+            'jqxtree',
+            'jqxexpander',
+            'jqxbuttons',
+            'jqxlistbox',
+            'jqxdropdownlist',
+            'jqxcombobox',
+            'jqxcheckbox',
+            'jqxmenu',
+            'jqxradiobutton',
+            'jqxdata',
+            'jqxgrid',
+            'jqxnumberinput',
+
+            // download modules
+            'DOWNLOAD_pivot',
+            'DOWNLOAD_countriesAgg',
+            'DOWNLOAD_configuration',
+            'DOWNLOAD_FBSN',
+            'DOWNLOAD_F3DWLD',
+            'DOWNLOAD_F3DWLDNotes',
+            'DOWNLOAD_I18N',
+            'DOWNLOAD_cpi',
+            'DOWNLOAD_collector',
+            'DOWNLOAD_faostat-download-tree',
+            'DOWNLOAD_google-analytics-manager'
         ]},
 
         'COMPARE': { deps :[

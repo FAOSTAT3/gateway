@@ -18,12 +18,12 @@ if (!window.FAOSTATHome) {
             FAOSTATHome._showBulkDownload();
 
             <!-- Country Profiles -->
-            <!--$('#btnCountry').fancybox({-->
-            <!--'width':1100,-->
-            <!--'height':1000,-->
-            <!--'type':'iframe',-->
-            <!--'autoScale':'false'-->
-            <!--});-->
+           $('#btnCountry').fancybox({
+            'width':1100,
+            'height':1000,
+            'type':'iframe',
+            'autoScale':'false'
+            });
 
         },
 
