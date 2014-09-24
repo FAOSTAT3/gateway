@@ -318,7 +318,7 @@ require.config({
             'jqxcombobox',
             'jqxdata',
 
-            'MES_google-analytics-manager',
+            'MES_google-analytics-manager'
 
         ]}
 
