@@ -101,7 +101,6 @@ if (!window.FAOSTATGateway) {
 
             $("#fs-menu-header").sticky({topSpacing:0});
 
-
             /** labels **/
             $('.ico-pr').html($.i18n.prop('_production'));
             $('.ico-tr').html($.i18n.prop('_trade'));
@@ -136,7 +135,7 @@ if (!window.FAOSTATGateway) {
         },
 
         _loadFeedbackSystem: function(id) {
-//            $("#" + id).fancybox();
+            $("#" + id).fancybox();
         }
 
     };
