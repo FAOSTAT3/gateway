@@ -110,23 +110,23 @@ if (!window.FAOSTATGateway) {
 
 
             /** labels **/
-//            $('.ico-pr').html($.i18n.prop('_production'));
-//            $('.ico-tr').html($.i18n.prop('_trade'));
-//            $('.ico-fs').html($.i18n.prop('_foodSupply'));
-//            $('.ico-fsecurity').html($.i18n.prop('_foodsecurity'));
-//            $('.ico-re').html($.i18n.prop('_resources'));
-//            $('.ico-em').html($.i18n.prop('_ghg'));
-//            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
-//            $('.ico-in').html($.i18n.prop('_investment'));
-//            $('.ico-fo').html($.i18n.prop('_forestry'));
-//            $('.ico-pi').html($.i18n.prop('_prices'));
-//            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
-//            $('.ico-fb').html($.i18n.prop('_foodBalance'));
-//            $('.ico-asti').html($.i18n.prop('_asti'));
-//            $('.ico-pop').html($.i18n.prop('_population'));
-//            $('.ico-po').html($.i18n.prop('_population'));
-//            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
-//            $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
+            $('.ico-pr').html($.i18n.prop('_production'));
+            $('.ico-tr').html($.i18n.prop('_trade'));
+            $('.ico-fs').html($.i18n.prop('_foodSupply'));
+            $('.ico-fsecurity').html($.i18n.prop('_foodsecurity'));
+            $('.ico-re').html($.i18n.prop('_resources'));
+            $('.ico-em').html($.i18n.prop('_ghg'));
+            $('.ico-el').html($.i18n.prop('_ghgLandUse'));
+            $('.ico-in').html($.i18n.prop('_investment'));
+            $('.ico-fo').html($.i18n.prop('_forestry'));
+            $('.ico-pi').html($.i18n.prop('_prices'));
+            $('.ico-ae').html($.i18n.prop('_agriEnviromental'));
+            $('.ico-fb').html($.i18n.prop('_foodBalance'));
+            $('.ico-asti').html($.i18n.prop('_asti'));
+            $('.ico-pop').html($.i18n.prop('_population'));
+            $('.ico-po').html($.i18n.prop('_population'));
+            $('.ico-cb').html($.i18n.prop('_commoditybalances'));
+            $('.ico-emergencyresponse').html($.i18n.prop('_emergency_response'));
 
             $('#lang' + CORE.lang).addClass("fs-lan-selected");
 

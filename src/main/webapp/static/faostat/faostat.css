@@ -236,7 +236,8 @@ modules **/
 .pageTitleCommands h1{
     color: #174c74;
     float: left;
-    font: normal normal 400 18px/normal 'Roboto Condensed', sans-serif !important;;
+    font: normal normal 400 18px/normal 'Roboto Condensed', sans-serif !important;
+    margin: 0px !important;
 }
 
 
@@ -3777,6 +3778,20 @@ a#btnFS{
 
 .single-result-table-box {
     margin-top: 10px;
+}
+
+
+.fa-bar-chart:hover {
+    cursor: pointer;
+    /*color: #379BCE;*/
+}
+.fa-area-chart:hover {
+    cursor: pointer;
+    /*color: #379BCE;*/
+}
+.fa-line-chart:hover {
+    cursor: pointer;
+    /*color: #379BCE;*/
 }
 
 
