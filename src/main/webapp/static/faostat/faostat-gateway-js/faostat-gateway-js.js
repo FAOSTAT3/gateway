@@ -11,7 +11,7 @@ if (!window.FAOSTATGateway) {
             require(["http://" + CORE.baseURL + "/faostat-gateway/static/faostat/common/common.js"], function () {
                 require(["FAOSTAT3"], function () {
 
-                    require.config({"locale": CORE.lang.toUpperCase()});
+                    require.config({"locale": lang});
 
 
                     // load history js
