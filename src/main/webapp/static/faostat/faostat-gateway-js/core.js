@@ -122,7 +122,7 @@ if (!window.CORE) {
 //                    break;
                 case 'analysis':
                     require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
-                        TILESMGR.init({}, null);
+                        TILESMGR.init({'lang': lang}, null);
                     });
                     break;
                 case 'mes':
