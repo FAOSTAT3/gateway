@@ -7,49 +7,43 @@ if (!window.FAOSTATGateway) {
          * This map is used to avoid modules libraries to be loaded more than once.
          */
         loadUI : function(module, groupCode, domainCode, lang) {
-
+            CORE.lang = lang;
             require(["http://" + CORE.baseURL + "/faostat-gateway/static/faostat/common/common.js"], function () {
                 require(["FAOSTAT3"], function () {
-
                     require.config({"locale": lang.toUpperCase()});
-
-
-                    // load history js
-//                    (function(window,undefined){
-//                        if ( CORE.testHTML5() ) {
-//                            console.log("here");
-//                            // Establish Variables
-//                            var History = window.History; // Note: We are using a capital H instead of a lower h
-//                            var State = History.getState();
-//
-//                            // Bind to State Change
-//                            History.Adapter.bind(window, 'statechange ', function () { // Note: We are using statechange instead of popstate
-//                                // Log the State
-//                                var State = History.getState(); // Note: We are using History.getState() instead of event.state
-//                                if (State.data.timestamp in CORE.timestamps) {
-//                                    // Deleting the unique timestamp associated with the state
-//                                    delete CORE.timestamps[State.data.timestamp];
-//                                }
-//                                else {
-//                                    // Manage Back/Forward button here
-//                                    CORE.reloadModule(CORE.lang)
-//                                }
-//                            });
-//                        }
-//                    })(window);
-
-                    // load moduels
-                    CORE.initModule(module, groupCode, domainCode, lang);
-                    FAOSTATGateway._loadUI(module);
+                    FAOSTATGateway._loadUI(module, groupCode, domainCode, lang);
                 });
             });
-
         },
 
-        _loadUI: function(module) {
+        _loadHistoryJS: function() {
+            if ( CORE.testHTML5() ) {
+                // Establish Variables
+                var History = window.History; // Note: We are using a capital H instead of a lower h
+                var State = History.getState();
+                // Bind to State Change
+                History.Adapter.bind(window, 'statechange ', function () { // Note: We are using statechange instead of popstate
+                    // Log the State
+                    var State = History.getState(); // Note: We are using History.getState() instead of event.state
+                    if (State.data.timestamp in CORE.timestamps) {
+                        // Deleting the unique timestamp associated with the state
+                        delete CORE.timestamps[State.data.timestamp];
+                    }
+                    else {
+                        // Manage Back/Forward button here
+                        CORE.reloadModule(CORE.lang)
+                    }
+                });
+            }
+        },
+
+        _loadUI: function(module, groupCode, domainCode, lang) {
+            // loading HistoryJS
+            FAOSTATGateway._loadHistoryJS();
 
             // loading module
-            //CORE.initModule(module);
+            CORE.initModule(module, groupCode, domainCode, lang);
+
 
             // Select the module on the Menu
             $('#'  + module).addClass("fs-menu-selected");
@@ -76,7 +70,6 @@ if (!window.FAOSTATGateway) {
                 zIndex: 2147483647 // Z-Index for the overlay
             });
         },
-
 
         _loadListeners: function() {
             $("#searchFS").on("submit", function() {
@@ -135,8 +128,6 @@ if (!window.FAOSTATGateway) {
             $('#country_warning').html($.i18n.prop('_country_alert_title'));
 
         },
-
-
 
         _inizializeDD: function() {
             /** enable menu **/
