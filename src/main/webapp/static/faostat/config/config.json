@@ -1,4 +1,4 @@
 {
-    "home" : "http://168.202.28.214:8080/faostat-gateway/base_index.html",
-    "base_url" : "168.202.28.214:8080"
+    "$_GATEWAY_BASE_URL"  : "//168.202.28.214:8080",
+    "$_GATEWAY_BASE_INDEX"  : "/static/faostat/index.html"
 }

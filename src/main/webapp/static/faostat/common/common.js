@@ -1,6 +1,8 @@
 
 var repository = '//fenixapps.fao.org/repository/js/';
 
+var faostat_gateway = ''
+
 require.config({
 
     baseUrl: '//168.202.28.214:8080',
@@ -14,12 +16,12 @@ require.config({
         'jquery-ui'            : repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
 
         // TODO: move it to the fenix-repository
-        'jquery.chromatable'    : 'faostat-download-js/js/chromatable/jquery.chromatable',
-        'jquery.mousewheel'     : 'faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack',
-        'jquery.fancybox'       : 'faostat-download-js/js/fanzybox/source/jquery.fancybox',
-        'jquery.fancybox-buttons'     : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons',
-        'jquery.fancybox-thumbs'       : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs',
-        'jquery.fancybox-media'       : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-media',
+        'jquery.chromatable'        : 'faostat-download-js/js/chromatable/jquery.chromatable',
+        'jquery.mousewheel'         : 'faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack',
+        'jquery.fancybox'           : 'faostat-download-js/js/fanzybox/source/jquery.fancybox',
+        'jquery.fancybox-buttons'   : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons',
+        'jquery.fancybox-thumbs'    : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs',
+        'jquery.fancybox-media'     : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-media',
 
         'jquery.jscrollpane'    : repository + 'jquery.scrollpane/1.0/jquery.jscrollpane.min',
 
@@ -36,8 +38,8 @@ require.config({
         'mustache': '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache',
 
         // commmons requirejs libraries
-        'text': 'faostat-gateway/static/faostat/common/libs/text',
-        'i18n': 'faostat-gateway/static/faostat/common/libs/i18n',
+        'text': faostat_gateway + 'static/faostat/common/libs/text',
+        'i18n': faostat_gateway + 'static/faostat/common/libs/i18n',
 
         // jqwidgets
         'jqxcore'           : repository + 'jqwidgets/2.8.3/jqxcore',
@@ -65,18 +67,18 @@ require.config({
         'jqxdata.export'    : repository + 'jqwidgets/2.8.3/jqxdata.export',
 
         // jshashtable
-        'jshashtable'       : 'faostat-gateway/static/faostat/common/libs/jshashtable',
+        'jshashtable'       : faostat_gateway + 'static/faostat/common/libs/jshashtable',
 
         // Gateway
-        'FAOSTAT3': 'faostat-gateway/static/faostat/faostat-gateway-js/core',
-        'FAOSTAT3_gateway_ga': 'faostat-gateway/static/faostat/faostat-gateway-js/faostat-ga',
-        'FAOSTAT3_gateway_js': 'faostat-gateway/static/faostat/faostat-gateway-js/faostat-gateway-js',
+        'FAOSTAT3': faostat_gateway + 'static/faostat/faostat-gateway-js/core',
+        'FAOSTAT3_gateway_ga': faostat_gateway + 'static/faostat/faostat-gateway-js/faostat-ga',
+        'FAOSTAT3_gateway_js': faostat_gateway + 'static/faostat/faostat-gateway-js/faostat-gateway-js',
         'FENIXChartsLibrary' : repository + 'FENIXChartsLibrary/0.4/FENIXChartsLibrary',
 
         // Home
-        'HOME'                          : 'faostat-gateway/static/faostat/faostat-home-js/faostat-home',
-        'HOME_faostat-home-charts'           : 'faostat-gateway/static/faostat/faostat-home-js/faostat-home-charts',
-        'HOME_faostat-home-database-updates' : 'faostat-gateway/static/faostat/faostat-home-js/database-updates',
+        'HOME'                          : faostat_gateway + 'static/faostat/faostat-home-js/faostat-home',
+        'HOME_faostat-home-charts'           : faostat_gateway + 'static/faostat/faostat-home-js/faostat-home-charts',
+        'HOME_faostat-home-database-updates' : faostat_gateway + 'static/faostat/faostat-home-js/database-updates',
 
         // Browse
         'BROWSE'                          : 'faostat-browse-js/js/faostat-browse',
@@ -120,24 +122,24 @@ require.config({
         'SEARCH_faostat-search-single-result'               : "faostat-search-js/js/faostat-search-single-result",
 
         // Download
-        'DOWNLOAD'                                          : 'faostat-download-js/js/faostat-download',
-        'DOWNLOAD_pivot'                                    : "faostat-download-js/pivotAgg/pivot",
-        'DOWNLOAD_countriesAgg'    : "faostat-download-js/pivotAgg/countriesAgg",
-        'DOWNLOAD_configuration'               : "faostat-download-js/pivotAgg/configuration",
-        'DOWNLOAD_FBSN'               : "faostat-download-js/FBSN",
+        'DOWNLOAD'                      : 'faostat-download-js/js/faostat-download',
+        'DOWNLOAD_pivot'                : "faostat-download-js/pivotAgg/pivot",
+        'DOWNLOAD_countriesAgg'         : "faostat-download-js/pivotAgg/countriesAgg",
+        'DOWNLOAD_configuration'        : "faostat-download-js/pivotAgg/configuration",
+        'DOWNLOAD_FBSN'                 : "faostat-download-js/FBSN",
         'DOWNLOAD_F3DWLD'               : "faostat-download-js/js/F3DWLD",
-        'DOWNLOAD_F3DWLDNotes'               : "faostat-download-js/js/F3DWLDNotes",
-        'DOWNLOAD_I18N'               : "faostat-download-js/js/I18N",
-        'DOWNLOAD_cpi'               : "faostat-download-js/js/cpi",
-        'DOWNLOAD_collector'               : "faostat-download-js/js/collector",
-        'DOWNLOAD_faostat-download-tree'               : "faostat-download-js/js/faostat-download-tree",
-        'DOWNLOAD_google-analytics-manager'               : "faostat-download-js/js/google-analytics-manager",
+        'DOWNLOAD_F3DWLDNotes'          : "faostat-download-js/js/F3DWLDNotes",
+        'DOWNLOAD_I18N'                 : "faostat-download-js/js/I18N",
+        'DOWNLOAD_cpi'                  : "faostat-download-js/js/cpi",
+        'DOWNLOAD_collector'            : "faostat-download-js/js/collector",
+        'DOWNLOAD_faostat-download-tree'      : "faostat-download-js/js/faostat-download-tree",
+        'DOWNLOAD_google-analytics-manager'   : "faostat-download-js/js/google-analytics-manager",
 
 
 
         // Methods and Standards
-        'MES' : 'mes/js/mes',
-        'MES_google-analytics-manager' : 'mes/js/google-analytics-manager',
+        'MES'                           : 'faostat-mes/js/mes',
+        'MES_google-analytics-manager'  : 'faostat-mes/js/google-analytics-manager',
 
 
         // Analysis

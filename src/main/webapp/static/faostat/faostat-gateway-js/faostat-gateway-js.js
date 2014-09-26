@@ -2,16 +2,17 @@ if (!window.FAOSTATGateway) {
 
     window.FAOSTATGateway = {
 
-
         /**
          * This map is used to avoid modules libraries to be loaded more than once.
          */
-        loadUI : function(module, groupCode, domainCode, lang) {
-            CORE.lang = lang;
-            require(["http://" + CORE.baseURL + "/faostat-gateway/static/faostat/common/common.js"], function () {
+        //loadUI : function(module, groupCode, domainCode, lang) {
+        loadUI : function(obj) {
+            console.log(obj)
+            CORE.lang = obj.lang;
+            require(["//" + CORE.baseURL + "/static/faostat/common/common.js"], function () {
                 require(["FAOSTAT3"], function () {
-                    require.config({"locale": lang.toUpperCase()});
-                    FAOSTATGateway._loadUI(module, groupCode, domainCode, lang);
+                    require.config({"locale": obj.lang.toUpperCase()});
+                    FAOSTATGateway._loadUI(obj);
                 });
             });
         },
@@ -37,13 +38,17 @@ if (!window.FAOSTATGateway) {
             }
         },
 
-        _loadUI: function(module, groupCode, domainCode, lang) {
+        _loadUI: function(obj) {
+
+            var module = obj.module;
+            var lang = obj.lang;
+
             // loading HistoryJS
             FAOSTATGateway._loadHistoryJS();
 
-            // loading module
-            CORE.initModule(module, groupCode, domainCode, lang);
 
+            // loading module
+            CORE.initModule(obj);
 
             // Select the module on the Menu
             $('#'  + module).addClass("fs-menu-selected");
@@ -85,7 +90,6 @@ if (!window.FAOSTATGateway) {
 
         _loadLabels: function() {
             /** setting lang properties **/
-
             $('#fs-fao').html($.i18n.prop('_fao'));
             $('.fs-statistics-division').html($.i18n.prop('_statistics_division'));
 
@@ -137,7 +141,5 @@ if (!window.FAOSTATGateway) {
         _loadFeedbackSystem: function(id) {
             $("#" + id).fancybox();
         }
-
     };
-
 }

@@ -3794,4 +3794,7 @@ a#btnFS{
     /*color: #379BCE;*/
 }
 
+#increment .jqx-input-content {
+    height:100% !important;
+}
 

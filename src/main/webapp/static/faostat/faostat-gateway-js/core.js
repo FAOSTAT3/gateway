@@ -10,7 +10,12 @@ if (!window.CORE) {
         /**
          * The base URL is used to load FAOSTAT modules.
          */
+        // this should be subsequent part of i.e. 168.202.28.214:8080
+        state_prefix : '',
         baseURL : '168.202.28.214:8080',
+        baseURL_WDS : '//faostat3.fao.org/wds',
+//        state_prefix : '/ghg/faostat-gateway/go/to/',
+
 
         groupCode : null,
 
@@ -21,13 +26,13 @@ if (!window.CORE) {
         lang : null,
 
         CONFIG_MES: {
-            prefix                  : 'http://168.202.28.214:8080/mes/',
+            prefix                  : 'http://168.202.28.214:8080/faostat-mes/',
             datasource              : 'faostat2',
-            html_structure          : 'http://168.202.28.214:8080/mes/structure.html',
+            html_structure          : 'http://168.202.28.214:8080/faostat-mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
             rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
-            I18N_URL                : 'http://168.202.28.214:8080/faostat-gateway/static/faostat/I18N/'
+            I18N_URL                : 'http://168.202.28.214:8080/static/faostat/I18N/'
 
         },
 
@@ -37,20 +42,21 @@ if (!window.CORE) {
          * @param groupName     FAOSTAT domain code, e.g. 'QC'
          * @param lang          UI language, e.g. 'E'
          */
-        initModule : function(module, groupCode, domainCode, lang) {
+        initModule : function(obj) {
             // method to calculate DIV min height
             CORE.contentDIVMinHeight();
             $("#searchFS").show();
             // Store parameters
-            CORE.groupCode = groupCode;
-            CORE.domainCode = domainCode;
-            CORE.lang = lang;
+            var module = obj.module
+            CORE.groupCode = obj.section;
+            CORE.domainCode = obj.code;
+            CORE.lang = obj.lang;
 
             // Call the init method of the module
             switch (module) {
                 case 'home':
                     require(['HOME'], function () {
-                        require(['text!faostat-gateway/static/faostat/faostat-home-js/template.html'], function (template) {
+                        require(['text!static/faostat/faostat-home-js/template.html'], function (template) {
                             var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
                             $("#container").empty()
                             $("#container").html(html)
@@ -65,11 +71,12 @@ if (!window.CORE) {
                     break;
                 case 'download':
                     require(['DOWNLOAD'], function () {
-                        require(['text!faostat-gateway/static/faostat/faostat-download-js/template.html'], function (template) {
-                            console.log(template);
+                        require(['text!static/faostat/faostat-download-js/template.html'], function (template) {
                             var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
                             $("#container").empty()
                             $("#container").html(html)
+                            console.log(CORE.groupCode);
+                            console.log(CORE.domainCode);
                             FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang);
                         });
                     });
@@ -99,15 +106,16 @@ if (!window.CORE) {
                     });
                     break;
                 case 'mes':
-                    CORE.CONFIG_MES.sectionCode = groupCode;
-                    CORE.CONFIG_MES.subSectionCode = domainCode;
-                    CORE.CONFIG_MES.lang = lang;
+                    CORE.CONFIG_MES.sectionCode = CORE.groupCode;
+                    CORE.CONFIG_MES.subSectionCode = CORE.domainCode;
+                    CORE.CONFIG_MES.lang = CORE.lang;
                     require(['MES'], function () {
                         MES.init(CORE.CONFIG_MES )
                     });
                     break;
                 case 'search':
-                    CORE.initModuleSearch(module, groupCode, lang)
+                    $('#searchFS').hide()
+                    CORE.initModuleSearch(module, obj.word, CORE.lang)
                     break;
             }
 
@@ -125,7 +133,6 @@ if (!window.CORE) {
             // Store parameters
             CORE.word = word;
             CORE.lang = lang;
-
             // Call the init method of the module
             switch (module) {
                 case 'search':
@@ -145,11 +152,15 @@ if (!window.CORE) {
          * Function linked to the Gateway's menu that load the requested module in the main content.
          */
         loadModule : function(module, group, domain, lang) {
-            window.location.href = 'http://' + CORE.baseURL + '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang;
+            var url = 'http://' + CORE.baseURL + '/' + module
+            if (group) url += '/' + group
+            if (domain) url += '/' + domain
+            if (lang) url += '/' + lang
+            window.location.href = url;
         },
 
         loadSearchModule : function(module, word, lang) {
-            window.location.href = 'http://' + CORE.baseURL + '/faostat-gateway/go/to/' + module + '/' + word + '/' + lang;
+            window.location.href = 'http://' + CORE.baseURL + '/' + module + '/' + word + '/' + lang;
         },
 
         /**
@@ -170,9 +181,15 @@ if (!window.CORE) {
          * This function update the URL to allow the bookmark of the user's selection.
          */
         upgradeURL : function(module, group, domain, lang) {
-            /** TODO: make is as load module **/
             if (CORE.testHTML5()) {
-                var state = '/faostat-gateway/go/to/' + module + '/' + group + '/' + domain + '/' + lang;
+                var state = CORE.state_prefix
+                if (module) state += '/' + module
+                if (group) state += '/' + group
+                if (domain) state += '/' + domain
+                if (lang) state += '/' + lang
+                //var state = CORE.state_prefix  + module + '/' + group + '/' + domain + '/' + lang;
+
+
                 if ( History.getState().data.state != state ) {
                     var t = new Date().getTime();
                     CORE.timestamps[t] = t;
@@ -243,7 +260,7 @@ if (!window.CORE) {
                 case 'S' : I18NLang = 'es'; break;
                 default: I18NLang = 'en'; break;
             }
-            var path =  'http://'+ CORE.baseURL +'/faostat-gateway/static/faostat/I18N/';
+            var path =  'http://'+ CORE.baseURL +'/static/faostat/I18N/';
 
             $.i18n.properties({
                 name: 'I18N',
@@ -268,17 +285,10 @@ if (!window.CORE) {
         /** TODO: to be completed **/
         loadModule: function(module, options) {
             // TODO: move in in CORE.js
-            var defaultURL =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module+'/'+ options + '/'+  CORE.lang;
-            var homeURL    =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module + '/'+ CORE.lang;
-            var searchURL  =  'http://' + CORE.baseURL +'/faostat-gateway/go/to/' + module +'/'+ options + '/'+ CORE.lang
-            switch (module) {
-                case 'search':
-                    window.location.href = searchURL;   break;
-                case 'home':
-                    window.location.href = homeURL;   break;
-                default:
-                    window.location.href = defaultURL;  break;
-            }
+            var url = 'http://' + CORE.baseURL +'/' + module;
+            if (options) url += '/'+ options
+            url += '/' + CORE.lang
+            window.location.href = url;
         },
 
         contentDIVMinHeight: function() {

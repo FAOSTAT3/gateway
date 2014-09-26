@@ -35,20 +35,20 @@
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css"/>
 
     <!-- Core JS -->
-    <script type="text/javascript" src="//$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>
-    <script type="text/javascript" src="//$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/core.js"></script>
-    <script type="text/javascript" src="//$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/UIUtils.js"></script>
-    <!--<script type="text/javascript" src="http://$_BASE_URL/faostat-gateway/static/faostat/faostat-gateway-js/faostat-ga.js"></script>-->
+    <script type="text/javascript" src="$_BASE_URL/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>
+    <script type="text/javascript" src="$_BASE_URL/static/faostat/faostat-gateway-js/core.js"></script>
+    <script type="text/javascript" src="$_BASE_URL/static/faostat/faostat-gateway-js/UIUtils.js"></script>
+    <!--<script type="text/javascript" src="http:$_BASE_URL/static/faostat/faostat-gateway-js/faostat-ga.js"></script>-->
 
     <!-- Scroll Up -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/scrollup/2.3.3/css/themes/pill.css" />
 
     <!-- Analysis -->
-    <!--<link type="text/css" rel="stylesheet" href="http://$_BASE_URL/analysis/css/analysis.css" />-->
+    <!--<link type="text/css" rel="stylesheet" href="http:$_BASE_URL/analysis/css/analysis.css" />-->
 
     <!-- FAOSTAT CSS -->
-    <link type="text/css" rel="stylesheet" href="//$_BASE_URL/faostat-gateway/static/faostat/faostat.css" />
-    <link type="text/css" rel="stylesheet" href="//$_BASE_URL/faostat-gateway/static/faostat/faostat-home.css" />
+    <link type="text/css" rel="stylesheet" href="$_BASE_URL/static/faostat/faostat.css" />
+    <link type="text/css" rel="stylesheet" href="$_BASE_URL/static/faostat/faostat-home.css" />
     <link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Google Analytics -->
@@ -63,7 +63,8 @@
         })();
     </script>
 </head>
-<body onload="FAOSTATGateway.loadUI($_MODULE, '$_GROUP_CODE', '$_DOMAIN_CODE', '$_LANG');">
+<!--<body onload="FAOSTATGateway.loadUI($MODULE_CONFIG, '$_GROUP_CODE', '$_DOMAIN_CODE', '$_LANG');">-->
+<body onload="start()">
     <div class="fs-warning-wrapper">
         <div class="fs-warning">
             <div class="standard-title" id="fs-warning-message-title">
@@ -148,10 +149,10 @@
                             </div>
                         </div>
                     </span>
-                <span onclick="CORE.loadModule('compare', 'Q/QC');" id="compare"></span>
+                <span onclick="CORE.loadModule('compare', null);" id="compare"></span>
                 <span onclick="CORE.loadModule('search', '*');" id="search"></span>
                 <span onclick="CORE.loadModule('analysis', 'Q/QC');" id="analysis"></span>
-                <span onclick="CORE.loadModule('mes', 'methodology_list/*');" id="mes"></span>
+                <span onclick="CORE.loadModule('mes', 'methodology_list');" id="mes"></span>
             </div>
             <form style="display:true" id="searchFS" method="get">
                 <input type="text" size="40" id="searchFStext">
@@ -166,7 +167,7 @@
 
             <div class="fs-row fs-goToBottomPadding">
                 <div class="fs_column_12">
-                    <img src="http://$_BASE_URL/faostat-gateway/static/faostat/images/logo-footer.png" alt="faostat-for a world without hunger" class="fs-logo-footer">
+                    <img src="$_BASE_URL/static/faostat/images/logo-footer.png" alt="faostat-for a world without hunger" class="fs-logo-footer">
                         <span class="fs-footer-link">
                             <a target="_blank" href="http://www.fao.org/corp/copyright/$_ISO2_LANG/">&#169; FAO 2014</a>
                             <br>
@@ -258,3 +259,9 @@
     </div>
 </body>
 </html>
+<script>
+    function start() {
+        var obj = $_MODULE_CONFIG
+        FAOSTATGateway.loadUI(obj);
+    }
+</script>

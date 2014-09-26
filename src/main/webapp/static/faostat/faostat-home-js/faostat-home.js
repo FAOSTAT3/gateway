@@ -28,7 +28,7 @@ if (!window.FAOSTATHome) {
         },
 
         _loadNews: function(id, type, lang) {
-            var url = 'http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-home-js/resources/' + type +'.json';
+            var url = 'http://' + CORE.baseURL + '/static/faostat/faostat-home-js/resources/' + type +'.json';
             $('#' + id).empty()
             $.getJSON(url, function(data) {
                 for( var i=0; i < data.length; i++) {
@@ -42,7 +42,7 @@ if (!window.FAOSTATHome) {
 
         _loadLinks: function(id, lang) {
 
-            var url = 'http://' + CORE.baseURL + '/faostat-gateway/static/faostat/faostat-home-js/resources/links.json';
+            var url = '//' + CORE.baseURL + '/static/faostat/faostat-home-js/resources/links.json';
             $.getJSON(url, function(data) {
                 $('#' + id).empty()
                 for( var i=0; i < data.length; i++) {
@@ -164,7 +164,7 @@ if (!window.FAOSTATHome) {
         _showBulkDownload: function() {
             $.ajax({
                 type: 'GET',
-                url: 'http://' + CORE.baseURL + '/wds/rest/bulkdownloads/' + CORE.datasource + '/0/E',
+                url: CORE.baseURL_WDS + '/rest/bulkdownloads/' + CORE.datasource + '/0/E',
                 dataType: 'json',
                 success: function (response) {
                     if (typeof response == 'string')

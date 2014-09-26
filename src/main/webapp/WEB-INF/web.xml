@@ -27,13 +27,13 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>jersey-serlvet</servlet-name>
-        <url-pattern>/go/*</url-pattern>
+        <servlet-name>config</servlet-name>
+        <url-pattern>/config</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>config</servlet-name>
-        <url-pattern>/config</url-pattern>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
     <!--<welcome-file-list>-->

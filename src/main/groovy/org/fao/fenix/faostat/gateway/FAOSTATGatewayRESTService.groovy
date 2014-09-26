@@ -22,49 +22,174 @@
 package org.fao.fenix.faostat.gateway
 
 import com.google.gson.Gson
+import org.json.JSONObject
 
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
-import org.fao.fenix.faostat.gateway.*;
 
 /**
  * @author <a href="mailto:guido.barbaglia@fao.org">Guido Barbaglia</a>
  * @author <a href="mailto:guido.barbaglia@gmail.com">Guido Barbaglia</a>
  * */
-@Path("to")
+@Path("")
 class FAOSTATGatewayRESTService {
 
     def CONFIG_FILE = 'static/faostat/config/config.json'
 
+    // config contained in the CONFIG FILE
+    def $_GATEWAY_BASE_INDEX = '$_GATEWAY_BASE_INDEX'
+    def $_GATEWAY_BASE_URL = '$_GATEWAY_BASE_URL'
+
+    // configs to override on the HTML
+    def $_MODULE_CONFIG = '$_MODULE_CONFIG'
+    def $_BASE_URL = '$_BASE_URL'
+    def DEFAULT_LANGUAGE = 'E'
+
     /**
-     * @param section   FAOSTAT section: browse, download, search, compare, analysis, mes, home
-     * @param group     FAOSTAT DB group
-     * @param domain    FAOSTAT DB group
-     * @param lang      E, F or S
+     * @param module    FAOSTAT module: home
+     * @param lang      EN, FR or ES
      * @return          HTML code to be rendered by the browser
      */
     @GET
     @Produces(MediaType.TEXT_HTML)
-    @Path("/{section}/{group}/{domain}/{lang}")
-    String loadModule(@PathParam("section") String section, @PathParam("group") String group, @PathParam("domain") String domain, @PathParam("lang") String lang) {
+    @Path("/{lang}")
+    public String loadModuleHomeDefault_2(@PathParam("lang") String lang) {
+        return loadDefaultModule('home', lang)
+    }
 
-        HashMap<String, String> configMap = readConfigFile();
-        String main = replaceHtml(configMap, 'faostat-'+ section +'-js', lang);
+    /** HOME **/
 
-        main = main.replace('$_MODULE', "'" +  section +"'")
-        main = main.replace('$_GROUP_CODE', (group == "*" ? "null" : group));
-        main = main.replace('$_DOMAIN_CODE', (domain == "*" ? "null" : domain));
-        main = main.replace('$_LANG', lang);
-        // Return the page
-        return main
+    /**
+     * @param module    FAOSTAT module: home
+     * @param lang      EN, FR or ES
+     * @return          HTML code to be rendered by the browser
+     */
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("home")
+    public String loadModuleHomeDefault() {
+        return loadDefaultModule('home')
+    }
+
+    /**
+     * @param module    FAOSTAT module: home
+     * @param lang      EN, FR or ES
+     * @return          HTML code to be rendered by the browser
+     */
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("home/{lang}")
+    public String loadModuleHomeLang(@PathParam("lang") String lang) {
+        return loadDefaultModule('home', lang)
     }
 
 
+
+    /** BROWSE **/
+    // TODO: needed?
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("browse/{section}")
+    public String loadBrowseSection(@PathParam("section") String section) {
+        loadDefaultModule('browse', DEFAULT_LANGUAGE, section, null)
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("/browse/{section}/{code}")
+    public String loadBrowseSectionCode(@PathParam("section") String section, @PathParam("code") String code) {
+        loadDefaultModule('browse', DEFAULT_LANGUAGE, section, code)
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("browse/{section}/{code}/{lang}")
+    public String loadBrowseSectionCodeLang(@PathParam("lang") String lang, @PathParam("section") String section, @PathParam("code") String code) {
+        loadDefaultModule('browse', lang, section, code)
+    }
+
+
+    /** COMPARE **/
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("compare")
+    public String loadCompareSection() {
+        loadDefaultModule('compare', DEFAULT_LANGUAGE)
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("compare/{lang}")
+    public String loadCompareSectionLang(@PathParam("lang") String lang) {
+        loadDefaultModule('compare', lang)
+    }
+
+    // TODO: this is the old version
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("compare/{section}/{code}/{lang}")
+    public String loadCompareSectionCodeLang(@PathParam("lang") String lang, @PathParam("section") String section, @PathParam("code") String code) {
+        loadDefaultModule('compare', lang)
+    }
+
+
+
+    /** MES **/
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("mes/{section}/{lang}")
+    public String loadMesSectionLang(@PathParam("lang") String lang, @PathParam("section") String section) {
+        loadDefaultModule('mes', lang, section)
+    }
+
+    // TODO: this is the old version
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("mes/{section}/{code}/{lang}")
+    public String loadMesSectionCodeLang(@PathParam("lang") String lang, @PathParam("section") String section, @PathParam("code") String code) {
+        loadDefaultModule('mes', lang, section, code)
+    }
+
+    /** DOWNLOAD **/
+    // TODO: needed?
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("download/{section}")
+    public String loadDownloadSection(@PathParam("section") String section) {
+        loadDefaultModule('download', DEFAULT_LANGUAGE, section, null)
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("/download/{section}/{code}")
+    public String loadDownloadSectionCode(@PathParam("section") String section, @PathParam("code") String code) {
+        loadDefaultModule('download', DEFAULT_LANGUAGE, section, code)
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("download/{section}/{code}/{lang}")
+    public String loadDownloadSectionCodeLang(@PathParam("lang") String lang, @PathParam("section") String section, @PathParam("code") String code) {
+        loadDefaultModule('download', lang, section, code)
+    }
+
+
+
+
+    /** SEARCH **/
+
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    @Path("search/{word}")
+    String loadModuleSearchLang(@PathParam("word") String word) {
+        return loadSearchModule('search', DEFAULT_LANGUAGE, word)
+    }
+
     /**
-     * @param section   FAOSTAT section: browse, download, search, compare, analysis, mes
+     * @param module   FAOSTAT module: browse, download, search, compare, analysis, mes
      * @param word      The word to search ( i.e. 'rice')
      * @param lang      E, F or S
      * @return          HTML code to be rendered by the browser
@@ -72,92 +197,67 @@ class FAOSTATGatewayRESTService {
     @GET
     @Produces(MediaType.TEXT_HTML)
     @Path("search/{word}/{lang}")
-    String loadModuleSearch(@PathParam("word") String word, @PathParam("lang") String lang) {
+    String loadModuleSearchWordLang(@PathParam("word") String word, @PathParam("lang") String lang) {
+        return loadSearchModule('search', lang, word)
+    }
 
+    private String loadSearchModule(String module, String lang=DEFAULT_LANGUAGE, String word=null) {
         HashMap<String, String> configMap = readConfigFile();
-        String main = replaceHtml(configMap, 'faostat-search-js', lang);
-
-        main = main.replace('$_MODULE', "'search'")
-        main = main.replace('$_WORD', (word == "*" ? "" : word));
-
-        // Return the page
-        return main
+        String html = getHtml(configMap);
+        def json = createJson(module, lang)
+        json.put("word", word)
+        return html.replace($_MODULE_CONFIG, json.toString())
     }
 
 
-    /**
-     * @param section   FAOSTAT section: home
-     * @param lang      E, F or S
-     * @return          HTML code to be rendered by the browser
-     */
-    @GET
-    @Produces(MediaType.TEXT_HTML)
-    @Path("home/{lang}")
-    String loadModuleHome(@PathParam("lang") String lang) {
-        // Fetch the base HTML
+    private String loadDefaultModule(String module, String lang=DEFAULT_LANGUAGE, String section=null, String code=null) {
         HashMap<String, String> configMap = readConfigFile();
-        String main = replaceHtml(configMap, 'faostat-home-js', lang);
-
-        main = main.replace('$_MODULE', "'home'")
-        main = main.replace('$_BASE_URL', configMap.get("base_url"))
-
-        // Return the page
-        return main
+        String html = getHtml(configMap);
+        def json = createJson(module, lang, section, code)
+        return html.replace($_MODULE_CONFIG, json.toString())
     }
 
-    String replaceHtml(configMap, section, lang) {
-        def base_index_url = ConfigServlet.PATH + "static/faostat/index.html"
-        // Load main HTML content
-        def content = null;
-        def main =  new File(base_index_url).text;
-        main = main.replace('$_BASE_URL', configMap.get("base_url"))
-
-        main = main.replace('$_LANG', lang)
-        main = main.replace('$_ISO2_LANG', getLangISo2(lang))
-
-        // TODO: make it nicer
-        main = main.replace('$_DISPLAY_SEARCH', 'true')
-
-        // Set page's title
-        main = main.replace('$_SECTION_NAME', "home")
-
-        // Load the module
-        //def sectionURL = ConfigServlet.PATH + "static/faostat/"+ section +"/index_gateway.html"
-
-        // Fetch its content
-        //content = new File(sectionURL).text;
-
-        // Replace wildcards with parameters from the REST
-//        content = content.replace('$_LANG', lang)
-//        content = content.replace('$_BASE_URL', configMap.get("base_url"))
-
-
-
-        // Inject the module into the main HTML
-//        main = main.replace('$_LANG', lang)
-//        main = main.replace('$_BASE_URL', configMap.get("base_url"))
-//        main = main.replace('$_CONTENT', main);
-        return main;
-    }
 
     HashMap<String, String> readConfigFile() {
+        println(ConfigServlet.PATH)
+        println(CONFIG_FILE)
         def config = ConfigServlet.PATH + CONFIG_FILE;
-        println(ConfigServlet.PATH);
-        println(config);
+
         def configContent = new File(config).text;
         Gson g = new Gson();
+        println(configContent)
         return g.fromJson(configContent, HashMap.class);
+    }
+
+    String getFAOSTATLang(String iso2) {
+        if      ( iso2.toUpperCase() == "EN") return "E";
+        else if ( iso2.toUpperCase() == "FR") return "F";
+        else if ( iso2.toUpperCase() == "ES") return "S";
+        return "E";
     }
 
 
     String getLangISo2(String lang) {
-        if ( lang.toUpperCase() == "E")
-            return "en";
-        else if   ( lang.toUpperCase() == "F")
-            return "fr";
-        else if   ( lang.toUpperCase() == "S")
-            return "es";
+        if      ( lang.toUpperCase() == "E") return "EN";
+        else if ( lang.toUpperCase() == "F") return "FR";
+        else if ( lang.toUpperCase() == "S") return "ES";
         return "en";
     }
 
+    String getHtml(configMap) {
+        // HTLM CONTENT
+        def base_index = ConfigServlet.PATH + configMap.get($_GATEWAY_BASE_INDEX);
+        base_index = new File(base_index).text
+        return base_index.replace($_BASE_URL, configMap.get($_GATEWAY_BASE_URL))
+    }
+
+    JSONObject createJson(module, lang, section=null, code=null) {
+        JSONObject obj = new JSONObject()
+        obj.put("module", module);
+        obj.put("lang", lang);
+        obj.put("lang_iso2", getLangISo2(lang));
+        obj.put("section", section);
+        obj.put("code", code);
+        return obj
+    }
 }
