@@ -1,0 +1,4 @@
+{
+    "$_GATEWAY_BASE_URL"  : "//168.202.28.214:8080",
+    "$_GATEWAY_BASE_INDEX"  : "/home/vortex/repos/FAOSTAT3/gateway/src/main/webapp/static/faostat/index.html"
+}
