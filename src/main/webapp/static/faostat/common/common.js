@@ -143,12 +143,12 @@ require.config({
 
 
         // Analysis
-        'ANALYSIS_TILE_MANAGER' : 'analysis/js/tiles-manager/tiles-manager',
-        'ANALYSIS_F3_CHART'     : 'analysis/js/libs/commons/f3-chart',
-        'ANALYSIS_GHG_QA_QC'    : 'analysis/js/ghg-qa-qc/ghg-qa-qc',
-        'ANALYSIS_GHG_OVERVIEW' : 'analysis/js/ghg-overview/ghg-overview',
-        'F3_CHART'              : 'analysis/js/commons/f3-chart',
-        'F3_GHG_TABLE'          : 'analysis/js/commons/f3-ghg-table'
+        'ANALYSIS_TILE_MANAGER' : 'tiled-analysis/js/tiles-manager/tiles-manager',
+        'ANALYSIS_F3_CHART'     : 'tiled-analysis/js/libs/commons/f3-chart',
+        'ANALYSIS_GHG_QA_QC'    : 'tiled-analysis/js/ghg-qa-qc/ghg-qa-qc',
+        'ANALYSIS_GHG_OVERVIEW' : 'tiled-analysis/js/ghg-overview/ghg-overview',
+        'F3_CHART'              : 'tiled-analysis/js/commons/f3-chart',
+        'F3_GHG_TABLE'          : 'tiled-analysis/js/commons/f3-ghg-table'
     },
 
     shim: {

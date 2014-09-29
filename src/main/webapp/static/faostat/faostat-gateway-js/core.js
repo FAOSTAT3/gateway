@@ -60,13 +60,13 @@ if (!window.CORE) {
                             var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
                             $("#container").empty()
                             $("#container").html(html)
-                            FAOSTATHome.loadUI(CORE.lang);
+                            FAOSTATHome.loadUI(obj.lang);
                         });
                     });
                     break;
                 case 'browse':
                     require(['BROWSE'], function () {
-                        FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                        FAOSTATBrowse.init(CORE.groupCode, CORE.domainCode, obj.lang);
                     });
                     break;
                 case 'download':
@@ -77,13 +77,13 @@ if (!window.CORE) {
                             $("#container").html(html)
                             console.log(CORE.groupCode);
                             console.log(CORE.domainCode);
-                            FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                            FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, obj.lang);
                         });
                     });
                     break;
                 case 'compare':
                     require(['COMPARE'], function () {
-                        FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, CORE.lang);
+                        FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, obj.lang);
                     });
                     break;
 //                case 'analysis':    CORE.loadModuleLibs(module, function() {
@@ -102,7 +102,7 @@ if (!window.CORE) {
 //                    break;
                 case 'analysis':
                     require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
-                        TILESMGR.init({'lang': lang}, null);
+                        TILESMGR.init({'lang': obj.lang}, null);
                     });
                     break;
                 case 'mes':
@@ -115,7 +115,7 @@ if (!window.CORE) {
                     break;
                 case 'search':
                     $('#searchFS').hide()
-                    CORE.initModuleSearch(module, obj.word, CORE.lang)
+                    CORE.initModuleSearch(module, obj.word, obj.lang)
                     break;
             }
 
@@ -188,7 +188,6 @@ if (!window.CORE) {
                 if (domain) state += '/' + domain
                 if (lang) state += '/' + lang
                 //var state = CORE.state_prefix  + module + '/' + group + '/' + domain + '/' + lang;
-
 
                 if ( History.getState().data.state != state ) {
                     var t = new Date().getTime();
