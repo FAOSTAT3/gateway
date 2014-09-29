@@ -53,12 +53,12 @@ class FAOSTATGatewayRESTService {
      * @param lang      EN, FR or ES
      * @return          HTML code to be rendered by the browser
      */
-    @GET
-    @Produces(MediaType.TEXT_HTML)
-    @Path("/{lang}")
-    public String loadModuleHomeDefault_2(@PathParam("lang") String lang) {
-        return loadDefaultModule('home', lang)
-    }
+//    @GET
+//    @Produces(MediaType.TEXT_HTML)
+//    @Path("/{lang}")
+//    public String loadModuleHomeDefault_2(@PathParam("lang") String lang) {
+//        return loadDefaultModule('home', lang)
+//    }
 
     /** HOME **/
 
