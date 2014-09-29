@@ -186,9 +186,7 @@ class FAOSTATGatewayRESTService {
 
 
 
-
     /** SEARCH **/
-
     @GET
     @Produces(MediaType.TEXT_HTML)
     @Path("search/{word}")
@@ -228,9 +226,7 @@ class FAOSTATGatewayRESTService {
 
     HashMap<String, String> readConfigFile() {
         println(ConfigServlet.PATH)
-        println(CONFIG_FILE)
         def config = ConfigServlet.PATH + CONFIG_FILE;
-
         def configContent = new File(config).text;
         Gson g = new Gson();
         println(configContent)
@@ -254,7 +250,8 @@ class FAOSTATGatewayRESTService {
 
     String getHtml(configMap) {
         // HTLM CONTENT
-        def base_index = ConfigServlet.PATH + configMap.get($_GATEWAY_BASE_INDEX);
+        //def base_index = ConfigServlet.PATH + configMap.get($_GATEWAY_BASE_INDEX);
+        def base_index = configMap.get($_GATEWAY_BASE_INDEX);
         base_index = new File(base_index).text
         return base_index.replace($_BASE_URL, configMap.get($_GATEWAY_BASE_URL))
     }
