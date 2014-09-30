@@ -128,6 +128,11 @@ public class ExportPOI {
         String Oldhead[] = null;
         int headLength = 0;
         Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
+        String swUnit=node.get("swUnit").asText();
+        String swFlag=node.get("swFlag").asText();
+        int swflagindex=1;
+   if(swUnit.equals( "true")){swflagindex=2;}
+        
         /* List nodeList=IteratorUtils.toList(nodeIterator);
          System.out.println("INANA");
          //Collections.sort(nodeList);
@@ -177,15 +182,18 @@ public class ExportPOI {
                         if (matcher.matches()) {
                             retHeadTmp += " " + matcher.group(1)+"("+matcher.group(2)+")";
                         } else {
-                            retHeadTmp += k.replaceAll("<span class=\"ordre\">.*</span>", "");
+                            retHeadTmp += " " +k.replaceAll("<span class=\"ordre\">.*</span>", "");
                         }
                     }
                     row.createCell((short) iii).setCellValue(retHeadTmp);
                     iii++;
+if(swUnit.equals( "true")){                 
                     row.createCell((short) iii).setCellValue("unit");
-                    iii++;
+                    iii++;}
+if(swFlag.equals( "true")){ 
                     row.createCell((short) iii).setCellValue("flag");
                     iii++;
+}
                 }
 
             }
@@ -208,8 +216,7 @@ public class ExportPOI {
                             sheet.addMergedRegion(new CellRangeAddress(i, i + 1, jj, jj));
                         }
                         } catch (Exception ex) {
-                     System.out.println(ex+" UN "+ j+" "+i);
-                    System.out.println(ex+" "+ k);
+                 
                 }
                         
                     } else {
@@ -234,22 +241,28 @@ public class ExportPOI {
 
             Oldhead = head;
 
+
             for (final JsonNode objNode : node.get("header")) {
                 try {
                     //  entry.getValue();
                     row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").get(0).toString()));
                     jj++;
+                    if(swUnit.equals( "true")){ 
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
-                    jj++;
-                    row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(2).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
-                    jj++;
+                    jj++;}
+                    if(swFlag.equals( "true")){ 
+                    row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(swflagindex).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
+                    jj++;}
                 } catch (Exception e) {
+                   
                     row.createCell((short) jj).setCellValue(" ");
                     jj++;
+                    if(swUnit.equals( "true")){ 
                     row.createCell((short) jj).setCellValue(" ");
-                    jj++;
+                    jj++;}
+                    if(swFlag.equals( "true")){ 
                     row.createCell((short) jj).setCellValue(" ");
-                    jj++;
+                    jj++;}
                 }
             }
             i++;
