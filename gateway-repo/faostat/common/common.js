@@ -1,11 +1,13 @@
 
+/* URLs with repository and static files */
 var repository = '//fenixapps.fao.org/repository/js/';
-
-var faostat_gateway = ''
+var faostat_static = 'static/faostat/';
 
 require.config({
 
-    baseUrl: '//168.202.28.214:8080',
+   /* BASE URL of the modules */
+   baseUrl: '//168.202.28.57:8080',
+
     paths: {
         'jquery'               : repository + 'jquery/1.10.2/jquery-1.10.2.min',
         'jquery.i18n'          : repository + 'jquery/1.0.9/jquery.i18n.properties-min',
@@ -38,8 +40,8 @@ require.config({
         'mustache': '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache',
 
         // commmons requirejs libraries
-        'text': faostat_gateway + 'static/faostat/common/libs/text',
-        'i18n': faostat_gateway + 'static/faostat/common/libs/i18n',
+        'text': faostat_static + 'common/libs/text',
+        'i18n': faostat_static + 'common/libs/i18n',
 
         // jqwidgets
         'jqxcore'           : repository + 'jqwidgets/2.8.3/jqxcore',
@@ -67,18 +69,18 @@ require.config({
         'jqxdata.export'    : repository + 'jqwidgets/2.8.3/jqxdata.export',
 
         // jshashtable
-        'jshashtable'       : faostat_gateway + 'static/faostat/common/libs/jshashtable',
+        'jshashtable'       : faostat_static + 'common/libs/jshashtable',
 
         // Gateway
-        'FAOSTAT3': faostat_gateway + 'static/faostat/faostat-gateway-js/core',
-        'FAOSTAT3_gateway_ga': faostat_gateway + 'static/faostat/faostat-gateway-js/faostat-ga',
-        'FAOSTAT3_gateway_js': faostat_gateway + 'static/faostat/faostat-gateway-js/faostat-gateway-js',
+        'FAOSTAT3': faostat_static + 'faostat-gateway-js/core',
+        'FAOSTAT3_gateway_ga': faostat_static + 'faostat-gateway-js/faostat-ga',
+        'FAOSTAT3_gateway_js': faostat_static + 'faostat-gateway-js/faostat-gateway-js',
         'FENIXChartsLibrary' : repository + 'FENIXChartsLibrary/0.4/FENIXChartsLibrary',
 
         // Home
-        'HOME'                          : faostat_gateway + 'static/faostat/faostat-home-js/faostat-home',
-        'HOME_faostat-home-charts'           : faostat_gateway + 'static/faostat/faostat-home-js/faostat-home-charts',
-        'HOME_faostat-home-database-updates' : faostat_gateway + 'static/faostat/faostat-home-js/database-updates',
+        'HOME'                          : faostat_static + 'faostat-home-js/faostat-home',
+        'HOME_faostat-home-charts'           : faostat_static + 'faostat-home-js/faostat-home-charts',
+        'HOME_faostat-home-database-updates' : faostat_static + 'faostat-home-js/database-updates',
 
         // Browse
         'BROWSE'                          : 'faostat-browse-js/js/faostat-browse',

@@ -12,7 +12,7 @@ if (!window.CORE) {
          */
         // this should be subsequent part of i.e. 168.202.28.214:8080
         state_prefix : '',
-        baseURL : '168.202.28.214:8080',
+        baseURL : '168.202.28.57:8080',
         baseURL_WDS : '//faostat3.fao.org/wds',
 //        state_prefix : '/ghg/faostat-gateway/go/to/',
 

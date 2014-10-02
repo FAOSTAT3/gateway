@@ -7,7 +7,6 @@ if (!window.FAOSTATGateway) {
          */
         //loadUI : function(module, groupCode, domainCode, lang) {
         loadUI : function(obj) {
-            console.log(obj)
             CORE.lang = obj.lang;
             require(["//" + CORE.baseURL + "/static/faostat/common/common.js"], function () {
                 require(["FAOSTAT3"], function () {
