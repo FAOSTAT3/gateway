@@ -12,7 +12,7 @@ if (!window.CORE) {
          */
         // this should be subsequent part of i.e. 168.202.28.214:8080
         state_prefix : '',
-        baseURL : '168.202.28.57:8080',
+        baseURL : '168.202.28.214:8080',
         baseURL_WDS : '//faostat3.fao.org/wds',
 //        state_prefix : '/ghg/faostat-gateway/go/to/',
 
@@ -75,8 +75,6 @@ if (!window.CORE) {
                             var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
                             $("#container").empty()
                             $("#container").html(html)
-                            console.log(CORE.groupCode);
-                            console.log(CORE.domainCode);
                             FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, obj.lang);
                         });
                     });
@@ -86,20 +84,6 @@ if (!window.CORE) {
                         FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, obj.lang);
                     });
                     break;
-//                case 'analysis':    CORE.loadModuleLibs(module, function() {
-//                    ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
-//                    break;
-//                case 'analysis':    CORE.loadModuleLibs(module, function() {
-//                    ANALYSIS.init(CORE.groupCode, CORE.domainCode, CORE.lang) });
-//                    break;
-//                case 'analysis':    CORE.loadModuleLibs(module, function() {
-//                        F3_ANALYSIS.init(
-//                            {
-//                                lang : lang
-//                            }
-//                        )
-//                    });
-//                    break;
                 case 'analysis':
                     require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
                         TILESMGR.init({'lang': obj.lang}, null);

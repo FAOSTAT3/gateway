@@ -245,7 +245,7 @@ input {
       /* remove if there is no animation */
       z-index: 1;
       /* remove if there is no animation */
-      top: 6px;
+      top: 8px;
       /* remove if there is no animation */
       transition: top 0.1s ease 0s; }
     .fs-domain .fs-domain-text span, .fs-domain-prod .fs-domain-text span, .fs-domain-emiag .fs-domain-text span, .fs-domain-pric .fs-domain-text span, .fs-domain-popu .fs-domain-text span, .fs-domain-trade .fs-domain-text span, .fs-domain-emilu .fs-domain-text span, .fs-domain-reso .fs-domain-text span, .fs-domain-fores .fs-domain-text span, .fs-domain-foodsec .fs-domain-text span, .fs-domain-foodsup .fs-domain-text span, .fs-domain-inves .fs-domain-text span, .fs-domain-asti .fs-domain-text span, .fs-domain-fbs .fs-domain-text span, .fs-domain-commbal .fs-domain-text span, .fs-domain-agriind .fs-domain-text span, .fs-domain-emerg .fs-domain-text span {

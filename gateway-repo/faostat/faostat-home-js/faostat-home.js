@@ -24,6 +24,12 @@ if (!window.FAOSTATHome) {
             'type':'iframe',
             'autoScale':'false'
             });
+            $('#btnRelease').fancybox({
+                'width':1100,
+                'height':1000,
+                'type':'iframe',
+                'autoScale':'false'
+            });
 
         },
 

@@ -3,10 +3,11 @@
 var repository = '//fenixapps.fao.org/repository/js/';
 var faostat_static = 'static/faostat/';
 
+
 require.config({
 
    /* BASE URL of the modules */
-   baseUrl: '//168.202.28.57:8080',
+   baseUrl: '//168.202.28.214:8080',
 
     paths: {
         'jquery'               : repository + 'jquery/1.10.2/jquery-1.10.2.min',
@@ -78,7 +79,7 @@ require.config({
         'FENIXChartsLibrary' : repository + 'FENIXChartsLibrary/0.4/FENIXChartsLibrary',
 
         // Home
-        'HOME'                          : faostat_static + 'faostat-home-js/faostat-home',
+        'HOME'                               : faostat_static + 'faostat-home-js/faostat-home',
         'HOME_faostat-home-charts'           : faostat_static + 'faostat-home-js/faostat-home-charts',
         'HOME_faostat-home-database-updates' : faostat_static + 'faostat-home-js/database-updates',
 
@@ -278,6 +279,7 @@ require.config({
 
             // jqwidgets
             'jqxcore',
+            'jqxdata',
             'jqxtabs',
             'jqxscrollbar',
             'jqxpanel',
