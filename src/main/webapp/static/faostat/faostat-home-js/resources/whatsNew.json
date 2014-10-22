@@ -1,6 +1,18 @@
 [
     {
         "title": {
+            "E" : "SEPTEMBER 2014",
+            "F" : "SEPTEMBRE 2014",
+            "S" : "SEPTIEMBRE 2014"
+        },
+        "description":  {
+            "E" : "Release of new data for food security indicators, including latest undernourishment figures.",
+            "F" : "Publication de nouvelles donn&eacute;es pour les indicateurs de la s&eacute;curit&eacute; alimentaire, incluant les derniers chiffres de la sous-alimentation.",
+            "S" : "Publicaci&oacute;n de los nuevos datos sobre los indicadores de seguridad alimentaria, incluyendo los &uacute;ltimos datos de subnutrici&oacute;n."
+        }
+    },
+    {
+        "title": {
             "E" : "JUNE 2014",
             "F" : "JUIN 2014",
             "S" : "JUNIO 2014"
@@ -10,19 +22,7 @@
             "F" : "Le domaine du bilan des disponibilités alimentaires (FBS) a été mis à jour jusqu’en 2011.",
             "S" : "El dominio de las Hojas de Balance de Alimentos (FBS) ha sido actualizado hasta el 2011."
         }
-    },
-    {
-        "title": {
-            "E" : "MAY 2014",
-            "F" : "MAI 2014",
-            "S" : "MAYO 2014"
-        },
-        "description":  {
-            "E" : "Launch of new Food Security domain. Data on determinants, outcomes, and vulnerability/stability.",
-            "F" : "Lancement du nouveau domaine de Sécurité alimentaire. Données sur les déterminants, résultats et vulnérabilité/stabilité.",
-            "S" : "Lanzamiento del nuevo dominio de Seguridad Alimentaria. Datos sobre determinantes, resultados y vulnerabilidad/estabilidad."
-        }
-    }
+    } 
 ]
 
 
