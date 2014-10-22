@@ -198,8 +198,17 @@
                     <div id="database-updates" class="fs-updates-content">
                         <i class='fa fa-refresh fa-spin fa-5x'></i>
                     </div>
+                    <!--  onclick="window.open('http://faostat3.fao.org/home/faostatReleaseCalendar.html','window');" -->
                     <div class="obj-box-bottom-btn">
-                        <div onclick="window.open('http://faostat3.fao.org/home/faostatReleaseCalendar.html','window');" class="obj-box-bottom-btn-content">
+                        <div 
+                          id="btnRelease"
+                             class="obj-box-bottom-btn-content"
+                             
+                             data-fancybox-type="iframe" 
+           href="http://faostat.fao.org/DesktopModules/Faostat/releaseCalendar/javascript/build/index.html" 
+           target="myFanzy"
+                             
+                             >
                             <div class="fs-calendar-icon"></div><div id="fs-release-calendar" class="obj-box-bottom-text"></div>
                         </div>
                     </div>
@@ -255,7 +264,7 @@
         <div class="fs-btn-database"><span id="FAOSTAT-ZIP-Download"></span></div>
           <div  class="fs-btn-countryProfile fs-feedback fs-feedback-system-button  various myButton" id="btnCountry" data-fancybox-type="iframe" 
            href="http://faostat.fao.org/CountryProfiles/Country_Profile/default.aspx" 
-           target="myFanzy"">
+           target="myFanzy">
           <span id="fs-country-profiles"></span>
          </div> 
         <script>
@@ -265,6 +274,13 @@
 'type':'iframe',
 'autoScale':'false'
 });
+      $('#btnRelease').fancybox({
+'width':1100,
+'height':1000,
+'type':'iframe',
+'autoScale':'false'
+});
+
     </script>
         <h3 id='whatsNewText'></h3>
         <div id='whatsNew-content'>
