@@ -6,21 +6,21 @@
             "S" : "SEPTIEMBRE 2014"
         },
         "description":  {
-            "E" : "Release of new data for food security indicators, including latest undernourishment figures.",
-            "F" : "Publication de nouvelles donn&eacute;es pour les indicateurs de la s&eacute;curit&eacute; alimentaire, incluant les derniers chiffres de la sous-alimentation.",
-            "S" : "Publicaci&oacute;n de los nuevos datos sobre los indicadores de seguridad alimentaria, incluyendo los &uacute;ltimos datos de subnutrici&oacute;n."
+            "E" : "Launch of new data for food security indicators, including latest undernourishment figures.",
+            "F" : "Lancement de nouvelles donn&eacute;es pour les indicateurs de la s&eacute;curit&eacute; alimentaire, incluant les derniers chiffres de la sous-alimentation.",
+            "S" : "Lanzamiento de los nuevos datos sobre los indicadores de seguridad alimentaria, incluyendo los &uacute;ltimos datos de subnutrici&oacute;n."
         }
     },
     {
         "title": {
-            "E" : "JUNE 2014",
-            "F" : "JUIN 2014",
-            "S" : "JUNIO 2014"
+            "E" : "",
+            "F" : "",
+            "S" : ""
         },
         "description":  {
-            "E" : "The Food Balance Sheets (FBS) domain has now been updated through 2011.",
-            "F" : "Le domaine du bilan des disponibilités alimentaires (FBS) a été mis à jour jusqu’en 2011.",
-            "S" : "El dominio de las Hojas de Balance de Alimentos (FBS) ha sido actualizado hasta el 2011."
+            "E" : "",
+            "F" : "",
+            "S" : ""
         }
     } 
 ]
