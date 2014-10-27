@@ -6,8 +6,8 @@ if (!window.FAOSTATHome) {
         /**
          * This map is used to avoid modules libraries to be loaded more than once.
          */
-       loadUI : function(lang) {
-             //FAOSTATHome._labels();
+        loadUI : function(lang) {
+            //FAOSTATHome._labels();
             FAOSTATDatabaseUpdate.getDatabaseUpdates(CORE.datasource, CORE.lang);
             FS_HOME_CHART.init();
 
@@ -18,11 +18,11 @@ if (!window.FAOSTATHome) {
             FAOSTATHome._showBulkDownload();
 
             <!-- Country Profiles -->
-           $('#btnCountry').fancybox({
-            'width':1100,
-            'height':1000,
-            'type':'iframe',
-            'autoScale':'false'
+            $('#btnCountry').fancybox({
+                'width':1100,
+                'height':1000,
+                'type':'iframe',
+                'autoScale':'false'
             });
             $('#btnRelease').fancybox({
                 'width':1100,
@@ -61,7 +61,7 @@ if (!window.FAOSTATHome) {
 
         _labels: function() {
             /** setting lang properties **/
-           // CORE.getLangProperties(FAOSTATHome._loadLabels);
+            // CORE.getLangProperties(FAOSTATHome._loadLabels);
 
             /* labels */
             $('.ico-pr').html($.i18n.prop('_production'));
@@ -163,8 +163,9 @@ if (!window.FAOSTATHome) {
             $('#wfp').attr("title", "World Food Programme (WFP)");
             $("#wfp").powerTip({placement: placement});
 
-
-
+            $("#fs-home-sy-link").click(function(){
+                window.open("http://www.fao.org/economic/ess/ess-publications/ess-yearbook/en", "_blank");
+            });
         },
 
         _showBulkDownload: function() {
@@ -175,7 +176,8 @@ if (!window.FAOSTATHome) {
                 success: function (response) {
                     if (typeof response == 'string')
                         response = $.parseJSON(response);
-                    document.getElementById('faostat-download-zip-date').innerHTML = response[0][4].substring(0, 10);
+
+                    $('#FAOSTAT-ZIP-Download').append("<em> " + response[0][4].substring(0, 10) + "</em>");
                 },
                 error: function (err, b, c) {
                 }
@@ -187,5 +189,4 @@ if (!window.FAOSTATHome) {
             });
         }
     };
-
 }
