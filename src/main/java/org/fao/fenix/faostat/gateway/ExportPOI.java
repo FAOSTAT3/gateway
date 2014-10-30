@@ -145,7 +145,7 @@ public class ExportPOI {
 
 
         while (nodeIterator.hasNext()) {
-          
+          System.out.println(i);
             Map.Entry<String, JsonNode> entry = (Map.Entry<String, JsonNode>) nodeIterator.next();
 
 
@@ -202,31 +202,35 @@ if(swFlag.equals( "true")){
               int j = 0;
               int jj=0;
             for (String k : head) {
+                System.out.println(k);
                 String ret1 = k.replaceAll("<span class=\"ordre\">.*</span>", "");
                 Matcher matcher = pattern.matcher(k);
-         try{
+         try{  
                     if (stop
                             && i > 0
                             && Oldhead[j].replaceAll("<span class=\"ordre\">.*</span>", "").equals(ret1)) {
-                        
+                        System.out.println(k);
                                try {
                         sheet.addMergedRegion(new CellRangeAddress(i, i + 1, jj, jj));
                         if (matcher.find()) {
+                             System.out.println("U"+k);
                             jj++;
                             sheet.addMergedRegion(new CellRangeAddress(i, i + 1, jj, jj));
                         }
-                        } catch (Exception ex) {
+                        } catch (Exception ex) {System.out.println("erreur ici");
                  
                 }
                         
-                    } else {
-                        
+                    }    else {
+                        System.out.println(k+"D"+ret1);
                         try{
                         if (matcher.find()) {
+                               System.out.println("U"+k+" "+jj);
                             row.createCell((short) jj).setCellValue(matcher.group(1));
                             jj++;
                             row.createCell((short) jj).setCellValue(matcher.group(2));
                         } else {
+                               System.out.println(jj+" DD"+k+"  "+ret1);
                             row.createCell((short) jj).setCellValue(ret1);
                         }
                         stop = false;
@@ -254,7 +258,7 @@ if(swFlag.equals( "true")){
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(swflagindex).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
                 } catch (Exception e) {
-                   
+                   System.out.println("maybe here");
                     row.createCell((short) jj).setCellValue(" ");
                     jj++;
                     if(swUnit.equals( "true")){ 
@@ -269,7 +273,7 @@ if(swFlag.equals( "true")){
         }
 
 
-        HSSFRow row = sheet.createRow(i++);
+        HSSFRow row = sheet.createRow(++i);
 
         for (final JsonNode objNode : nodeFlag.get("data")) {
             row = sheet.createRow(i++);
