@@ -184,7 +184,7 @@ if (!window.FAOSTATHome) {
             });
 
             $("#FAOSTAT-ZIP-Download").click(function(){
-                window.open("ftp://ext-ftp.fao.org/ES/Reserved/essb/ess/ftp_essb/FAOSTAT/BulkDownloads/FAOSTAT.zip", "_blank");
+                window.open("http://faostat3.fao.org/ftp-faostat/Bulk/FAOSTAT.zip", "_blank");
                 FAOSTAT_STATS.bulkDownloadZip();
             });
         }
