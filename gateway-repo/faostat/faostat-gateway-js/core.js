@@ -12,7 +12,7 @@ if (!window.CORE) {
          */
         // this should be subsequent part of i.e. 168.202.28.214:8080
         state_prefix : '',
-        baseURL : '168.202.28.214:8080',
+        baseURL : '168.202.28.57:8080',
         baseURL_WDS : '//faostat3.fao.org/wds',
 //        state_prefix : '/ghg/faostat-gateway/go/to/',
 
@@ -86,7 +86,10 @@ if (!window.CORE) {
                     break;
                 case 'analysis':
                     require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
-                        TILESMGR.init({'lang': obj.lang}, null);
+                        TILESMGR.init({
+                            'lang': obj.lang,
+                            'base_url': CORE.baseURL
+                        }, null);
                     });
                     break;
                 case 'mes':
