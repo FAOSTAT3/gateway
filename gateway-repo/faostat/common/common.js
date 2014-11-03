@@ -7,7 +7,7 @@ var faostat_static = 'static/faostat/';
 require.config({
 
    /* BASE URL of the modules */
-   baseUrl: '//168.202.28.214:8080',
+   baseUrl: '//168.202.28.57:8080',
 
     paths: {
         'jquery'               : repository + 'jquery/1.10.2/jquery-1.10.2.min',
@@ -299,7 +299,7 @@ require.config({
             'FAOSTAT3',
             'jquery-ui',
             'jquery.jscrollpane',
-
+            'chosen',
             // jqwidgets
             'jqxcore',
             'jqxtabs',
