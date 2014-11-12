@@ -151,6 +151,7 @@ require.config({
         'ANALYSIS_GHG_QA_QC'    : 'tiled-analysis/js/ghg-qa-qc/ghg-qa-qc',
         'ANALYSIS_GHG_DATA'     : 'tiled-analysis/js/ghg-data/ghg-data',
         'ANALYSIS_GHG_OVERVIEW' : 'tiled-analysis/js/ghg-overview/ghg-overview',
+        'ANALYSIS_GHG_INDICATORS' : 'tiled-analysis/js/ghg-indicators/ghg-indicators',
         'F3_CHART'              : 'tiled-analysis/js/commons/f3-chart',
         'F3_GHG_TABLE'          : 'tiled-analysis/js/commons/f3-ghg-table'
     },
