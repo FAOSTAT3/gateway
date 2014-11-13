@@ -62,6 +62,12 @@
         "/faostat-download-js/pivotAgg/gchart_renderers.js",
         "/faostat-download-js/pivotAgg/configuration.js",
 
+ "/faostat-download-js/pivotAgg/grid/gt_grid_height.css",
+ "/faostat-download-js/pivotAgg/grid/gt_msg_en.js",
+ "/faostat-download-js/pivotAgg/grid/gt_grid_all.js",
+ "/faostat-download-js/pivotAgg/grid/flashchart/fusioncharts/FusionCharts.js",
+
+
         "/faostat-download-js/FBSN.js",
 
         "/faostat-download-js/js/F3DWLD.js",
