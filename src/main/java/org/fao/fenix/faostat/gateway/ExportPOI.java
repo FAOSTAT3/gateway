@@ -180,7 +180,7 @@ public class ExportPOI {
                     for (String k : tpheadcell) {
                         Matcher matcher = pattern.matcher(k);
                         if (matcher.matches()) {
-                            retHeadTmp += " " + matcher.group(2)+"("+matcher.group(1)+")";
+                            retHeadTmp += " " + matcher.group(1)+"("+matcher.group(2)+")";
                         } else {
                             retHeadTmp += " " +k.replaceAll("<span class=\"ordre\">.*</span>", "");
                         }
