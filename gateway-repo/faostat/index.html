@@ -12,9 +12,9 @@
     <script type='text/javascript' src='//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js'></script>
 
     <!-- Fancybox -->
-    <link type="text/css" rel="stylesheet" href="/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-    <link type="text/css" rel="stylesheet" href="/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-    <link type="text/css" rel="stylesheet" href="/faostat-download-js/js/fanzybox/source/jquery.fancybox.css?v=2.1.4" />
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+    <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/jquery.fancybox.css?v=2.1.4" />
     <link type="text/css" rel="stylesheet" href="/faostat-download-js/css/myPivot.css" />
     <link type="text/css" rel="stylesheet" href="/faostat-download-js/pivotAgg/pivot.css" />
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.scrollpane/1.0/jquery.jscrollpane.css" />
@@ -29,7 +29,7 @@
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
 
     <!-- chosen -->
-    <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'>
+    <!-- <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'> -->
 
     <!-- JQWidgets -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/css/jqwidgets/2.8.3/styles/jqx.base.css"/>
@@ -50,18 +50,6 @@
     <link type="text/css" rel="stylesheet" href="/static/faostat/faostat.css" />
     <link type="text/css" rel="stylesheet" href="/static/faostat/faostat-home.css" />
     <link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-29534670-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
 </head>
 <!--<body onload="FAOSTATGateway.loadUI($MODULE_CONFIG, '$_GROUP_CODE', '$_DOMAIN_CODE', '$_LANG');">-->
 <body onload="start()">
@@ -263,5 +251,15 @@
     function start() {
         var obj = $_MODULE_CONFIG
         FAOSTATGateway.loadUI(obj);
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29534670-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
     }
-</script> 
+</script>
+

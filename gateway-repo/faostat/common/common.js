@@ -19,12 +19,12 @@ require.config({
         'jquery-ui'            : repository + 'jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
 
         // TODO: move it to the fenix-repository
-        'jquery.chromatable'        : 'faostat-download-js/js/chromatable/jquery.chromatable',
-        'jquery.mousewheel'         : 'faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack',
-        'jquery.fancybox'           : 'faostat-download-js/js/fanzybox/source/jquery.fancybox',
-        'jquery.fancybox-buttons'   : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons',
-        'jquery.fancybox-thumbs'    : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs',
-        'jquery.fancybox-media'     : 'faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-media',
+        'jquery.chromatable'        : repository + 'chromatable/jquery.chromatable',
+        'jquery.mousewheel'         : repository + 'jquery.fancybox/lib/jquery.mousewheel-3.0.6.pack',
+        'jquery.fancybox'           : repository + 'jquery.fancybox/source/jquery.fancybox',
+        'jquery.fancybox-buttons'   : repository + 'jquery.fancybox/source/helpers/jquery.fancybox-buttons',
+        'jquery.fancybox-thumbs'    : repository + 'jquery.fancybox/source/helpers/jquery.fancybox-thumbs',
+        'jquery.fancybox-media'     : repository + 'jquery.fancybox/source/helpers/jquery.fancybox-media',
 
         'jquery.jscrollpane'    : repository + 'jquery.scrollpane/1.0/jquery.jscrollpane.min',
 
@@ -73,6 +73,7 @@ require.config({
         'jshashtable'       : faostat_static + 'common/libs/jshashtable',
 
         // Gateway
+        // TODO: this should remove "core.js" it's already imported in the html. How to remove it?
         'FAOSTAT3': faostat_static + 'faostat-gateway-js/core',
         'FAOSTAT3_gateway_ga': faostat_static + 'faostat-gateway-js/faostat-ga',
         'FAOSTAT3_gateway_js': faostat_static + 'faostat-gateway-js/faostat-gateway-js',
