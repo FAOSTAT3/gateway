@@ -1605,7 +1605,7 @@ table.calculated_table td {
     /* max-width: 65px; */
     min-width: 20px;
     overflow: hidden;
-    padding: 3px 0 3px 0;
+     /* padding: 3px 0 3px 0; */
     /* text-overflow: ellipsis; */
     transition: border-color 0.218s ease 0s;
     vertical-align: top;
