@@ -6,15 +6,17 @@ if (!window.FAOSTATGateway) {
          * This map is used to avoid modules libraries to be loaded more than once.
          */
         //loadUI : function(module, groupCode, domainCode, lang) {
-        loadUI : function(obj) {
+/*        loadUI : function(obj) {
+            console.log(CORE.baseURL + "/static/faostat/common/config.js");
             CORE.lang = obj.lang;
-            require(["//" + CORE.baseURL + "/static/faostat/common/common.js"], function () {
-                require(["FAOSTAT3"], function () {
+            require(["//" + CORE.baseURL + "/static/faostat/common/config.js"], function () {
+                console.log("here");
+//                require(["FAOSTAT3"], function () {
                     require.config({"locale": obj.lang.toUpperCase()});
                     FAOSTATGateway._loadUI(obj);
-                });
+//                });
             });
-        },
+        },*/
 
         _loadHistoryJS: function() {
             if ( CORE.testHTML5() ) {
