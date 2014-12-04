@@ -2,8 +2,6 @@ if (!window.CORE) {
 
     window.CORE = {
 
-        datasource : "faostat2",
-
         timestamps : [],
 
 
@@ -12,10 +10,9 @@ if (!window.CORE) {
          */
         // this should be subsequent part of i.e. 168.202.28.214:8080
         state_prefix : '',
-        baseURL : '168.202.28.57:8080',
-        baseURL_WDS : '//faostat3.fao.org/wds',
-//        state_prefix : '/ghg/faostat-gateway/go/to/',
-
+        baseURL : 'faostat3.fao.org',
+        baseURL_WDS : 'http://faostat3.fao.org/wds',
+	datasource : "faostatdb",
 
         groupCode : null,
 
@@ -26,13 +23,13 @@ if (!window.CORE) {
         lang : null,
 
         CONFIG_MES: {
-            prefix                  : 'http://168.202.28.214:8080/faostat-mes/',
-            datasource              : 'faostat2',
-            html_structure          : 'http://168.202.28.214:8080/faostat-mes/structure.html',
+            prefix                  : 'http://faostat3.fao.org/modules/faostat-mes',
+            datasource              : 'faostatdb',
+            html_structure          : 'http://faostat3.fao.org/modules/faostat-mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',
             rest_domains            : 'http://faostat3.fao.org/wds/rest/domains',
-            I18N_URL                : 'http://168.202.28.214:8080/static/faostat/I18N/'
+            I18N_URL                : 'http://faostat3.fao.org/static/faostat/I18N/'
 
         },
 
@@ -43,6 +40,7 @@ if (!window.CORE) {
          * @param lang          UI language, e.g. 'E'
          */
         initModule : function(obj) {
+
             // method to calculate DIV min height
             CORE.contentDIVMinHeight();
             $("#searchFS").show();
@@ -55,13 +53,11 @@ if (!window.CORE) {
             // Call the init method of the module
             switch (module) {
                 case 'home':
-                    require(['HOME'], function () {
-                        require(['text!static/faostat/faostat-home-js/template.html'], function (template) {
+                    require(['text!static/faostat/faostat-home-js/template.html', 'HOME'], function (template) {
                             var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
                             $("#container").empty()
                             $("#container").html(html)
                             FAOSTATHome.loadUI(obj.lang);
-                        });
                     });
                     break;
                 case 'browse':
@@ -70,13 +66,11 @@ if (!window.CORE) {
                     });
                     break;
                 case 'download':
-                    require(['DOWNLOAD'], function () {
-                        require(['text!static/faostat/faostat-download-js/template.html'], function (template) {
+                    require(['text!static/faostat/faostat-download-js/template.html', 'DOWNLOAD'], function (template) {
                             var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
                             $("#container").empty()
                             $("#container").html(html)
                             FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, obj.lang);
-                        });
                     });
                     break;
                 case 'compare':
@@ -84,14 +78,16 @@ if (!window.CORE) {
                         FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, obj.lang);
                     });
                     break;
-                case 'analysis':
-                    require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
-                        TILESMGR.init({
-                            'lang': obj.lang,
-                            'base_url': CORE.baseURL
-                        }, null);
+               case 'analysis':
+                    require(['FAOSTAT_ANALYSIS'], function (TILESMGR) {
+			ANALYSIS.init(CORE.groupCode, CORE.domainCode, obj.lang);
                     });
                     break;
+                /*case 'analysis':
+                    require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
+                        TILESMGR.init({'lang': obj.lang}, null);
+                    });
+                    break;*/
                 case 'mes':
                     CORE.CONFIG_MES.sectionCode = CORE.groupCode;
                     CORE.CONFIG_MES.subSectionCode = CORE.domainCode;
