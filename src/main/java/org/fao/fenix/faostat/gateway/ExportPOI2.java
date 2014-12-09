@@ -67,8 +67,8 @@ import org.codehaus.jackson.map.ObjectMapper;
  *
  * @author joyeuxroccaserra
  */
-@Path("/ExportPOI")
-public class ExportPOI {
+@Path("/ExportPOI2")
+public class ExportPOI2 {
 
     @Context
     private UriInfo context;
@@ -76,7 +76,7 @@ public class ExportPOI {
     /**
      * Creates a new instance of ExportPOI
      */
-    public ExportPOI() {
+    public ExportPOI2() {
     }
 
     /**
@@ -247,9 +247,9 @@ if(swFlag.equals( "true")){
 
 
             for (final JsonNode objNode : node.get("header")) {
-                try {
+                try {//System.out.println("ouestdoncornicar ");
                     //  entry.getValue();
-                    row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").get(0).toString()));
+                    row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").toString()));
                     jj++;
                     if(swUnit.equals( "true")){ 
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
