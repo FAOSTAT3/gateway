@@ -16,6 +16,7 @@ if (!window.FAOSTATHome) {
             FAOSTATHome._loadNews('comingUp-content', 'comingUp', lang);
             FAOSTATHome._loadLinks('fs-links-content', lang);
             FAOSTATHome._showBulkDownload();
+            FAOSTATHome._modal_survey();
 
             <!-- Country Profiles -->
             $('#btnCountry').fancybox({
@@ -187,6 +188,10 @@ if (!window.FAOSTATHome) {
                 window.open("http://faostat3.fao.org/ftp-faostat/Bulk/FAOSTAT.zip", "_blank");
                 FAOSTAT_STATS.bulkDownloadZip();
             });
+        },
+
+        _modal_survey: function() {
+            $("#modal-11").addClass("md-show");
         }
     };
 }
