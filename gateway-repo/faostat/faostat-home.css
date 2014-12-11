@@ -252,7 +252,7 @@ input {
       margin-right: 20px;
       position: relative;
       /* remove if there is no animation */
-      top: -6px;
+      top: -9px;
       /* remove if there is no animation */
       transition: top 0.1s ease 0s; }
   .fs-domain:hover, .fs-domain-prod:hover, .fs-domain-emiag:hover, .fs-domain-pric:hover, .fs-domain-popu:hover, .fs-domain-trade:hover, .fs-domain-emilu:hover, .fs-domain-reso:hover, .fs-domain-fores:hover, .fs-domain-foodsec:hover, .fs-domain-foodsup:hover, .fs-domain-inves:hover, .fs-domain-asti:hover, .fs-domain-fbs:hover, .fs-domain-commbal:hover, .fs-domain-agriind:hover, .fs-domain-emerg:hover {
