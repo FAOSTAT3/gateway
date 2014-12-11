@@ -270,3 +270,26 @@
         <p id="fs-essdd"><br> Viale delle Terme di Caracalla <br> 00153 Rome, Italy <br><br> <a href='mailto:FAO-statistics@fao.org'> FAO-statistics@fao.org </a></p>
     </div>
 </div>
+
+<div id="modal-11" class="md-modal md-effect-11">
+    <div class="md-content">
+        <h3 id="survey"></h3>
+        <div id="survey-content"></div>
+    </div>
+</div>
+<script>
+    $("#survey").html($.i18n.prop('_survey'));
+    $("#survey-content").html($.i18n.prop('_survey_content'));
+    $("#survey-open").click(function() {
+        var lang = ""
+        if (CORE.lang != "E") {
+            lang = CORE.lang;
+        }
+        window.open("https://www.surveymonkey.com/s/FAOSTAT" + lang.toLocaleLowerCase(), "_blank");
+        $("#modal-11").removeClass("md-show")
+    });
+    $("#survey-close").click(function() {
+        $("#modal-11").removeClass("md-show")
+    });
+</script>
+<div class="md-overlay"></div><!-- the overlay element -->
