@@ -10,9 +10,9 @@ if (!window.CORE) {
          */
         // this should be subsequent part of i.e. 168.202.28.214:8080
         state_prefix : '',
-        baseURL : 'faostat3.fao.org',
+        baseURL : '168.202.28.214:8080',
         baseURL_WDS : 'http://faostat3.fao.org/wds',
-	datasource : "faostatdb",
+        datasource : "faostatdb",
 
         groupCode : null,
 
@@ -54,10 +54,10 @@ if (!window.CORE) {
             switch (module) {
                 case 'home':
                     require(['text!static/faostat/faostat-home-js/template.html', 'HOME'], function (template) {
-                            var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
-                            $("#container").empty()
-                            $("#container").html(html)
-                            FAOSTATHome.loadUI(obj.lang);
+                        var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
+                        $("#container").empty()
+                        $("#container").html(html)
+                        FAOSTATHome.loadUI(obj.lang);
                     });
                     break;
                 case 'browse':
@@ -67,10 +67,10 @@ if (!window.CORE) {
                     break;
                 case 'download':
                     require(['text!static/faostat/faostat-download-js/template.html', 'DOWNLOAD'], function (template) {
-                            var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
-                            $("#container").empty()
-                            $("#container").html(html)
-                            FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, obj.lang);
+                        var html = template.replace(/\$_BASE_URL/g, CORE.baseURL);
+                        $("#container").empty()
+                        $("#container").html(html)
+                        FAOSTATDownload.init(CORE.groupCode, CORE.domainCode, obj.lang);
                     });
                     break;
                 case 'compare':
@@ -78,16 +78,16 @@ if (!window.CORE) {
                         FAOSTATCompare.init(CORE.groupCode, CORE.domainCode, obj.lang);
                     });
                     break;
-               case 'analysis':
-                    require(['FAOSTAT_ANALYSIS'], function (TILESMGR) {
-			ANALYSIS.init(CORE.groupCode, CORE.domainCode, obj.lang);
+                //case 'analysis':
+                //    require(['FAOSTAT_ANALYSIS'], function (TILESMGR) {
+                //        ANALYSIS.init(CORE.groupCode, CORE.domainCode, obj.lang);
+                //    });
+                //    break;
+                case 'analysis':
+                    require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
+                        TILESMGR.init({'lang': obj.lang, 'lang_iso2': obj.lang_iso2}, null);
                     });
                     break;
-                /*case 'analysis':
-                    require(['ANALYSIS_TILE_MANAGER'], function (TILESMGR) {
-                        TILESMGR.init({'lang': obj.lang}, null);
-                    });
-                    break;*/
                 case 'mes':
                     CORE.CONFIG_MES.sectionCode = CORE.groupCode;
                     CORE.CONFIG_MES.subSectionCode = CORE.domainCode;
