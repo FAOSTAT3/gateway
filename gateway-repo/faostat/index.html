@@ -8,6 +8,7 @@
     <link rel='icon' type='image/png' href='//fenixapps.fao.org/repository/favicon/faostat.png'>
     <link href='//fenixapps.fao.org/repository/fonts/roboto/roboto-main.css' rel='stylesheet' type='text/css'>
 
+
     <!-- Download Pivot -->
     <!-- Fancybox -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
@@ -21,8 +22,18 @@
     <!-- jquery.rangeslider (SEARCH) -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
 
-    <!-- chosen -->
-    <!-- <link href='//fenixapps.fao.org/repository/js/chosen/1.0.0/chosen.min.css' rel='stylesheet'> -->
+    <!-- Tiled-Analysis -->
+    <link type="text/css" rel="stylesheet" href="/tiled-analysis/css/analysis.css" />
+    <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" />
+    <link href='//fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/css/jquery.power.tip/1.1.0/jquery.powertip.css" type="text/css" />
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/leaflet/0.7.3/leaflet.css" />
+    <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='http://fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/fenix-map-js.css" />
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/leaflet-custom.css" />
 
     <!-- JQWidgets -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jqwidgets/styles/jqwidgets.min.css"/>
@@ -243,6 +254,7 @@
     /* URLs with repository and static files */
     var repository = '//fenixapps.fao.org/repository/js/';
     var faostat_static = '//168.202.28.214:8080/static/faostat/';
+    var fnx_modules = '//168.202.28.214:8080/static/faostat/modules/';
 
     require.config({
 
@@ -252,6 +264,8 @@
         baseUrl: '//168.202.28.214:8080/',
 
         paths: {
+//            TODO: remove it because it's already imported
+            'jquery': '//fenixapps.fao.org/cdn/faostat3/jquery.min',
 
             'highcharts': repository + 'highcharts/4.0.4/js/highcharts',
             'highcharts_exporting' : repository + 'highcharts/4.0.4/js/modules/exporting',
@@ -259,6 +273,21 @@
             // commmons requirejs libraries
             'text': faostat_static + 'common/libs/text',
             'i18n': faostat_static + 'common/libs/i18n',
+
+            // new analysis stuff (TODO: add to the CDN!)
+            'mustache': '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache',
+            'bootstrap': repository + 'bootstrap/3.2/js/bootstrap.min',
+            'chosen': repository + 'chosen/1.2.0/chosen.jquery.min',
+
+            // fenix-map-js
+            'import-dependencies'   :   '//fenixapps.fao.org/repository/js/FENIX/utils/import-dependencies-1.0',
+            'leaflet'               :   '//fenixapps.fao.org/repository/js/leaflet/0.7.3/leaflet',
+            'jquery.power.tip'      :   '//fenixapps.fao.org/repository/js/jquery.power.tip/1.1.0/jquery.powertip.min',
+            'jquery-ui'             :   '//fenixapps.fao.org/repository/js/jquery-ui/1.10.3/jquery-ui-1.10.3.custom.min',
+            'jquery.i18n.properties':   '//fenixapps.fao.org/repository/js/jquery/1.0.9/jquery.i18n.properties-min',
+            'jquery.hoverIntent'    :   '//fenixapps.fao.org/repository/js/jquery.hoverIntent/1.0/jquery.hoverIntent',
+            'fenix-map'             :   repository + 'fenix-map-js/ghg_demo/fenix-map-min',
+            'fenix-map-config'      :   repository + 'fenix-map-js/ghg_demo/fenix-map-config',
 
             // jshashtable
             'jshashtable'       : faostat_static + 'common/libs/jshashtable',
@@ -340,6 +369,10 @@
             'F3_CHART'              : 'tiled-analysis/js/commons/f3-chart',
             'F3_GHG_TABLE'          : 'tiled-analysis/js/commons/f3-ghg-table',
 
+            // Geobricks-ui-distribution
+            'GEOBRICKS-UI-DISTRIBUTION': fnx_modules + 'geobricks_ui_distribution/distribution',
+            geobricks_ui_distribution: fnx_modules + 'geobricks_ui_distribution',
+
             // Old analysis
             'FAOSTAT_ANALYSIS' 			: 'faostat-analysis-js/js/faostat-analysis',
             'FAOSTAT_ANALYSIS_COLLECTOR' 		: 'faostat-analysis-js/js/faostat-analysis-collector',
@@ -348,8 +381,17 @@
         },
 
         shim: {
-            'highcharts_exporting': { deps :['highcharts'] },
-            'FENIXChartsLibrary': { deps :['highcharts'] },
+            'highcharts_exporting': ['highcharts'],
+            'FENIXChartsLibrary': ['highcharts'],
+
+            // new analysis stuff TODO: move to the CND with grunt
+            //'bootstrap': ['jquery'],
+            //'chosen': ['jquery'],
+
+            'underscore': {
+              //  deps :['jquery'],
+                exports: '_'
+            },
 
             'HOME': { deps :[
                 'highcharts',
@@ -430,7 +472,18 @@
                 'FAOSTAT_ANALYSIS_COLLECTOR',
                 'FAOSTAT_ANALYSIS_GOOGLE_ANALYTICS',
                 'FAOSTAT_ANALYSIS_WDS_CLIENT'
-            ]}
+            ]},
+
+            // TODO: fix jquery and jquery-ui
+            'fenix-map':  {
+                deps: [
+//                    'jquery',
+                    'leaflet',
+//                    'jquery-ui',
+                    'fenix-map-config', 'import-dependencies',
+                    'jquery.power.tip', 'jquery.i18n.properties',
+                    'jquery.hoverIntent', 'chosen']
+            }
         }
     });
 
