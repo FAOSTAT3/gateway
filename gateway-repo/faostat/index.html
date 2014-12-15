@@ -14,8 +14,8 @@
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.fancybox/source/jquery.fancybox.css?v=2.1.4" />
-    <link type="text/css" rel="stylesheet" href="/modules/faostat-download-js/css/myPivot.css" />
-    <link type="text/css" rel="stylesheet" href="/modules/faostat-download-js/pivotAgg/pivot.css" />
+    <link type="text/css" rel="stylesheet" href="/faostat-ghg/modules/faostat-download-js/css/myPivot.css" />
+    <link type="text/css" rel="stylesheet" href="/faostat-ghg/modules/faostat-download-js/pivotAgg/pivot.css" />
 
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jquery.min.css" />
 
@@ -23,7 +23,6 @@
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/repository/js/jquery.rangeslider/5.1.1/css-custom/iThing_custom.css" />
 
     <!-- Tiled-Analysis -->
-    <link type="text/css" rel="stylesheet" href="/tiled-analysis/css/analysis.css" />
     <link type="text/css" rel="stylesheet" href="http://fenixapps.fao.org/repository/js/bootstrap/3.2/css/bootstrap.min.css" />
     <link href='//fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="http://fenixapps.fao.org/repository/css/jquery.power.tip/1.1.0/jquery.powertip.css" type="text/css" />
@@ -32,8 +31,7 @@
     <link rel='icon' type='image/png' href='http://fenixapps.fao.org/repository/favicon/faostat.png'>
     <link href='http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
     <link href='http://fenixapps.fao.org/repository/js/chosen/1.2.0/chosen.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/fenix-map-js.css" />
-    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/leaflet-custom.css" />
+
 
     <!-- JQWidgets -->
     <link type="text/css" rel="stylesheet" href="//fenixapps.fao.org/cdn/faostat3/jqwidgets/styles/jqwidgets.min.css"/>
@@ -42,9 +40,14 @@
     <!--<link type="text/css" rel="stylesheet" href="/modules/tiled-analysis/css/analysis.css" />-->
 
     <!-- FAOSTAT CSS -->
-    <link type="text/css" rel="stylesheet" href="/static/faostat/faostat.css" />
-    <link type="text/css" rel="stylesheet" href="/static/faostat/faostat-home.css" />
+    <link type="text/css" rel="stylesheet" href="/faostat-ghg/static/faostat/faostat.css" />
+    <link type="text/css" rel="stylesheet" href="/faostat-ghg/static/faostat/faostat-home.css" />
     <link href="//fenixapps.fao.org/repository/js/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link type="text/css" rel="stylesheet" href="/faostat-ghg/modules/tiled-analysis/css/analysis.css" />
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/fenix-map-js.css" />
+    <link rel="stylesheet" href="http://fenixapps.fao.org/repository/js/fenix-map-js/ghg_demo/leaflet-custom.css" />
 </head>
 <body>
 <div class="fs-warning-wrapper">
@@ -149,7 +152,7 @@
 
         <div class="fs-row fs-goToBottomPadding">
             <div class="fs_column_12">
-                <img src="/static/faostat/images/logo-footer.png" alt="faostat-for a world without hunger" class="fs-logo-footer">
+                <img src="/faostat-ghg/static/faostat/images/logo-footer.png" alt="faostat-for a world without hunger" class="fs-logo-footer">
                         <span class="fs-footer-link">
                             <a target="_blank" href="http://www.fao.org/corp/copyright/$_ISO2_LANG/">&#169; FAO 2014</a>
                             <br>
@@ -243,9 +246,9 @@
 <!-- Scripts -->
 <script src="//fenixapps.fao.org/cdn/faostat3/jquery.min.js"></script>
 <script src="//fenixapps.fao.org/cdn/faostat3/jqwidgets/jqwidgets.min.js"></script>
-<script src="/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>
-<script src="/static/faostat/faostat-gateway-js/core.js"></script>
-<script src="/static/faostat/faostat-gateway-js/UIUtils.js"></script>
+<script src="/faostat-ghg/static/faostat/faostat-gateway-js/faostat-gateway-js.js"></script>
+<script src="/faostat-ghg/static/faostat/faostat-gateway-js/core.js"></script>
+<script src="/faostat-ghg/static/faostat/faostat-gateway-js/UIUtils.js"></script>
 
 <!-- Require-js -->
 <script src='//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.js'></script>
@@ -253,15 +256,15 @@
 
     /* URLs with repository and static files */
     var repository = '//fenixapps.fao.org/repository/js/';
-    var faostat_static = '//168.202.28.214:8080/static/faostat/';
-    var fnx_modules = '//168.202.28.214:8080/static/faostat/modules/';
+    var faostat_static = '//fenixapps2.fao.org/faostat-ghg/static/faostat/';
+    var fnx_modules = '//fenixapps2.fao.org/faostat-ghg/static/faostat/modules/';
 
     require.config({
 
         waitSeconds: 60,
 
         /* BASE URL of the modules */
-        baseUrl: '//168.202.28.214:8080/',
+        baseUrl: '//fenixapps2.fao.org/faostat-ghg/modules/',
 
         paths: {
 //            TODO: remove it because it's already imported
