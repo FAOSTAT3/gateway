@@ -89,8 +89,8 @@
         "/faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack.js",
         "/faostat-download-js/css/myPivot.css",
 
-        "/faostat-download-js/pivotAgg/pivot.css",
-        "/faostat-download-js/pivotAgg/pivot.js",
+        "/faostat-download-js/pivotAgg/pivotOLD.css",
+        "/faostat-download-js/pivotAgg/pivotOLD.js",
         "/faostat-download-js/pivotAgg/countriesAgg.js",
         "https://www.google.com/jsapi",
         "/faostat-download-js/pivotAgg/gchart_renderers.js",
