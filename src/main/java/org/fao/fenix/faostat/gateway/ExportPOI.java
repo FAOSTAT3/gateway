@@ -248,10 +248,11 @@ if(swFlag.equals( "true")){
 
             for (final JsonNode objNode : node.get("header")) {
                 try {
+                    
                     //  entry.getValue();
                     row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").get(0).toString()));
                     jj++;
-                    if(swUnit.equals( "true")){ 
+                    if(swUnit.equals( "true")){
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
                     if(swFlag.equals( "true")){ 

@@ -131,7 +131,7 @@ public class ExportPOI2 {
         String swUnit=node.get("swUnit").asText();
         String swFlag=node.get("swFlag").asText();
         int swflagindex=1;
-   if(swUnit.equals( "true")){swflagindex=2;}
+       if(swUnit.equals( "1")){swflagindex=2;}
         
         /* List nodeList=IteratorUtils.toList(nodeIterator);
          System.out.println("INANA");
@@ -187,10 +187,10 @@ public class ExportPOI2 {
                     }
                     row.createCell((short) iii).setCellValue(retHeadTmp);
                     iii++;
-if(swUnit.equals( "true")){                 
+if(swUnit.equals( "1")){                 
                     row.createCell((short) iii).setCellValue("unit");
                     iii++;}
-if(swFlag.equals( "true")){ 
+if(swFlag.equals( "1")){ 
                     row.createCell((short) iii).setCellValue("flag");
                     iii++;
 }
@@ -245,25 +245,30 @@ if(swFlag.equals( "true")){
 
             Oldhead = head;
 
-
             for (final JsonNode objNode : node.get("header")) {
+              
                 try {//System.out.println("ouestdoncornicar ");
                     //  entry.getValue();
-                    row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").toString()));
+                   if(entry.getValue().get(objNode.asText()).get("sum").size()>1){
+                    row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").get(0).toString()));
                     jj++;
-                    if(swUnit.equals( "true")){ 
+                    if(swUnit.equals( "1")){ 
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
-                    if(swFlag.equals( "true")){ 
+                    if(swFlag.equals( "1")){ 
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(swflagindex).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
+                   }
+                   else{  row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").toString()));
+                   jj++;
+                  }
                 } catch (Exception e) {
                     row.createCell((short) jj).setCellValue(" ");
                     jj++;
-                    if(swUnit.equals( "true")){ 
+                    if(swUnit.equals( "1")){ 
                     row.createCell((short) jj).setCellValue(" ");
                     jj++;}
-                    if(swFlag.equals( "true")){ 
+                    if(swFlag.equals( "1")){ 
                     row.createCell((short) jj).setCellValue(" ");
                     jj++;}
                 }
