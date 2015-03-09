@@ -55,14 +55,14 @@
         "/faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack.js",
         "/faostat-download-js/css/myPivot.css",
 
-        "/faostat-download-js/pivotAgg/pivotNewOld.css",
-        "/faostat-download-js/pivotAgg/pivotNewOld.js",
-        "/faostat-download-js/pivotAgg/countriesAgg.js",
+        "/faostat-download-js/pivotAgg/pivotOLD.css",
+        "/faostat-download-js/pivotAgg/pivotOLD.js",
+      
         "https://www.google.com/jsapi",
         "/faostat-download-js/pivotAgg/gchart_renderers.js",
         "/faostat-download-js/pivotAgg/configuration.js",
 
- "/faostat-download-js/pivotAgg/grid/gt_grid_heightold.css",
+ "/faostat-download-js/pivotAgg/grid/gt_grid_height.css",
  "/faostat-download-js/pivotAgg/grid/gt_msg_en.js",
  "/faostat-download-js/pivotAgg/grid/gt_grid_all.js",
  "/faostat-download-js/pivotAgg/grid/flashchart/fusioncharts/FusionCharts.js",
