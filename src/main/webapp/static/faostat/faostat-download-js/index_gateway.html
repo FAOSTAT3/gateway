@@ -32,6 +32,7 @@
         </div>
 
         <div class="right-content" style="width:790px;overflow:visible">
+            
             <div id="central_area" class='download-central-area'>
 
              <div id="listArea0"></div>  
@@ -51,7 +52,7 @@
 
         </div>
 
- 
+        <div id="testinline"></div>
         <div id="output_area"></div>
 
 
@@ -59,21 +60,21 @@
 
         <div class='clear'></div>
 
-       <div id="testinline"></div>
-          <div id="myGrid1_div"></div><br />
- <div id="mesFlags" style="clear:both"></div>
-        <form id="monMainForm" action="/faostat.olap.ws/rest/OLAPCreator/" method="POST"  target="OLAP">
-            <input type="hidden" name="n" id="n" value="4"/>
-            <input type="hidden" name="d" id="d" value="ElementCode#AreaCode#ItemCode#Year"/>
-            <input type="hidden" name="v" id="v" value="5530#4,68#15,31#1985"/>
-            <input type="hidden" name="o" id="o" value="sum"/>
-            <input type="hidden" name="id" id="id" value="Warehouse"/>
-            <input  type="hidden" name="domain" id="domain" value="PA_PI_PP"/>
-            <input  type="hidden" name="a" id="a" value="0#0#0#0"/>
-            <input  type="hidden"name="c" id="c" value="0,1#2,3"/>
-            <input  type="hidden" name="option" id="option" value="showChart:0,headingBefore:0,headingAfter:0,headingOutside:1,showchoosedim:0,nbDec:2,subtotals:0,totals:0,calcTotal:1,showFlags:1,showUnits:1,,nestedby:1,showEmpty:0,type:-1" />
-            <input type="hidden" name="xml" id="xml" value="">
+      
+        <div class="fx-olap-holder">
+            <div id="fx-olap-ui"></div>
+            <div id="fx-olap-holder-div"></div>
+            <div id="myGrid1_div"></div>
+            <div id="mesFlags" style="clear:both"></div>
+        </div>
+        <!--form id="xlsDataForm" action="http://faostat3.fao.org/faostat-olapws/ExportPOI2" method="POST" -->
+        
+        <form id="xlsDataForm" action="/faostat-gateway/go/ExportPOI2" method="POST">
+            <!--textarea id="myJson"  name="myJson" ></textarea-->
+            <input id="myJson"  name="myJson" type="hidden" value="" />
+            <input id="myFlags"  name="myFlags" type="hidden" value='{"data":[{"title":"","label":"Official data"}]}' />
         </form>
+
 
         <div id="METADATA" style="display:none"></div>
 
