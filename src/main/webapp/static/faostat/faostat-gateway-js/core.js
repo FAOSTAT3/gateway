@@ -22,7 +22,7 @@ if (!window.CORE) {
 
         CONFIG_MES: {
             prefix                  : 'http://localhost:8080/mes/',
-            datasource              : 'faostat2',
+            datasource              : 'faostatdb',
             html_structure          : 'http://faostat3.fao.org/mes/structure.html',
             rest_mes                : 'http://faostat3.fao.org/wds/rest/mes',
             rest_groupanddomains    : 'http://faostat3.fao.org/wds/rest/groupsanddomains',

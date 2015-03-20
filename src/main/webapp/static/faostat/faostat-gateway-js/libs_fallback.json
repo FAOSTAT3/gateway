@@ -64,8 +64,23 @@
 
  "/faostat-download-js/pivotAgg/grid/gt_grid_height.css",
  "/faostat-download-js/pivotAgg/grid/gt_msg_en.js",
+ 
  "/faostat-download-js/pivotAgg/grid/gt_grid_all.js",
+ 
+ 
+ 
+ 
  "/faostat-download-js/pivotAgg/grid/flashchart/fusioncharts/FusionCharts.js",
+
+
+  "/faostat-download-js/pivotAgg/HierarchicalRender/pivot.js",
+    "/faostat-download-js/pivotAgg/HierarchicalRender/group_distinct.js",
+     "/faostat-download-js/pivotAgg/HierarchicalRender/formatter_default.js",
+     "/faostat-download-js/pivotAgg/HierarchicalRender/agregate_count.js",
+    "/faostat-download-js/pivotAgg/HierarchicalRender/agregate_sum.js",
+      "/faostat-download-js/pivotAgg/HierarchicalRender/agregate_average.js",
+    "/faostat-download-js/pivotAgg/HierarchicalRender/agregate_distinct.js",
+     "/faostat-download-js/pivotAgg/HierarchicalRender/jbPivot.css",
 
 
         "/faostat-download-js/FBSN.js",
