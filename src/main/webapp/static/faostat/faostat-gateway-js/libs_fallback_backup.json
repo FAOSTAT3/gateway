@@ -63,7 +63,7 @@
     ],
     "download" : [
        
-      /*    "/faostat-download-js/pivotAgg/grid/src/gt_const.js",
+          "/faostat-download-js/pivotAgg/grid/src/gt_const.js",
    "/faostat-download-js/pivotAgg/grid/src/gt_base.js",
     "/faostat-download-js/pivotAgg/grid/src/gt_grid.js",
      "/faostat-download-js/pivotAgg/grid/src/gt_validator.js",
@@ -74,7 +74,7 @@
           "/faostat-download-js/pivotAgg/grid/src/gt_tool.js",
             "/faostat-download-js/pivotAgg/grid/src/gt_ajax.js",
               "/faostat-download-js/pivotAgg/grid/src/gt_editor.js",
-                "/faostat-download-js/pivotAgg/grid/src/gt_dialog.js",*/
+                "/faostat-download-js/pivotAgg/grid/src/gt_dialog.js",
         
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxcore.js",
         "http://fenixapps.fao.org/repository/js/jqwidgets/2.8.3/jqxtabs.js",

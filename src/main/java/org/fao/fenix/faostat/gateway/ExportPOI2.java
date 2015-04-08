@@ -130,7 +130,7 @@ public class ExportPOI2 {
         Iterator<Entry<String, JsonNode>> nodeIterator = node.get("data").getFields();
         String swUnit=node.get("swUnit").asText();
         String swFlag=node.get("swFlag").asText();
-        int swflagindex=1;
+        int swflagindex=2;
        if(swUnit.equals( "1")){swflagindex=2;}
         
         /* List nodeList=IteratorUtils.toList(nodeIterator);
@@ -256,6 +256,7 @@ if(swFlag.equals( "1")){
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
                     if(swFlag.equals( "1")){ 
+                        System.out.println("swflagindex"+swflagindex);
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(swflagindex).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
                    }
