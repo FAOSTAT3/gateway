@@ -131,7 +131,7 @@ public class ExportPOI2 {
         String swUnit=node.get("swUnit").asText();
         String swFlag=node.get("swFlag").asText();
         int swflagindex=2;
-       if(swUnit.equals( "1")){swflagindex=2;}
+       //if(swUnit.equals( "1")){swflagindex=2;}
         
         /* List nodeList=IteratorUtils.toList(nodeIterator);
          System.out.println("INANA");
