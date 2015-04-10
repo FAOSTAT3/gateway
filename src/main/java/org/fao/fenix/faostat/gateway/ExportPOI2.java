@@ -247,8 +247,7 @@ if(swFlag.equals( "1")){
 
             for (final JsonNode objNode : node.get("header")) {
               
-                try {//System.out.println("ouestdoncornicar ");
-                    //  entry.getValue();
+                try {
                    if(entry.getValue().get(objNode.asText()).get("sum").size()>1){
                     row.createCell((short) jj).setCellValue(Double.parseDouble(entry.getValue().get(objNode.asText()).get("sum").get(0).toString()));
                     jj++;
@@ -256,7 +255,7 @@ if(swFlag.equals( "1")){
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(1).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
                     if(swFlag.equals( "1")){ 
-                        System.out.println("swflagindex"+swflagindex);
+                       
                     row.createCell((short) jj).setCellValue(entry.getValue().get(objNode.asText()).get("sum").get(swflagindex).toString().replaceAll("&nbsp;", "").replaceAll("\"", ""));
                     jj++;}
                    }
